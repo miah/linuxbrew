@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Sproxy < Formula
   desc "HTTP proxy server collecting URLs in a 'siege-friendly' manner"
-  homepage 'http://www.joedog.org/sproxy-home/'
-  url 'http://download.joedog.org/sproxy/sproxy-1.02.tar.gz'
-  sha1 'c218b3a49d3acc3aca39ac658b2013846ee7c5b9'
+  homepage "http://www.joedog.org/sproxy-home/"
+  url "http://download.joedog.org/sproxy/sproxy-1.02.tar.gz"
+  sha1 "c218b3a49d3acc3aca39ac658b2013846ee7c5b9"
 
   bottle do
     revision 1
@@ -19,6 +19,6 @@ class Sproxy < Formula
     system "make"
     system "make install"
     # Makefile doesn't honor mandir, so move manpages post-install
-    share.install prefix+'man'
+    share.install prefix+"man"
   end
 end

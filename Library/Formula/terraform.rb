@@ -76,7 +76,7 @@ class Terraform < Formula
 
   go_resource "code.google.com/p/go-uuid" do
     url "https://code.google.com/p/go-uuid", :using => :hg,
-      :revision => "35bc42037350"
+                                             :revision => "35bc42037350"
   end
 
   %w[
@@ -84,7 +84,7 @@ class Terraform < Formula
     net 5aa7325eaa14d7ed4b520f40d58adf2834c8de01
     oauth2 f98d0160877ab4712b906626425ed8b0b320907c
     tools 96f6cfbb921ad6d191c67d09a6d4c4fd056403ae
-    ].each_slice(2) do |x, y|
+  ].each_slice(2) do |x, y|
     go_resource "golang.org/x/#{x}" do
       url "https://go.googlesource.com/#{x}.git", :revision => y
     end

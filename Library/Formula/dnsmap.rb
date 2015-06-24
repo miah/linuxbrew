@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Dnsmap < Formula
   desc "Passive DNS network mapper (a.k.a. subdomains bruteforcer)"
-  homepage 'http://code.google.com/p/dnsmap/'
-  url 'https://dnsmap.googlecode.com/files/dnsmap-0.30.tar.gz'
-  sha1 'a9a8a17102825510d16c1f8af33ca74407c18c70'
+  homepage "http://code.google.com/p/dnsmap/"
+  url "https://dnsmap.googlecode.com/files/dnsmap-0.30.tar.gz"
+  sha1 "a9a8a17102825510d16c1f8af33ca74407c18c70"
 
   def install
     system "make", "CC=#{ENV.cc}", "CFLAGS=#{ENV.cflags}", "BINDIR=#{bin}", "install"

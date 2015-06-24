@@ -20,7 +20,7 @@ class Marst < Formula
   end
 
   test do
-    (testpath/'hello.alg').write('begin outstring(1, "Hello, world!\n") end')
+    (testpath/"hello.alg").write('begin outstring(1, "Hello, world!\n") end')
     system "#{bin}/marst -o hello.c hello.alg"
     system "#{ENV.cc} hello.c -lalgol -lm -o hello"
     system "./hello"

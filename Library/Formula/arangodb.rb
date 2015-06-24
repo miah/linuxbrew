@@ -1,12 +1,12 @@
-require 'formula'
+require "formula"
 
 class Arangodb < Formula
   desc "Universal open-source database with a flexible data model"
-  homepage 'https://www.arangodb.com/'
-  url 'https://www.arangodb.com/repositories/Source/ArangoDB-2.5.5.tar.gz'
-  sha1 'e8ca48870222f68189881eb09b431cce02bfb7d8'
+  homepage "https://www.arangodb.com/"
+  url "https://www.arangodb.com/repositories/Source/ArangoDB-2.5.5.tar.gz"
+  sha1 "e8ca48870222f68189881eb09b431cce02bfb7d8"
 
-  head "https://github.com/arangodb/arangodb.git", :branch => 'unstable'
+  head "https://github.com/arangodb/arangodb.git", :branch => "unstable"
 
   bottle do
     sha256 "e1b8492d5bb327eebd5d046c35889e0ec2d7e01e56965585cf91fa1d065feaee" => :yosemite
@@ -14,8 +14,8 @@ class Arangodb < Formula
     sha256 "de8f83b412fd3edbf5dc3449920ee309bfc171b950cff1b9a9692564a4082e43" => :mountain_lion
   end
 
-  depends_on 'go' => :build
-  depends_on 'openssl'
+  depends_on "go" => :build
+  depends_on "openssl"
 
   needs :cxx11
 
@@ -39,8 +39,8 @@ class Arangodb < Formula
     system "./configure", *args
     system "make install"
 
-    (var/'arangodb').mkpath
-    (var/'log/arangodb').mkpath
+    (var/"arangodb").mkpath
+    (var/"log/arangodb").mkpath
   end
 
   def post_install

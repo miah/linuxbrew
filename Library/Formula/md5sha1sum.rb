@@ -32,5 +32,4 @@ class Md5sha1sum < Formula
     EOS
     system "#{bin}/sha1sum", "--check", "file.txt.sha1"
   end
-
 end

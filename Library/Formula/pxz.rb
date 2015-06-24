@@ -1,13 +1,13 @@
-require 'formula'
+require "formula"
 
 class Pxz < Formula
   desc "Compression utility"
-  homepage 'http://jnovy.fedorapeople.org/pxz/'
-  url 'http://jnovy.fedorapeople.org/pxz/pxz-4.999.9beta.20091201git.tar.xz'
-  version '4.999.9'
-  sha1 'fe352d3e076183be95609497b1102a5a49a65b4f'
+  homepage "http://jnovy.fedorapeople.org/pxz/"
+  url "http://jnovy.fedorapeople.org/pxz/pxz-4.999.9beta.20091201git.tar.xz"
+  version "4.999.9"
+  sha1 "fe352d3e076183be95609497b1102a5a49a65b4f"
 
-  depends_on 'xz'
+  depends_on "xz"
 
   fails_with :clang do
     cause "pxz requires OpenMP support"
@@ -17,7 +17,7 @@ class Pxz < Formula
 
   def install
     system "make", "CC=#{ENV.cc}"
-    bin.install 'pxz'
+    bin.install "pxz"
   end
 end
 

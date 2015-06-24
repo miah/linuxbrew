@@ -1,14 +1,14 @@
-require 'formula'
+require "formula"
 
 class Gcal < Formula
   desc "Gcal is a program for calculating and printing calendars"
-  homepage 'http://www.gnu.org/software/gcal/'
-  url 'http://ftpmirror.gnu.org/gcal/gcal-3.6.3.tar.xz'
-  mirror 'http://ftp.gnu.org/gnu/gcal/gcal-3.6.3.tar.xz'
-  sha1 'a5d68216d8b0735c9b095fb81a08d6dbf5cdeedd'
+  homepage "http://www.gnu.org/software/gcal/"
+  url "http://ftpmirror.gnu.org/gcal/gcal-3.6.3.tar.xz"
+  mirror "http://ftp.gnu.org/gnu/gcal/gcal-3.6.3.tar.xz"
+  sha1 "a5d68216d8b0735c9b095fb81a08d6dbf5cdeedd"
 
   def install
-    system './configure', "--prefix=#{prefix}", '--disable-dependency-tracking'
+    system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
     system "make install"
   end
 end

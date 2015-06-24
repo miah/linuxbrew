@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libdsk < Formula
   desc "Library for accessing discs and disc image files"
-  homepage 'http://www.seasip.info/Unix/LibDsk/'
-  url 'http://www.seasip.info/Unix/LibDsk/libdsk-1.3.8.tar.gz'
-  sha1 'eac675db4e16f35c86ba2d2f865c8e58a99156a7'
+  homepage "http://www.seasip.info/Unix/LibDsk/"
+  url "http://www.seasip.info/Unix/LibDsk/libdsk-1.3.8.tar.gz"
+  sha1 "eac675db4e16f35c86ba2d2f865c8e58a99156a7"
 
   bottle do
     sha256 "5b826726a3146916ec472d350c00656e878b0420d271b4c623d868fd91809637" => :yosemite
@@ -16,6 +16,6 @@ class Libdsk < Formula
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make install"
-    (share+name+'doc').install Dir['doc/*.{html,txt,pdf}']
+    (share+name+"doc").install Dir["doc/*.{html,txt,pdf}"]
   end
 end

@@ -1,8 +1,8 @@
-require 'formula'
+require "formula"
 
 class Libkml < Formula
   desc "Library to parse, generate and operate on KML"
-  homepage 'http://code.google.com/p/libkml/'
+  homepage "http://code.google.com/p/libkml/"
 
   stable do
     url "https://libkml.googlecode.com/files/libkml-1.2.0.tar.gz"
@@ -29,7 +29,7 @@ class Libkml < Formula
   end
 
   head do
-    url 'http://libkml.googlecode.com/svn/trunk/'
+    url "http://libkml.googlecode.com/svn/trunk/"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -52,7 +52,7 @@ class Libkml < Formula
       # is applied. http://code.google.com/p/libkml/issues/detail?id=186
       # If the patch is applied, this find and replace will be unnecessary, but also
       # harmless
-      inreplace 'configure.ac', '-Werror', ''
+      inreplace "configure.ac", "-Werror", ""
 
       system "./autogen.sh"
     end

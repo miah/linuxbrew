@@ -63,12 +63,12 @@ class Sdl < Formula
 
     ENV.universal_binary if build.universal?
 
-    system "./autogen.sh" if build.head? or build.with? "x11"
+    system "./autogen.sh" if build.head? || build.with?("x11")
 
     args = %W[--prefix=#{prefix}]
     args << "--disable-nasm" unless MacOS.version >= :mountain_lion # might work with earlier, might only work with new clang
     # LLVM-based compilers choke on the assembly code packaged with SDL.
-    args << "--disable-assembly" if ENV.compiler == :llvm or (ENV.compiler == :clang and MacOS.clang_build_version < 421)
+    args << "--disable-assembly" if ENV.compiler == :llvm || (ENV.compiler == :clang && MacOS.clang_build_version < 421)
     args << "--without-x" if build.without? "x11"
     args << "--with-x" if build.with? "x11"
 
@@ -87,12 +87,12 @@ class Sdl < Formula
         system "./configure"
         system "make"
         # Upstream - Why no make install? Why?
-        (share+"tests").install %w{ checkkeys graywin loopwave testalpha testbitmap testblitspeed testcdrom
-                        testcursor testdyngl testerror testfile testgamma testgl testhread testiconv
-                        testjoystick testkeys testloadso testlock testoverlay testoverlay2 testpalette
-                        testplatform testsem testsprite testtimer testver testvidinfo testwin testwm
-                        threadwin torturethread }
-        (share+"test_extras").install %w{ icon.bmp moose.dat picture.xbm sail.bmp sample.bmp sample.wav }
+        (share+"tests").install %w[checkkeys graywin loopwave testalpha testbitmap testblitspeed testcdrom
+                                   testcursor testdyngl testerror testfile testgamma testgl testhread testiconv
+                                   testjoystick testkeys testloadso testlock testoverlay testoverlay2 testpalette
+                                   testplatform testsem testsprite testtimer testver testvidinfo testwin testwm
+                                   threadwin torturethread]
+        (share+"test_extras").install %w[icon.bmp moose.dat picture.xbm sail.bmp sample.bmp sample.wav]
         bin.write_exec_script Dir["#{share}/tests/*"]
       end
       # And then we undo stupid but necessary so it doesn't break all the other things.

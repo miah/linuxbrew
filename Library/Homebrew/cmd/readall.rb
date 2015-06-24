@@ -3,9 +3,9 @@
 # when making significant changes to formula.rb,
 # or to determine if any current formulae have Ruby issues
 
-require 'formula'
-require 'cmd/tap'
-require 'thread'
+require "formula"
+require "cmd/tap"
+require "thread"
 
 module Homebrew
   def readall

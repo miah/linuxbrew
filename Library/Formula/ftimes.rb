@@ -11,7 +11,7 @@ class Ftimes < Formula
   def install
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
-                          "--with-pcre=#{Formula['pcre'].opt_prefix}",
+                          "--with-pcre=#{Formula["pcre"].opt_prefix}",
                           "--prefix=#{prefix}"
 
     inreplace "doc/ftimes/Makefile" do |s|

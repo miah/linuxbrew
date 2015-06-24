@@ -1,16 +1,16 @@
-require 'formula'
+require "formula"
 
 class Minidjvu < Formula
   desc "DjVu multipage encoder, single page encoder/decoder"
-  homepage 'http://minidjvu.sourceforge.net/'
-  url 'https://downloads.sourceforge.net/project/minidjvu/minidjvu/0.8/minidjvu-0.8.tar.gz'
-  sha1 '23835f73bc3580b72c6afe1f77feaf1e2611e714'
+  homepage "http://minidjvu.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/minidjvu/minidjvu/0.8/minidjvu-0.8.tar.gz"
+  sha1 "23835f73bc3580b72c6afe1f77feaf1e2611e714"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on 'djvulibre'
-  depends_on 'libtiff'
+  depends_on "djvulibre"
+  depends_on "libtiff"
 
   def install
     ENV.j1

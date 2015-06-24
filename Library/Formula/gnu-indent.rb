@@ -20,7 +20,7 @@ class GnuIndent < Formula
       --disable-dependency-tracking
       --prefix=#{prefix}
       --mandir=#{man}
-      ]
+    ]
 
     args << "--program-prefix=g" if build.without? "default-names"
 

@@ -1,4 +1,4 @@
-require 'formula'
+require "formula"
 
 class FreeimageHttpDownloadStrategy < CurlDownloadStrategy
   def stage
@@ -10,11 +10,11 @@ end
 
 class Freeimage < Formula
   desc "Library for FreeImage, a dependency-free graphics library"
-  homepage 'http://sf.net/projects/freeimage'
-  url 'https://downloads.sourceforge.net/project/freeimage/Source%20Distribution/3.16.0/FreeImage3160.zip',
+  homepage "http://sf.net/projects/freeimage"
+  url "https://downloads.sourceforge.net/project/freeimage/Source%20Distribution/3.16.0/FreeImage3160.zip",
     :using => FreeimageHttpDownloadStrategy
-  version '3.16.0'
-  sha1 'a70600d288fe5bd11131e85e6f857a93bb100ad8'
+  version "3.16.0"
+  sha1 "a70600d288fe5bd11131e85e6f857a93bb100ad8"
 
   option :universal
 

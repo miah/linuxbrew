@@ -1,4 +1,4 @@
-require 'formula'
+require "formula"
 
 class Htmldoc < Formula
   desc "Convert HTML to PDF or PostScript"

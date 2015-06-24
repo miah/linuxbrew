@@ -7,7 +7,7 @@ class Davmail < Formula
   sha1 "4b524832b432216d2b8dfa97198c50681a1734ce"
 
   def install
-    libexec.install Dir['*']
+    libexec.install Dir["*"]
     bin.write_jar_script libexec/"davmail.jar", "davmail"
   end
 end

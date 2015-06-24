@@ -22,7 +22,7 @@ class Irods < Formula
 
     system "make"
 
-    bin.install Dir["clients/icommands/bin/*"].select {|f| File.executable? f}
+    bin.install Dir["clients/icommands/bin/*"].select { |f| File.executable? f }
 
     # patch in order to use osxfuse
     if build.with? "osxfuse"
@@ -33,7 +33,7 @@ class Irods < Formula
         inreplace "Makefile", "-I$(fuseHomeDir)/include", "-I$(fuseHomeDir)/include/osxfuse"
         system "make"
       end
-      bin.install Dir["clients/fuse/bin/*"].select {|f| File.executable? f}
+      bin.install Dir["clients/fuse/bin/*"].select { |f| File.executable? f }
     end
   end
 

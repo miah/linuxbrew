@@ -19,5 +19,4 @@ class Dnstop < Formula
     bin.install "dnstop"
     man8.install "dnstop.8"
   end
-
 end

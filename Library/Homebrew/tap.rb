@@ -37,15 +37,15 @@ class Tap
   # e.g. `https://github.com/user/homebrew-repo`
   def remote
     @remote ||= if installed?
-      if (@path/".git").exist?
-        @path.cd do
-          Utils.popen_read("git", "config", "--get", "remote.origin.url").chomp
-        end
-      else
-        nil
-      end
-    else
-      raise TapUnavailableError, name
+                  if (@path/".git").exist?
+                    @path.cd do
+                      Utils.popen_read("git", "config", "--get", "remote.origin.url").chomp
+                    end
+                  else
+                    nil
+                  end
+                else
+                  raise TapUnavailableError, name
     end
   end
 

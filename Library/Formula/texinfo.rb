@@ -28,7 +28,7 @@ class Texinfo < Formula
     # However, it complains about installing epsf.tex in TEXMF/tex/generic/dvips, so let's do that...
     # This somewhat breaks the homebrew philosophy, I am sorry.
     # Also, we don't depend on tex-live, but this directory only exists if it is installed.
-    if File.exist? "#{HOMEBREW_PREFIX}/share/texmf-dist/" then
+    if File.exist? "#{HOMEBREW_PREFIX}/share/texmf-dist/"
       cp "doc/epsf.tex", "#{HOMEBREW_PREFIX}/share/texmf-dist/tex/generic/dvips/"
     end
   end

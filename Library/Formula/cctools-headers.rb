@@ -22,6 +22,6 @@ class CctoolsHeaders < Formula
     (prefix/"usr").rmtree
 
     # ld64 requires an updated mach/machine.h to build
-    resource("headers").stage {(include/"mach").install "osfmk/mach/machine.h"}
+    resource("headers").stage { (include/"mach").install "osfmk/mach/machine.h" }
   end
 end

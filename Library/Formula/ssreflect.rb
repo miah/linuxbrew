@@ -20,9 +20,9 @@ class Ssreflect < Formula
 
     # Enable static linking.
     if build.with? "static"
-      inreplace 'Make' do |s|
-        s.gsub! /#\-custom/, '-custom'
-        s.gsub! /#SSRCOQ/, 'SSRCOQ'
+      inreplace "Make" do |s|
+        s.gsub! /#\-custom/, "-custom"
+        s.gsub! /#SSRCOQ/, "SSRCOQ"
       end
     end
 

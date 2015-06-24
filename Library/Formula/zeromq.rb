@@ -37,8 +37,8 @@ class Zeromq < Formula
     args = ["--disable-dependency-tracking", "--prefix=#{prefix}"]
     if build.with? "libpgm"
       # Use HB libpgm-5.2 because their internal 5.1 is b0rked.
-      ENV['OpenPGM_CFLAGS'] = %x[pkg-config --cflags openpgm-5.2].chomp
-      ENV['OpenPGM_LIBS'] = %x[pkg-config --libs openpgm-5.2].chomp
+      ENV["OpenPGM_CFLAGS"] = `pkg-config --cflags openpgm-5.2`.chomp
+      ENV["OpenPGM_LIBS"] = `pkg-config --libs openpgm-5.2`.chomp
       args << "--with-system-pgm"
     end
 

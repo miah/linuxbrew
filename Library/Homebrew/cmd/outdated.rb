@@ -1,5 +1,5 @@
-require 'formula'
-require 'keg'
+require "formula"
+require "keg"
 
 module Homebrew
   def outdated
@@ -7,7 +7,7 @@ module Homebrew
 
     outdated = outdated_brews(formulae) do |f, versions|
       if ($stdout.tty? || ARGV.verbose?) && !ARGV.flag?("--quiet")
-        puts "#{f.full_name} (#{versions*', '} < #{f.pkg_version})"
+        puts "#{f.full_name} (#{versions*", "} < #{f.pkg_version})"
       else
         puts f.full_name
       end

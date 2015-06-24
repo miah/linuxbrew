@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Flake < Formula
   desc "FLAC audio encoder"
-  homepage 'http://flake-enc.sourceforge.net'
+  homepage "http://flake-enc.sourceforge.net"
   url "https://downloads.sourceforge.net/project/flake-enc/flake/0.11/flake-0.11.tar.bz2"
-  sha1 '2dd2276c1f1ba36abb1c305185efeced06abca62'
+  sha1 "2dd2276c1f1ba36abb1c305185efeced06abca62"
 
   def install
     ENV.j1

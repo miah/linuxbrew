@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Bgpq3 < Formula
   desc "bgp filtering automation for Cisco and Juniper routers"
-  homepage 'http://snar.spb.ru/prog/bgpq3/'
-  url 'https://github.com/snar/bgpq3/archive/v0.1.30.tar.gz'
-  sha1 'ba74b304eb7b3b7f5c0305d75222411baee9816f'
+  homepage "http://snar.spb.ru/prog/bgpq3/"
+  url "https://github.com/snar/bgpq3/archive/v0.1.30.tar.gz"
+  sha1 "ba74b304eb7b3b7f5c0305d75222411baee9816f"
   head "https://github.com/snar/bgpq3.git"
 
   bottle do

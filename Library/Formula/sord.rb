@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Sord < Formula
   desc "C library for storing RDF data in memory"
-  homepage 'http://drobilla.net/software/sord/'
-  url 'http://download.drobilla.net/sord-0.12.2.tar.bz2'
-  sha1 '01def87419beed8bb51a89e50307a22940f1d968'
+  homepage "http://drobilla.net/software/sord/"
+  url "http://download.drobilla.net/sord-0.12.2.tar.bz2"
+  sha1 "01def87419beed8bb51a89e50307a22940f1d968"
 
   bottle do
     cellar :any
@@ -13,9 +13,9 @@ class Sord < Formula
     sha256 "c9fc9daeadbe4096518ace14a9635118f037360156b229b4e96df04836d8a102" => :mountain_lion
   end
 
-  depends_on 'pkg-config' => :build
-  depends_on 'pcre'
-  depends_on 'serd'
+  depends_on "pkg-config" => :build
+  depends_on "pcre"
+  depends_on "serd"
 
   def install
     system "./waf", "configure", "--prefix=#{prefix}"

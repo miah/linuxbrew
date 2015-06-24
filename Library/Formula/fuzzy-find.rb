@@ -1,4 +1,4 @@
-require 'formula'
+require "formula"
 
 class FuzzyFind < Formula
   desc "Fuzzy filename finder that matches across directories as well as files"
@@ -7,7 +7,7 @@ class FuzzyFind < Formula
   version "0.6.0"
   sha1 "13429471e6b51613361128e4d31f2e62013e2c2b"
 
-  head 'https://github.com/silentbicycle/ff.git'
+  head "https://github.com/silentbicycle/ff.git"
 
   def install
     system "make"

@@ -20,7 +20,7 @@ class Poco < Formula
   def install
     ENV.cxx11 if build.cxx11?
 
-    arch = Hardware.is_64_bit? ? 'Darwin64': 'Darwin32' if OS.mac?
+    arch = Hardware.is_64_bit? ? "Darwin64": "Darwin32" if OS.mac?
     system "./configure", "--prefix=#{prefix}",
                           "--config=#{arch}",
                           "--omit=Data/MySQL,Data/ODBC",

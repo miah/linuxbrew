@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libgsm < Formula
   desc "Lossy speech compression library"
-  homepage 'http://www.quut.com/gsm/'
-  url 'http://www.quut.com/gsm/gsm-1.0.13.tar.gz'
-  sha1 '668b0a180039a50d379b3d5a22e78da4b1d90afc'
+  homepage "http://www.quut.com/gsm/"
+  url "http://www.quut.com/gsm/gsm-1.0.13.tar.gz"
+  sha1 "668b0a180039a50d379b3d5a22e78da4b1d90afc"
 
   bottle do
     cellar :any
@@ -25,7 +25,7 @@ class Libgsm < Formula
 
   def install
     ENV.universal_binary if build.universal?
-    ENV.append_to_cflags '-c -O2 -DNeedFunctionPrototypes=1'
+    ENV.append_to_cflags "-c -O2 -DNeedFunctionPrototypes=1"
 
     # Only the targets for which a directory exists will be installed
     bin.mkpath
@@ -44,6 +44,6 @@ class Libgsm < Formula
     system "make", "install",
            "INSTALL_ROOT=#{prefix}",
            "GSM_INSTALL_INC=#{include}"
-    lib.install Dir['lib/*dylib']
+    lib.install Dir["lib/*dylib"]
   end
 end

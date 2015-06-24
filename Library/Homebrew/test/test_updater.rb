@@ -1,6 +1,6 @@
-require 'testing_env'
-require 'cmd/update'
-require 'yaml'
+require "testing_env"
+require "cmd/update"
+require "yaml"
 
 class UpdaterTests < Homebrew::TestCase
   class UpdaterMock < ::Updater
@@ -13,14 +13,14 @@ class UpdaterTests < Homebrew::TestCase
       @called = []
     end
 
-    def in_repo_expect(cmd, output = '')
+    def in_repo_expect(cmd, output = "")
       @expected << cmd
       @outputs[cmd] << output
     end
 
     def `(*args)
       cmd = args.join(" ")
-      if @expected.include?(cmd) and !@outputs[cmd].empty?
+      if @expected.include?(cmd) && !@outputs[cmd].empty?
         @called << cmd
         @outputs[cmd].shift
       else
@@ -55,7 +55,7 @@ class UpdaterTests < Homebrew::TestCase
     FileUtils.rm_rf HOMEBREW_LIBRARY.join("Taps")
   end
 
-  def perform_update(fixture_name="")
+  def perform_update(fixture_name = "")
     @updater.diff = fixture(fixture_name)
     @updater.in_repo_expect("git checkout -q master")
     @updater.in_repo_expect("git rev-parse -q --verify HEAD", "1234abcd")
@@ -81,13 +81,13 @@ class UpdaterTests < Homebrew::TestCase
 
   def test_update_homebrew_with_formulae_changes
     perform_update("update_git_diff_output_with_formulae_changes")
-    assert_equal %w{ xar yajl }, @report.select_formula(:M)
-    assert_equal %w{ antiword bash-completion ddrescue dict lua }, @report.select_formula(:A)
+    assert_equal %w[xar yajl], @report.select_formula(:M)
+    assert_equal %w[antiword bash-completion ddrescue dict lua], @report.select_formula(:A)
   end
 
   def test_update_homebrew_with_removed_formulae
     perform_update("update_git_diff_output_with_removed_formulae")
-    assert_equal %w{libgsasl}, @report.select_formula(:D)
+    assert_equal %w[libgsasl], @report.select_formula(:D)
   end
 
   def test_update_homebrew_with_changed_filetype
@@ -101,7 +101,7 @@ class UpdaterTests < Homebrew::TestCase
 
     perform_update("update_git_diff_output_with_restructured_tap")
 
-    assert_equal %w{foo/bar/git foo/bar/lua}, @report.select_formula(:A)
+    assert_equal %w[foo/bar/git foo/bar/lua], @report.select_formula(:A)
     assert_empty @report.select_formula(:D)
   end
 
@@ -113,7 +113,7 @@ class UpdaterTests < Homebrew::TestCase
     perform_update("update_git_diff_simulate_homebrew_php_restructuring")
 
     assert_empty @report.select_formula(:A)
-    assert_equal %w{foo/bar/git foo/bar/lua}, @report.select_formula(:D)
+    assert_equal %w[foo/bar/git foo/bar/lua], @report.select_formula(:D)
   end
 
   def test_update_homebrew_with_tap_formulae_changes
@@ -123,8 +123,8 @@ class UpdaterTests < Homebrew::TestCase
 
     perform_update("update_git_diff_output_with_tap_formulae_changes")
 
-    assert_equal %w{foo/bar/lua}, @report.select_formula(:A)
-    assert_equal %w{foo/bar/git}, @report.select_formula(:M)
+    assert_equal %w[foo/bar/lua], @report.select_formula(:A)
+    assert_equal %w[foo/bar/git], @report.select_formula(:M)
     assert_empty @report.select_formula(:D)
   end
 end

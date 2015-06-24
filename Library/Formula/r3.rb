@@ -31,12 +31,12 @@ class R3 < Formula
 
     system "./autogen.sh"
 
-    args = %W{
+    args = %W[
       --disable-debug
       --disable-dependency-tracking
       --disable-silent-rules
       --prefix=#{prefix}
-    }
+    ]
 
     args << "--enable-graphviz" if build.with? "graphviz"
     args << "--with-malloc=jemalloc" if build.with? "jemalloc"

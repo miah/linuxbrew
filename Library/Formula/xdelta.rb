@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Xdelta < Formula
   desc "Binary diff, differential compression tools"
-  homepage 'http://xdelta.org'
-  url 'https://xdelta.googlecode.com/files/xdelta3-3.0.6.tar.gz'
-  sha1 'a468ce0efb0cd1c7dbdff637731e9ac6470437c6'
+  homepage "http://xdelta.org"
+  url "https://xdelta.googlecode.com/files/xdelta3-3.0.6.tar.gz"
+  sha1 "a468ce0efb0cd1c7dbdff637731e9ac6470437c6"
 
   def install
     system "./configure", "--disable-dependency-tracking",

@@ -35,8 +35,8 @@ class Caveats
     return "" unless f.keg_only?
 
     s = "This formula is keg-only, which means it was not symlinked into #{HOMEBREW_PREFIX}."
-    s << "\n\n#{f.keg_only_reason.to_s}"
-    if f.lib.directory? or f.include.directory?
+    s << "\n\n#{f.keg_only_reason}"
+    if f.lib.directory? || f.include.directory?
       s <<
         <<-EOS.undent_________________________________________________________72
 
@@ -53,7 +53,7 @@ class Caveats
   end
 
   def bash_completion_caveats
-    if keg and keg.completion_installed? :bash then <<-EOS.undent
+    if keg && keg.completion_installed?(:bash) then <<-EOS.undent
       Bash completion has been installed to:
         #{HOMEBREW_PREFIX}/etc/bash_completion.d
       EOS
@@ -61,7 +61,7 @@ class Caveats
   end
 
   def zsh_completion_caveats
-    if keg and keg.completion_installed? :zsh then <<-EOS.undent
+    if keg && keg.completion_installed?(:zsh) then <<-EOS.undent
       zsh completion has been installed to:
         #{HOMEBREW_PREFIX}/share/zsh/site-functions
       EOS
@@ -69,7 +69,7 @@ class Caveats
   end
 
   def fish_completion_caveats
-    if keg and keg.completion_installed? :fish and which("fish") then <<-EOS.undent
+    if keg && keg.completion_installed?(:fish) && which("fish") then <<-EOS.undent
       fish completion has been installed to:
         #{HOMEBREW_PREFIX}/share/fish/vendor_completions.d
       EOS
@@ -124,7 +124,7 @@ class Caveats
   end
 
   def app_caveats
-    if keg and keg.app_installed?
+    if keg && keg.app_installed?
       <<-EOS.undent
         .app bundles were installed.
         Run `brew linkapps #{keg.name}` to symlink these to /Applications.
@@ -135,17 +135,17 @@ class Caveats
   def plist_caveats
     return "" unless OS.mac?
     s = []
-    if f.plist or (keg and keg.plist_installed?)
-      destination = f.plist_startup ? '/Library/LaunchDaemons' \
-                                    : '~/Library/LaunchAgents'
+    if f.plist || (keg && keg.plist_installed?)
+      destination = f.plist_startup ? "/Library/LaunchDaemons" \
+                                    : "~/Library/LaunchAgents"
 
       plist_filename = if f.plist
-        f.plist_path.basename
-      else
-        File.basename Dir["#{keg}/*.plist"].first
+                         f.plist_path.basename
+                       else
+                         File.basename Dir["#{keg}/*.plist"].first
       end
       plist_link = "#{destination}/#{plist_filename}"
-      plist_domain = f.plist_path.basename('.plist')
+      plist_domain = f.plist_path.basename(".plist")
       destination_path = Pathname.new File.expand_path destination
       plist_path = destination_path/plist_filename
 
@@ -173,18 +173,18 @@ class Caveats
       # For startup plists, we cannot tell whether it's running on launchd,
       # as it requires for `sudo launchctl list` to get real result.
       elsif f.plist_startup
-          s << "To reload #{f.full_name} after an upgrade:"
-          s << "    sudo launchctl unload #{plist_link}"
-          s << "    sudo cp -fv #{f.opt_prefix}/*.plist #{destination}"
-          s << "    sudo chown root #{plist_link}"
-          s << "    sudo launchctl load #{plist_link}"
+        s << "To reload #{f.full_name} after an upgrade:"
+        s << "    sudo launchctl unload #{plist_link}"
+        s << "    sudo cp -fv #{f.opt_prefix}/*.plist #{destination}"
+        s << "    sudo chown root #{plist_link}"
+        s << "    sudo launchctl load #{plist_link}"
       elsif Kernel.system "/bin/launchctl list #{plist_domain} &>/dev/null"
-          s << "To reload #{f.full_name} after an upgrade:"
-          s << "    launchctl unload #{plist_link}"
-          s << "    launchctl load #{plist_link}"
+        s << "To reload #{f.full_name} after an upgrade:"
+        s << "    launchctl unload #{plist_link}"
+        s << "    launchctl load #{plist_link}"
       else
-          s << "To load #{f.full_name}:"
-          s << "    launchctl load #{plist_link}"
+        s << "To load #{f.full_name}:"
+        s << "    launchctl load #{plist_link}"
       end
 
       if f.plist_manual
@@ -192,7 +192,7 @@ class Caveats
         s << "    #{f.plist_manual}"
       end
 
-      s << "" << "WARNING: launchctl will fail when run under tmux." if ENV['TMUX']
+      s << "" << "WARNING: launchctl will fail when run under tmux." if ENV["TMUX"]
     end
     s.join("\n") unless s.empty?
   end

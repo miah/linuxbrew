@@ -19,7 +19,6 @@ class Yara < Formula
   depends_on "pcre"
   depends_on "openssl"
 
-
   # fixes a variable redefinition error with clang
   patch do
     url "https://github.com/plusvic/yara/pull/261.diff"

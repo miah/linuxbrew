@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libftdi0 < Formula
   desc "Library to talk to FTDI chips"
-  homepage 'http://www.intra2net.com/en/developer/libftdi'
+  homepage "http://www.intra2net.com/en/developer/libftdi"
   url "http://www.intra2net.com/en/developer/libftdi/download/libftdi-0.20.tar.gz"
-  sha1 '4bc6ce70c98a170ada303fbd00b8428d8a2c1aa2'
+  sha1 "4bc6ce70c98a170ada303fbd00b8428d8a2c1aa2"
 
   bottle do
     cellar :any
@@ -14,10 +14,10 @@ class Libftdi0 < Formula
     sha1 "39d3653f05b71220ed1977abf6bdb37c0e00fed5" => :mountain_lion
   end
 
-  depends_on 'libusb-compat'
+  depends_on "libusb-compat"
 
   def install
-    mkdir 'libftdi-build' do
+    mkdir "libftdi-build" do
       system "../configure", "--prefix=#{prefix}"
       system "make"
       system "make install"

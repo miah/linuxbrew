@@ -1,4 +1,4 @@
-require 'formula'
+require "formula"
 
 class RpmDownloadStrategy < CurlDownloadStrategy
   def stage
@@ -15,11 +15,11 @@ end
 
 class Rpm < Formula
   desc "RPM package manager"
-  homepage 'http://www.rpm5.org/'
-  url 'http://rpm5.org/files/rpm/rpm-5.4/rpm-5.4.15-0.20140824.src.rpm',
+  homepage "http://www.rpm5.org/"
+  url "http://rpm5.org/files/rpm/rpm-5.4/rpm-5.4.15-0.20140824.src.rpm",
       :using => RpmDownloadStrategy
-  version '5.4.15'
-  sha1 '5e94f4679759c36ce76a4847401b22b660a97227'
+  version "5.4.15"
+  sha1 "5e94f4679759c36ce76a4847401b22b660a97227"
 
   bottle do
     sha256 "ac5e32d13f8d61c4a7bfae758a98f4be00622e02a2db6e64430429a0ed17cc30" => :yosemite
@@ -27,41 +27,41 @@ class Rpm < Formula
     sha256 "67743955785cdb2f2c532d0a9cdd8c05adab1da9c10c9a2f5af18d53f3abaea5" => :mountain_lion
   end
 
-  depends_on 'berkeley-db'
-  depends_on 'libmagic'
-  depends_on 'popt'
-  depends_on 'libtasn1'
-  depends_on 'gettext'
-  depends_on 'xz'
-  depends_on 'ossp-uuid'
-  depends_on 'rpm2cpio' => :build
+  depends_on "berkeley-db"
+  depends_on "libmagic"
+  depends_on "popt"
+  depends_on "libtasn1"
+  depends_on "gettext"
+  depends_on "xz"
+  depends_on "ossp-uuid"
+  depends_on "rpm2cpio" => :build
 
   def install
     # only rpm should go into HOMEBREW_CELLAR, not rpms built
-    inreplace "macros/macros.in", '@prefix@', HOMEBREW_PREFIX
+    inreplace "macros/macros.in", "@prefix@", HOMEBREW_PREFIX
     args = %W[
-        --prefix=#{prefix}
-        --localstatedir=#{var}
-        --with-path-cfg=#{etc}/rpm
-        --with-path-magic=#{HOMEBREW_PREFIX}/share/misc/magic
-        --with-path-sources=#{var}/lib/rpmbuild
-        --with-libiconv-prefix=/usr
-        --disable-openmp
-        --disable-nls
-        --disable-dependency-tracking
-        --with-db=external
-        --with-sqlite=external
-        --with-file=external
-        --with-popt=external
-        --with-beecrypt=internal
-        --with-libtasn1=external
-        --with-neon=internal
-        --with-uuid=external
-        --with-pcre=internal
-        --with-lua=internal
-        --with-syck=internal
-        --without-apidocs
-        varprefix=#{var}
+      --prefix=#{prefix}
+      --localstatedir=#{var}
+      --with-path-cfg=#{etc}/rpm
+      --with-path-magic=#{HOMEBREW_PREFIX}/share/misc/magic
+      --with-path-sources=#{var}/lib/rpmbuild
+      --with-libiconv-prefix=/usr
+      --disable-openmp
+      --disable-nls
+      --disable-dependency-tracking
+      --with-db=external
+      --with-sqlite=external
+      --with-file=external
+      --with-popt=external
+      --with-beecrypt=internal
+      --with-libtasn1=external
+      --with-neon=internal
+      --with-uuid=external
+      --with-pcre=internal
+      --with-lua=internal
+      --with-syck=internal
+      --without-apidocs
+      varprefix=#{var}
     ]
 
     system "./configure", *args
@@ -102,14 +102,14 @@ class Rpm < Formula
     EOS
   end
 
-  def rpmdir macro
-    return Pathname.new(`#{bin}/rpm --eval #{macro}`.chomp)
+  def rpmdir(macro)
+    Pathname.new(`#{bin}/rpm --eval #{macro}`.chomp)
   end
 
   test do
     system "#{bin}/rpm", "-vv", "-qa"
-    rpmdir('%_builddir').mkpath
-    specfile = rpmdir('%_specdir')+'test.spec'
+    rpmdir("%_builddir").mkpath
+    specfile = rpmdir("%_specdir")+"test.spec"
     specfile.unlink if specfile.exist?
     (specfile).write(test_spec)
     system "#{bin}/rpmbuild", "-ba", specfile

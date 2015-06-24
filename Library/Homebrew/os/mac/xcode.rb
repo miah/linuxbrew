@@ -60,7 +60,7 @@ module OS
       end
 
       def installed?
-        not prefix.nil?
+        !prefix.nil?
       end
 
       def version
@@ -79,7 +79,7 @@ module OS
         %W[#{prefix}/usr/bin/xcodebuild #{which("xcodebuild")}].uniq.each do |path|
           if File.file? path
             Utils.popen_read(path, "-version") =~ /Xcode (\d(\.\d)*)/
-            return $1 if $1
+            return Regexp.last_match(1) if Regexp.last_match(1)
           end
         end
 
@@ -179,7 +179,7 @@ module OS
         else
           version = `/usr/bin/clang --version`
         end
-        version = version[%r{clang-(\d+\.\d+\.\d+)}, 1] || "0"
+        version = version[/clang-(\d+\.\d+\.\d+)/, 1] || "0"
         version < latest_version
       end
 

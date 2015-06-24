@@ -20,7 +20,7 @@ class LittleCms < Formula
 
   def install
     ENV.universal_binary if build.universal?
-    args = %W{--disable-dependency-tracking --disable-debug --prefix=#{prefix}}
+    args = %W[--disable-dependency-tracking --disable-debug --prefix=#{prefix}]
     args << "--without-tiff" if build.without? "libtiff"
     args << "--without-jpeg" if build.without? "jpeg"
     if build.with? "python"

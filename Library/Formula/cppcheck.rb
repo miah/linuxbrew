@@ -29,7 +29,6 @@ class Cppcheck < Formula
   depends_on "pcre" if build.with? "rules"
   depends_on "qt" if build.with? "gui"
 
-
   def install
     # Man pages aren't installed as they require docbook schemas.
 

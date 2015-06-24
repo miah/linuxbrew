@@ -27,7 +27,7 @@ class Cgdb < Formula
     system "sh", "autogen.sh" if build.head?
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
-                          "--with-readline=#{Formula['readline'].opt_prefix}"
+                          "--with-readline=#{Formula["readline"].opt_prefix}"
     system "make install"
   end
 end

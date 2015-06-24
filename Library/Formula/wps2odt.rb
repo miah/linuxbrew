@@ -1,13 +1,13 @@
-require 'formula'
+require "formula"
 
 class Wps2odt < Formula
   desc "Library for importing MS Works word processor file format"
-  homepage 'http://libwps.sourceforge.net'
-  url 'https://downloads.sourceforge.net/project/libwps/wps2odt/wps2odt-0.2.0/wps2odt-0.2.0.tar.bz2'
-  sha1 '94e1c911ee2dd4ddf262035c20721c09ca795831'
+  homepage "http://libwps.sourceforge.net"
+  url "https://downloads.sourceforge.net/project/libwps/wps2odt/wps2odt-0.2.0/wps2odt-0.2.0.tar.bz2"
+  sha1 "94e1c911ee2dd4ddf262035c20721c09ca795831"
 
-  depends_on 'pkg-config' => :build
-  depends_on 'libwps'
+  depends_on "pkg-config" => :build
+  depends_on "libwps"
 
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",

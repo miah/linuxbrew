@@ -1,18 +1,18 @@
-require 'formula'
+require "formula"
 
 class Sdcc < Formula
   desc "ANSI C compiler for Intel 8051, Maxim 80DS390, and Zilog Z80"
-  homepage 'http://sdcc.sourceforge.net/'
-  url 'https://downloads.sourceforge.net/project/sdcc/sdcc/3.4.0/sdcc-src-3.4.0.tar.bz2'
-  sha1 '469649acbd22376933154ab1e16d0a59806594c4'
+  homepage "http://sdcc.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/sdcc/sdcc/3.4.0/sdcc-src-3.4.0.tar.bz2"
+  sha1 "469649acbd22376933154ab1e16d0a59806594c4"
 
-  head 'https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/sdcc/'
+  head "https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/sdcc/"
 
-  depends_on 'gputils'
-  depends_on 'boost'
+  depends_on "gputils"
+  depends_on "boost"
 
-  option 'enable-avr-port', "Enables the AVR port (UNSUPPORTED, MAY FAIL)"
-  option 'enable-xa51-port', "Enables the xa51 port (UNSUPPORTED, MAY FAIL)"
+  option "enable-avr-port", "Enables the AVR port (UNSUPPORTED, MAY FAIL)"
+  option "enable-xa51-port", "Enables the xa51 port (UNSUPPORTED, MAY FAIL)"
 
   # SDCC Doesn't build huge-stack-auto by default for mcs51, but it
   # is needed by Contiki and others. This simple patch enables it to build.
@@ -24,8 +24,8 @@ class Sdcc < Formula
   def install
     args = ["--prefix=#{prefix}"]
 
-    args << '--enable-avr-port' if build.include? 'enable-avr-port'
-    args << '--enable-xa51-port' if build.include? 'enable-xa51-port'
+    args << "--enable-avr-port" if build.include? "enable-avr-port"
+    args << "--enable-xa51-port" if build.include? "enable-xa51-port"
 
     system "./configure", *args
     system "make all"

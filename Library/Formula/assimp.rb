@@ -29,7 +29,7 @@ class Assimp < Formula
 
   test do
     # Library test.
-    (testpath/'test.cpp').write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS.undent
       #include <assimp/Importer.hpp>
       int main() {
         Assimp::Importer importer;

@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Proftpd < Formula
   desc "Highly configurable GPL-licensed FTP server software"
-  homepage 'http://www.proftpd.org/'
-  url 'ftp://ftp.proftpd.org/distrib/source/proftpd-1.3.4d.tar.gz'
-  sha1 'a5b6c80a8ddeeeccc1c6448d797ccd62a3f63b65'
+  homepage "http://www.proftpd.org/"
+  url "ftp://ftp.proftpd.org/distrib/source/proftpd-1.3.4d.tar.gz"
+  sha1 "a5b6c80a8ddeeeccc1c6448d797ccd62a3f63b65"
 
   # fixes unknown group 'nogroup'
   patch :DATA

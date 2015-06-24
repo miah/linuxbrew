@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class IosWebkitDebugProxy < Formula
   desc "DevTools proxy for iOS devices"
-  homepage 'https://github.com/google/ios-webkit-debug-proxy'
-  url 'https://github.com/google/ios-webkit-debug-proxy/archive/1.4.tar.gz'
-  sha1 'e6d882182fe2fd8f5827a9289545cc7e9ebb25e7'
+  homepage "https://github.com/google/ios-webkit-debug-proxy"
+  url "https://github.com/google/ios-webkit-debug-proxy/archive/1.4.tar.gz"
+  sha1 "e6d882182fe2fd8f5827a9289545cc7e9ebb25e7"
   revision 2
 
   bottle do
@@ -17,9 +17,9 @@ class IosWebkitDebugProxy < Formula
   depends_on :macos => :lion
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on 'libplist'
-  depends_on 'usbmuxd'
-  depends_on 'libimobiledevice'
+  depends_on "libplist"
+  depends_on "usbmuxd"
+  depends_on "libimobiledevice"
 
   def install
     system "./autogen.sh"

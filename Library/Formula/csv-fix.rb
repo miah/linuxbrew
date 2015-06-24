@@ -18,7 +18,8 @@ class CsvFix < Formula
   end
 
   test do
-    assert_equal %{"foo","bar"\n},
+    assert_equal %("foo","bar"
+),
                  pipe_output("#{bin}/csvfix trim", "foo , bar \n")
   end
 end

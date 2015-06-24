@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Aspcud < Formula
   desc "Package dependency solver"
-  homepage 'http://potassco.sourceforge.net/'
-  url 'https://downloads.sourceforge.net/project/potassco/aspcud/1.9.0/aspcud-1.9.0-source.tar.gz'
-  sha1 'ae77772c2424620b3064d0dfe795c26b1c8aa778'
+  homepage "http://potassco.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/potassco/aspcud/1.9.0/aspcud-1.9.0-source.tar.gz"
+  sha1 "ae77772c2424620b3064d0dfe795c26b1c8aa778"
 
   bottle do
     revision 1
@@ -13,11 +13,11 @@ class Aspcud < Formula
     sha1 "705c19c367ee0740eaa0d8130e0619d0879d7db5" => :lion
   end
 
-  depends_on 'boost' => :build
-  depends_on 'cmake' => :build
-  depends_on 're2c'  => :build
-  depends_on 'gringo'
-  depends_on 'clasp'
+  depends_on "boost" => :build
+  depends_on "cmake" => :build
+  depends_on "re2c"  => :build
+  depends_on "gringo"
+  depends_on "clasp"
 
   # boost 1.56 compatibility
   # https://sourceforge.net/p/potassco/bugs/99/
@@ -32,13 +32,13 @@ class Aspcud < Formula
   end
 
   test do
-   fixture = <<-EOS.undent
+    fixture = <<-EOS.undent
       package: foo
       version: 1
 
       request: foo >= 1
     EOS
-    (testpath/'in.cudf').write(fixture)
+    (testpath/"in.cudf").write(fixture)
     system "#{bin}/aspcud", "in.cudf", "out.cudf"
   end
 end

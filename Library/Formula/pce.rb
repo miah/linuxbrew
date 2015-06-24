@@ -1,20 +1,20 @@
-require 'formula'
+require "formula"
 
 class Pce < Formula
   desc "PC emulator"
-  homepage 'http://www.hampa.ch/pce/'
-  url 'http://www.hampa.ch/pub/pce/pce-0.2.2.tar.gz'
-  sha1 'b12dffbacaad44532b5c576bcffae5d11f17cc56'
+  homepage "http://www.hampa.ch/pce/"
+  url "http://www.hampa.ch/pub/pce/pce-0.2.2.tar.gz"
+  sha1 "b12dffbacaad44532b5c576bcffae5d11f17cc56"
 
-  head 'git://git.hampa.ch/pce.git'
+  head "git://git.hampa.ch/pce.git"
 
   devel do
-    url 'http://www.hampa.ch/pub/pce/pre/pce-20140222-4b05f0c.tar.gz'
-    sha1 '980bf6cf02c074d3a70b9dbb262358e0518461b8'
+    url "http://www.hampa.ch/pub/pce/pre/pce-20140222-4b05f0c.tar.gz"
+    sha1 "980bf6cf02c074d3a70b9dbb262358e0518461b8"
   end
 
-  depends_on 'sdl'
-  depends_on 'readline'
+  depends_on "sdl"
+  depends_on "readline"
 
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",

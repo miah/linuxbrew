@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Pincaster < Formula
   desc "Nosql database with a HTTP/JSON interface"
-  homepage 'https://github.com/jedisct1/Pincaster'
-  url 'http://download.pureftpd.org/pincaster/releases/pincaster-0.6.tar.bz2'
-  sha1 'ad3799ce3207480979355f30d6f534dad6229ae2'
+  homepage "https://github.com/jedisct1/Pincaster"
+  url "http://download.pureftpd.org/pincaster/releases/pincaster-0.6.tar.bz2"
+  sha1 "ad3799ce3207480979355f30d6f534dad6229ae2"
 
   def install
     system "./configure", "--prefix=#{prefix}"

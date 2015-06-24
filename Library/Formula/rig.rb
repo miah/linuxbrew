@@ -8,8 +8,8 @@ class Rig < Formula
 
   def install
     system "make"
-    bin.install 'rig'
-    (share/'rig').install Dir['data/*']
+    bin.install "rig"
+    (share/"rig").install Dir["data/*"]
   end
 
   test do

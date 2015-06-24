@@ -1,14 +1,14 @@
-require 'formula'
+require "formula"
 
 class Growly < Formula
   desc "Redirect command output to a growl notification"
-  homepage 'https://github.com/ryankee/growly'
-  head 'https://github.com/ryankee/growly.git'
-  url 'https://github.com/downloads/ryankee/growly/growly-v0.2.0.tar.gz'
-  sha1 'f260315adbff902b14469cb755c2620868649cf1'
+  homepage "https://github.com/ryankee/growly"
+  head "https://github.com/ryankee/growly.git"
+  url "https://github.com/downloads/ryankee/growly/growly-v0.2.0.tar.gz"
+  sha1 "f260315adbff902b14469cb755c2620868649cf1"
 
   def install
-    bin.install 'growly'
+    bin.install "growly"
   end
 
   test do

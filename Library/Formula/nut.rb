@@ -53,7 +53,7 @@ class Nut < Formula
             "--with-openssl",
             "--without-nss",
             "--without-wrap",
-    ]
+           ]
     args << (build.with?("serial") ? "--with-serial" : "--without-serial")
     args << (build.with?("libusb") ? "--with-usb" : "--without-usb")
     args << (build.with?("dev") ? "--with-dev" : "--without-dev")

@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Ttytter < Formula
   desc "Twitter command-line client"
-  homepage 'http://www.floodgap.com/software/ttytter/'
-  url 'http://www.floodgap.com/software/ttytter/dist2/2.1.00.txt'
-  sha1 'a72b2c4b7da8a370ff15c7f5a1a3ecf9056590f0'
+  homepage "http://www.floodgap.com/software/ttytter/"
+  url "http://www.floodgap.com/software/ttytter/dist2/2.1.00.txt"
+  sha1 "a72b2c4b7da8a370ff15c7f5a1a3ecf9056590f0"
 
   def install
     bin.install "#{version}.txt" => "ttytter"

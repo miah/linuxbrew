@@ -6,7 +6,7 @@ class Fzf < Formula
   homepage "https://github.com/junegunn/fzf"
   url "https://github.com/junegunn/fzf/archive/0.10.0.tar.gz"
   sha256 "7d0b3ced40c99934590e3b0a2302a79ca13f36b7558d1643a89b1800021252ee"
-  head 'https://github.com/junegunn/fzf.git'
+  head "https://github.com/junegunn/fzf.git"
 
   bottle do
     sha256 "d21d870c4bce187a71ab9062aaeabd6208ee6fb09706ec12c800abf90abeff3f" => :yosemite

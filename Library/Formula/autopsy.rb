@@ -1,14 +1,14 @@
-require 'formula'
+require "formula"
 
 class Autopsy < Formula
   desc "Graphical interface to Sleuth Kit investigation tools"
-  homepage 'http://www.sleuthkit.org/autopsy/index.php'
-  url 'https://downloads.sourceforge.net/project/autopsy/autopsy/2.24/autopsy-2.24.tar.gz'
-  sha1 '084a6554a1494f5f34df4a5a3635c8d3dc3b8822'
+  homepage "http://www.sleuthkit.org/autopsy/index.php"
+  url "https://downloads.sourceforge.net/project/autopsy/autopsy/2.24/autopsy-2.24.tar.gz"
+  sha1 "084a6554a1494f5f34df4a5a3635c8d3dc3b8822"
 
-  depends_on 'sleuthkit'
-  depends_on 'afflib' => :optional
-  depends_on 'libewf' => :optional
+  depends_on "sleuthkit"
+  depends_on "afflib" => :optional
+  depends_on "libewf" => :optional
 
   # fixes weird configure script that wouldn't work nicely with homebrew
   patch :DATA
@@ -50,13 +50,13 @@ class Autopsy < Formula
 
   def install
     (var+"lib/autopsy").mkpath
-    mv 'lib', 'libexec'
-    prefix.install %w{ global.css help libexec pict }
-    prefix.install Dir['*.txt']
+    mv "lib", "libexec"
+    prefix.install %w[global.css help libexec pict]
+    prefix.install Dir["*.txt"]
     (prefix+"conf.pl").write autcfg
-    inreplace 'base/autopsy.base', '/tmp/autopsy', prefix
-    inreplace 'base/autopsy.base', 'lib/define.pl', "#{libexec}/define.pl"
-    bin.install 'base/autopsy.base' => 'autopsy'
+    inreplace "base/autopsy.base", "/tmp/autopsy", prefix
+    inreplace "base/autopsy.base", "lib/define.pl", "#{libexec}/define.pl"
+    bin.install "base/autopsy.base" => "autopsy"
   end
 
   def caveats; <<-EOS.undent

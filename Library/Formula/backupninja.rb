@@ -1,4 +1,4 @@
-require 'formula'
+require "formula"
 
 class Backupninja < Formula
   desc "Backup automation tool"
@@ -10,7 +10,7 @@ class Backupninja < Formula
   depends_on "dialog"
   depends_on "gawk"
 
-  skip_clean 'etc/backup.d'
+  skip_clean "etc/backup.d"
 
   def install
     system "./configure", "--prefix=#{prefix}"

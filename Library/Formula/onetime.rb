@@ -32,7 +32,7 @@ class Onetime < Formula
 
   test do
     system "dd", "if=/dev/random", "of=pad_data.txt", "bs=1024", "count=1"
-    (testpath+'input.txt').write "INPUT"
+    (testpath+"input.txt").write "INPUT"
     system "#{bin}/onetime", "-e", "--pad=pad_data.txt", "--no-trace",
                              "--config=.", "input.txt"
     system "#{bin}/onetime", "-d", "--pad=pad_data.txt", "--no-trace",

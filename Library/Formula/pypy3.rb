@@ -98,7 +98,7 @@ class Pypy3 < Formula
     bin.install_symlink scripts_folder/"pip" => "pip_pypy3"
 
     # post_install happens after linking
-    %w[easy_install_pypy3 pip_pypy3].each{ |e| (HOMEBREW_PREFIX/"bin").install_symlink bin/e }
+    %w[easy_install_pypy3 pip_pypy3].each { |e| (HOMEBREW_PREFIX/"bin").install_symlink bin/e }
   end
 
   def caveats; <<-EOS.undent

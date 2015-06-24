@@ -1,4 +1,4 @@
-require 'formula'
+require "formula"
 
 class Lynis < Formula
   desc "Security and system auditing tool to harden systems"
@@ -16,13 +16,13 @@ class Lynis < Formula
   def install
     inreplace "lynis" do |s|
       s.gsub! 'tINCLUDE_TARGETS="/usr/local/include/lynis /usr/local/lynis/include /usr/share/lynis/include ./include"',
-        %{tINCLUDE_TARGETS="#{include}"}
+        %(tINCLUDE_TARGETS="#{include}")
       s.gsub! 'tPLUGIN_TARGETS="/usr/local/lynis/plugins /usr/local/share/lynis/plugins /usr/share/lynis/plugins /etc/lynis/plugins ./plugins"',
-        %{tPLUGIN_TARGETS="#{prefix}/plugins"}
+        %(tPLUGIN_TARGETS="#{prefix}/plugins")
       s.gsub! 'tDB_TARGETS="/usr/local/share/lynis/db /usr/local/lynis/db /usr/share/lynis/db ./db"',
-        %{tDB_TARGETS="#{prefix}/db"}
+        %(tDB_TARGETS="#{prefix}/db")
       s.gsub! 'tPROFILE_TARGETS="/usr/local/etc/lynis/default.prf /etc/lynis/default.prf /usr/local/lynis/default.prf ./default.prf"',
-        %{tPROFILE_TARGETS="#{prefix}/default.prf"}
+        %(tPROFILE_TARGETS="#{prefix}/default.prf")
     end
 
     prefix.install "db", "include", "plugins", "default.prf"

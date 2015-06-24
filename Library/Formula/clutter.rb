@@ -39,17 +39,17 @@ class Clutter < Formula
     ]
 
     if build.with? "x11"
-      args.concat %w{
+      args.concat %w[
         --with-x --enable-x11-backend=yes
         --enable-gdk-pixbuf=yes
         --enable-quartz-backend=no
-      }
+      ]
     else
-      args.concat %w{
+      args.concat %w[
         --without-x --enable-x11-backend=no
         --enable-gdk-pixbuf=no
         --enable-quartz-backend=yes
-      }
+      ]
     end
 
     system "./configure", *args

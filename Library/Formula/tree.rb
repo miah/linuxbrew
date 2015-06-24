@@ -1,4 +1,4 @@
-require 'formula'
+require "formula"
 
 class Tree < Formula
   desc "Display directories as trees (with optional color/HTML output)"
@@ -15,8 +15,8 @@ class Tree < Formula
   end
 
   def install
-    ENV.append 'CFLAGS', '-fomit-frame-pointer'
-    objs = 'tree.o unix.o html.o xml.o hash.o color.o strverscmp.o json.o'
+    ENV.append "CFLAGS", "-fomit-frame-pointer"
+    objs = "tree.o unix.o html.o xml.o hash.o color.o strverscmp.o json.o"
 
     system "make", "prefix=#{prefix}",
                    "MANDIR=#{man1}",

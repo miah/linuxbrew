@@ -1,21 +1,21 @@
-require 'formula'
+require "formula"
 
 class Owfs < Formula
   desc "Monitor and control physical environment using Dallas/Maxim 1-wire system"
-  homepage 'http://owfs.org/'
-  url 'https://downloads.sourceforge.net/project/owfs/owfs/2.9p1/owfs-2.9p1.tar.gz'
-  version '2.9p1'
-  sha1 'd431ae5b8eec6988f8ee1e401325eba845cf3696'
+  homepage "http://owfs.org/"
+  url "https://downloads.sourceforge.net/project/owfs/owfs/2.9p1/owfs-2.9p1.tar.gz"
+  version "2.9p1"
+  sha1 "d431ae5b8eec6988f8ee1e401325eba845cf3696"
 
-  depends_on 'libusb-compat'
+  depends_on "libusb-compat"
 
   def install
     # Fix include of getline and strsep to avoid crash
-    inreplace 'configure', '-D_POSIX_C_SOURCE=200112L', ''
+    inreplace "configure", "-D_POSIX_C_SOURCE=200112L", ""
 
     # 'tac' command is missing in MacOSX
-    inreplace 'src/man/Makefile.am', 'tac', 'tail -r'
-    inreplace 'src/man/Makefile.in', 'tac', 'tail -r'
+    inreplace "src/man/Makefile.am", "tac", "tail -r"
+    inreplace "src/man/Makefile.in", "tac", "tail -r"
 
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",

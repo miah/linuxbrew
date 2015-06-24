@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Fftw < Formula
   desc "C routines to compute the Discrete Fourier Transform"
-  homepage 'http://www.fftw.org'
-  url 'http://www.fftw.org/fftw-3.3.4.tar.gz'
-  sha1 'fd508bac8ac13b3a46152c54b7ac885b69734262'
+  homepage "http://www.fftw.org"
+  url "http://www.fftw.org/fftw-3.3.4.tar.gz"
+  sha1 "fd508bac8ac13b3a46152c54b7ac885b69734262"
   revision 1
 
   bottle do
@@ -30,7 +30,7 @@ class Fftw < Formula
             "--enable-threads",
             "--disable-dependency-tracking"]
     simd_args = ["--enable-sse2"]
-    simd_args << "--enable-avx" if ENV.compiler == :clang and Hardware::CPU.avx? and !build.bottle?
+    simd_args << "--enable-avx" if ENV.compiler == :clang && Hardware::CPU.avx? && !build.bottle?
 
     args << "--disable-fortran" if build.without? "fortran"
     args << "--enable-mpi" if build.with? "mpi"
@@ -63,7 +63,7 @@ class Fftw < Formula
   test do
     # Adapted from the sample usage provided in the documentation:
     # http://www.fftw.org/fftw3_doc/Complex-One_002dDimensional-DFTs.html
-    (testpath/'fftw.c').write <<-TEST_SCRIPT.undent
+    (testpath/"fftw.c").write <<-TEST_SCRIPT.undent
       #include <fftw3.h>
       int main(int argc, char* *argv)
       {
@@ -80,7 +80,7 @@ class Fftw < Formula
       }
     TEST_SCRIPT
 
-    system ENV.cc, '-o', 'fftw', 'fftw.c', '-lfftw3', *ENV.cflags.to_s.split
-    system './fftw'
+    system ENV.cc, "-o", "fftw", "fftw.c", "-lfftw3", *ENV.cflags.to_s.split
+    system "./fftw"
   end
 end

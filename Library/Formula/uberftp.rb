@@ -1,12 +1,12 @@
-require 'formula'
+require "formula"
 
 class Uberftp < Formula
   desc "Interactive GridFTP client"
-  homepage 'http://dims.ncsa.illinois.edu/set/uberftp/'
-  url 'https://github.com/JasonAlt/UberFTP/archive/Version_2_7.tar.gz'
-  sha1 'f185e2ed567eca3484ca230e44a6ffdb4ec69792'
+  homepage "http://dims.ncsa.illinois.edu/set/uberftp/"
+  url "https://github.com/JasonAlt/UberFTP/archive/Version_2_7.tar.gz"
+  sha1 "f185e2ed567eca3484ca230e44a6ffdb4ec69792"
 
-  depends_on 'globus-toolkit'
+  depends_on "globus-toolkit"
 
   def install
     # get the flavor

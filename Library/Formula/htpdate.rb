@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Htpdate < Formula
   desc "Synchronize time with remote web servers"
-  homepage 'http://www.vervest.org/fiki/bin/view/HTP'
-  url 'http://www.vervest.org/htp/archive/c/htpdate-0.9.1.tar.bz2'
-  sha1 'e0b1a3ae9ba755471102f28a2b8a7e2dc77addc7'
+  homepage "http://www.vervest.org/fiki/bin/view/HTP"
+  url "http://www.vervest.org/htp/archive/c/htpdate-0.9.1.tar.bz2"
+  sha1 "e0b1a3ae9ba755471102f28a2b8a7e2dc77addc7"
 
   def install
     system "make", "prefix=#{prefix}",

@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libvbucket < Formula
   desc "Utility library providing mapping to virtual buckets"
-  homepage 'http://couchbase.com/develop/c/current'
-  url 'http://packages.couchbase.com/clients/c/libvbucket-1.8.0.4.tar.gz'
-  sha1 '4f24a85d251c0fca69e7705681a2170dd794492a'
+  homepage "http://couchbase.com/develop/c/current"
+  url "http://packages.couchbase.com/clients/c/libvbucket-1.8.0.4.tar.gz"
+  sha1 "4f24a85d251c0fca69e7705681a2170dd794492a"
 
   bottle do
     cellar :any
@@ -23,14 +23,12 @@ class Libvbucket < Formula
   end
 
   test do
-    require 'utils/json'
+    require "utils/json"
     json = Utils::JSON.dump(
-      {
-        "hashAlgorithm" => "CRC",
-        "numReplicas" => 2,
-        "serverList" => ["server1:11211","server2:11210","server3:11211"],
-        "vBucketMap" => [[0,1,2],[1,2,0],[2,1,-1],[1,2,0]],
-      }
+      "hashAlgorithm" => "CRC",
+      "numReplicas" => 2,
+      "serverList" => ["server1:11211", "server2:11210", "server3:11211"],
+      "vBucketMap" => [[0, 1, 2], [1, 2, 0], [2, 1, -1], [1, 2, 0]],
     )
 
     expected = <<-EOS.undent

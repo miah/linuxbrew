@@ -1,7 +1,7 @@
 class Strongswan < Formula
   desc "VPN based on IPsec"
-  homepage 'https://www.strongswan.org'
-  url 'https://download.strongswan.org/strongswan-5.3.2.tar.bz2'
+  homepage "https://www.strongswan.org"
+  url "https://download.strongswan.org/strongswan-5.3.2.tar.bz2"
   sha256 "a4a9bc8c4e42bdc4366a87a05a02bf9f425169a7ab0c6f4482d347e44acbf225"
 
   bottle do
@@ -10,11 +10,11 @@ class Strongswan < Formula
     sha256 "f3601206f55048e0d67802fc4d32091cfe3a6bef4c98fa38a2f1e9ddbb832e85" => :mountain_lion
   end
 
-  option 'with-curl', 'Build with libcurl based fetcher'
-  option 'with-suite-b', 'Build with Suite B support (does not use the IPsec implementation provided by the kernel)'
+  option "with-curl", "Build with libcurl based fetcher"
+  option "with-suite-b", "Build with Suite B support (does not use the IPsec implementation provided by the kernel)"
 
-  depends_on 'openssl'
-  depends_on 'curl' => :optional
+  depends_on "openssl"
+  depends_on "curl" => :optional
 
   def install
     args = %W[
@@ -53,9 +53,9 @@ class Strongswan < Formula
       --enable-x509
       --enable-xauth-generic
     ]
-    args << "--enable-curl" if build.with? 'curl'
-    args << "--enable-kernel-pfkey" if build.without? 'suite-b'
-    args << "--enable-kernel-libipsec" if build.with? 'suite-b'
+    args << "--enable-curl" if build.with? "curl"
+    args << "--enable-kernel-pfkey" if build.without? "suite-b"
+    args << "--enable-kernel-libipsec" if build.with? "suite-b"
 
     system "./configure", *args
     system "make", "install"
@@ -68,7 +68,7 @@ class Strongswan < Formula
 
       You will have to run both 'ipsec' and 'charon-cmd' with 'sudo'.
     EOS
-    if build.with? 'suite-b'
+    if build.with? "suite-b"
       msg += <<-EOS.undent
 
         If you previously ran strongSwan without Suite B support it might be
@@ -76,6 +76,6 @@ class Strongswan < Formula
         to receive packets.
       EOS
     end
-    return msg
+    msg
   end
 end

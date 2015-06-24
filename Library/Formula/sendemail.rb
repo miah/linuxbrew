@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Sendemail < Formula
   desc "Email program for sending SMTP mail"
-  homepage 'http://caspian.dotconf.net/menu/Software/SendEmail/'
-  url 'http://caspian.dotconf.net/menu/Software/SendEmail/sendEmail-v1.56.tar.gz'
-  sha1 '5c7c03ce60785c7b7695ec486c84d6e15704df38'
+  homepage "http://caspian.dotconf.net/menu/Software/SendEmail/"
+  url "http://caspian.dotconf.net/menu/Software/SendEmail/sendEmail-v1.56.tar.gz"
+  sha1 "5c7c03ce60785c7b7695ec486c84d6e15704df38"
 
   # Reported upstream: http://caspian.dotconf.net/menu/Software/SendEmail/#comment-1119965648
   patch do
@@ -13,7 +13,7 @@ class Sendemail < Formula
   end
 
   def install
-    bin.install 'sendEmail'
+    bin.install "sendEmail"
   end
 
   test do

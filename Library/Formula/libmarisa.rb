@@ -21,7 +21,7 @@ class Libmarisa < Formula
   end
 
   test do
-    (testpath/'test.cpp').write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS.undent
       #include <marisa.h>
       int main() {
         marisa::Keyset keyset;

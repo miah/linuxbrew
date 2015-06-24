@@ -27,8 +27,8 @@ class Gammaray < Formula
   def install
     args = std_cmake_args
     args << "-DGAMMARAY_ENFORCE_QT4_BUILD=" + ((build.with? "qt4") ? "ON" : "OFF")
-    args << "-DCMAKE_DISABLE_FIND_PACKAGE_VTK=" + ((build.without? "vtk") ? "ON" : "OFF" )
-    args << "-DCMAKE_DISABLE_FIND_PACKAGE_Graphviz=" + ((build.without? "graphviz") ? "ON" : "OFF" )
+    args << "-DCMAKE_DISABLE_FIND_PACKAGE_VTK=" + ((build.without? "vtk") ? "ON" : "OFF")
+    args << "-DCMAKE_DISABLE_FIND_PACKAGE_Graphviz=" + ((build.without? "graphviz") ? "ON" : "OFF")
 
     mkdir "build" do
       system "cmake", "..", *args
@@ -37,6 +37,6 @@ class Gammaray < Formula
   end
 
   test do
-    assert_match /^qt/, %x[#{bin}/gammaray --list-probes].chomp
+    assert_match /^qt/, `#{bin}/gammaray --list-probes`.chomp
   end
 end

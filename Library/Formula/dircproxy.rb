@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Dircproxy < Formula
   desc "IRC proxy server (AKA 'bouncer')"
-  homepage 'http://code.google.com/p/dircproxy/'
-  url 'https://dircproxy.googlecode.com/files/dircproxy-1.2.0-RC1.tar.gz'
-  sha1 '7dc4b3aa2e10222f74e280de69c41f571335a96b'
+  homepage "http://code.google.com/p/dircproxy/"
+  url "https://dircproxy.googlecode.com/files/dircproxy-1.2.0-RC1.tar.gz"
+  sha1 "7dc4b3aa2e10222f74e280de69c41f571335a96b"
 
   def install
     system "./configure", "--disable-dependency-tracking",

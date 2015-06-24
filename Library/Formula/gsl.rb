@@ -1,11 +1,11 @@
-require 'formula'
+require "formula"
 
 class Gsl < Formula
   desc "Numerical library for C and C++"
-  homepage 'http://www.gnu.org/software/gsl/'
-  url 'http://ftpmirror.gnu.org/gsl/gsl-1.16.tar.gz'
-  mirror 'http://ftp.gnu.org/gnu/gsl/gsl-1.16.tar.gz'
-  sha1 '210af9366485f149140973700d90dc93a4b6213e'
+  homepage "http://www.gnu.org/software/gsl/"
+  url "http://ftpmirror.gnu.org/gsl/gsl-1.16.tar.gz"
+  mirror "http://ftp.gnu.org/gnu/gsl/gsl-1.16.tar.gz"
+  sha1 "210af9366485f149140973700d90dc93a4b6213e"
 
   bottle do
     cellar :any

@@ -15,5 +15,4 @@ class Fping < Formula
                           "--enable-ipv6"
     system "make install"
   end
-
 end

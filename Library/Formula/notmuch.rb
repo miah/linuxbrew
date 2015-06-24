@@ -46,11 +46,10 @@ class Notmuch < Formula
     system "./configure", *args
     system "make", "V=1", "install"
 
-    Language::Python.each_python(build) do |python, version|
+    Language::Python.each_python(build) do |python, _version|
       cd "bindings/python" do
         system python, *Language::Python.setup_install_args(prefix)
       end
     end
-
   end
 end

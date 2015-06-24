@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Luabind < Formula
   desc "Library for bindings between C++ and Lua"
-  homepage 'http://www.rasterbar.com/products/luabind.html'
-  url 'https://downloads.sourceforge.net/project/luabind/luabind/0.9.1/luabind-0.9.1.tar.gz'
-  sha1 '2e92a18b8156d2e2948951d429cd3482e7347550'
+  homepage "http://www.rasterbar.com/products/luabind.html"
+  url "https://downloads.sourceforge.net/project/luabind/luabind/0.9.1/luabind-0.9.1.tar.gz"
+  sha1 "2e92a18b8156d2e2948951d429cd3482e7347550"
   bottle do
     cellar :any
     sha1 "aa32def1a41203aa36c907e55aa48741927e4de8" => :yosemite
@@ -14,9 +14,9 @@ class Luabind < Formula
 
   revision 1
 
-  depends_on 'lua51'
-  depends_on 'boost'
-  depends_on 'boost-build' => :build
+  depends_on "lua51"
+  depends_on "boost"
+  depends_on "boost-build" => :build
 
   # boost 1.57 compatibility
   # https://github.com/Homebrew/homebrew/pull/33890#issuecomment-67723688

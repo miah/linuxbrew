@@ -119,7 +119,7 @@ class Agda < Formula
     system bin/"agda", "--js", "--safe", test_file_path
 
     # typecheck, compile, and run a program that uses the standard library
-    if build.with? "stdlib" and build.with? "malonzo-ffi"
+    if build.with?("stdlib") && build.with?("malonzo-ffi")
       test_file_path = testpath/"stdlib-test.agda"
       test_file_path.write <<-EOS.undent
         module stdlib-test where

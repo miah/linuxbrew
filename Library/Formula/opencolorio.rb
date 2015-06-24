@@ -1,21 +1,21 @@
-require 'formula'
+require "formula"
 
 class Opencolorio < Formula
   desc "Color management solution geared towards motion picture production"
-  homepage 'http://opencolorio.org/'
-  url 'https://github.com/imageworks/OpenColorIO/archive/v1.0.9.tar.gz'
-  sha1 '45efcc24db8f8830b6892830839da085e19eeb6d'
+  homepage "http://opencolorio.org/"
+  url "https://github.com/imageworks/OpenColorIO/archive/v1.0.9.tar.gz"
+  sha1 "45efcc24db8f8830b6892830839da085e19eeb6d"
 
-  head 'https://github.com/imageworks/OpenColorIO.git'
+  head "https://github.com/imageworks/OpenColorIO.git"
 
-  depends_on 'cmake' => :build
-  depends_on 'pkg-config' => :build
-  depends_on 'little-cms2'
+  depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
+  depends_on "little-cms2"
   depends_on :python => :optional
 
-  option 'with-tests', 'Verify the build with its unit tests (~1min)'
-  option 'with-java', 'Build ocio with java bindings'
-  option 'with-docs', 'Build the documentation'
+  option "with-tests", "Verify the build with its unit tests (~1min)"
+  option "with-java", "Build ocio with java bindings"
+  option "with-docs", "Build the documentation"
 
   # Fix build with libc++
   patch do
@@ -29,22 +29,22 @@ class Opencolorio < Formula
 
   def install
     args = std_cmake_args
-    args << "-DOCIO_BUILD_JNIGLUE=ON" if build.with? 'java'
-    args << "-DOCIO_BUILD_TESTS=ON" if build.with? 'tests'
-    args << "-DOCIO_BUILD_DOCS=ON" if build.with? 'docs'
+    args << "-DOCIO_BUILD_JNIGLUE=ON" if build.with? "java"
+    args << "-DOCIO_BUILD_TESTS=ON" if build.with? "tests"
+    args << "-DOCIO_BUILD_DOCS=ON" if build.with? "docs"
     args << "-DCMAKE_VERBOSE_MAKEFILE=OFF"
 
     # Python note:
     # OCIO's PyOpenColorIO.so doubles as a shared library. So it lives in lib, rather
     # than the usual HOMEBREW_PREFIX/lib/python2.7/site-packages per developer choice.
-    args << "-DOCIO_BUILD_PYGLUE=OFF" if build.without? 'python'
+    args << "-DOCIO_BUILD_PYGLUE=OFF" if build.without? "python"
 
-    args << '..'
+    args << ".."
 
-    mkdir 'macbuild' do
+    mkdir "macbuild" do
       system "cmake", *args
       system "make"
-      system "make test" if build.with? 'tests'
+      system "make test" if build.with? "tests"
       system "make install"
     end
   end

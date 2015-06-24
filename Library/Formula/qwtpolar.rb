@@ -36,7 +36,7 @@ class Qwtpolar < Formula
 
     args = %W[-config release -spec]
     # On Mavericks we want to target libc++, this requires a unsupported/macx-clang-libc++ flag
-    if ENV.compiler == :clang and MacOS.version >= :mavericks
+    if ENV.compiler == :clang && MacOS.version >= :mavericks
       args << "unsupported/macx-clang-libc++"
     else
       args << "macx-g++"
@@ -51,7 +51,6 @@ class Qwtpolar < Formula
     ln_sf prefix/"plugins/designer/libqwt_polar_designer_plugin.dylib",
           Formula["qt"].opt_prefix/"plugins/designer/" if build.with? "plugin"
   end
-
 end
 
 __END__

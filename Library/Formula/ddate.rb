@@ -1,4 +1,4 @@
-require 'formula'
+require "formula"
 
 class Ddate < Formula
   desc "Converts boring normal dates to fun Discordian Date"

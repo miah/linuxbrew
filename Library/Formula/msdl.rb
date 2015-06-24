@@ -1,11 +1,11 @@
-require 'formula'
+require "formula"
 
 class Msdl < Formula
   desc "Downloader for various streaming protocols"
-  homepage 'http://msdl.sourceforge.net'
-  url 'https://downloads.sourceforge.net/msdl/msdl-1.2.7-r2.tar.gz'
-  version '1.2.7-r2'
-  sha1 'd30a637fc8be4ea80ddd373e428542bef15297fb'
+  homepage "http://msdl.sourceforge.net"
+  url "https://downloads.sourceforge.net/msdl/msdl-1.2.7-r2.tar.gz"
+  version "1.2.7-r2"
+  sha1 "d30a637fc8be4ea80ddd373e428542bef15297fb"
 
   # Fixes linker error under clang; apparently reported upstream:
   # https://github.com/Homebrew/homebrew/pull/13907

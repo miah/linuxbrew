@@ -28,7 +28,7 @@ class Pcrexx < Formula
     # Pcre++ ships Pcre.3, which causes a conflict with pcre.3 from pcre
     # in case-insensitive file system. Rename it to pcre++.3 to avoid
     # this problem.
-    mv man3/'Pcre.3', man3/'pcre++.3'
+    mv man3/"Pcre.3", man3/"pcre++.3"
   end
 
   def caveats; <<-EOS.undent

@@ -17,7 +17,7 @@ class Pow < Formula
     EOS
   end
 
-  def caveats;
+  def caveats
     <<-EOS.undent
       Create the required host directories:
         mkdir -p ~/Library/Application\\ Support/Pow/Hosts

@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Lrdf < Formula
   desc "RDF library for accessing plugin metadata in the LADSPA plugin system"
-  homepage 'https://github.com/swh/LRDF'
-  url 'https://github.com/swh/LRDF/archive/0.5.0.tar.gz'
-  sha1 'f44889937a70581c737976687f81cee71f92032f'
+  homepage "https://github.com/swh/LRDF"
+  url "https://github.com/swh/LRDF/archive/0.5.0.tar.gz"
+  sha1 "f44889937a70581c737976687f81cee71f92032f"
 
   depends_on "pkg-config" => :build
   depends_on "automake" => :build

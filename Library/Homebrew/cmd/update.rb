@@ -1,4 +1,4 @@
-require 'cmd/tap'
+require "cmd/tap"
 
 module Homebrew
   def update
@@ -10,7 +10,7 @@ module Homebrew
     end
 
     # ensure GIT_CONFIG is unset as we need to operate on .git/config
-    ENV.delete('GIT_CONFIG')
+    ENV.delete("GIT_CONFIG")
 
     cd HOMEBREW_REPOSITORY
     git_init_if_necessary
@@ -36,7 +36,7 @@ module Homebrew
         rescue
           onoe "Failed to update tap: #{tap}"
         else
-          report.update(updater.report) do |key, oldval, newval|
+          report.update(updater.report) do |_key, oldval, newval|
             oldval.concat(newval)
           end
         end
@@ -48,14 +48,14 @@ module Homebrew
       next unless (HOMEBREW_CELLAR/f).exist?
       migration = TAP_MIGRATIONS[f]
       next unless migration
-      tap_user, tap_repo = migration.split '/'
+      tap_user, tap_repo = migration.split "/"
       install_tap tap_user, tap_repo
     end if load_tap_migrations
 
     if report.empty?
       puts "Already up-to-date."
     else
-      puts "Updated Homebrew from #{master_updater.initial_revision[0,8]} to #{master_updater.current_revision[0,8]}."
+      puts "Updated Homebrew from #{master_updater.initial_revision[0, 8]} to #{master_updater.current_revision[0, 8]}."
       report.dump
     end
   end
@@ -111,7 +111,7 @@ module Homebrew
   end
 
   def load_tap_migrations
-    require 'tap_migrations'
+    require "tap_migrations"
   rescue LoadError
     false
   end
@@ -153,12 +153,13 @@ class Updater
   end
 
   def report
-    map = Hash.new{ |h,k| h[k] = [] }
+    map = Hash.new { |h, k| h[k] = [] }
 
     if initial_revision && initial_revision != current_revision
       diff.each_line do |line|
         status, *paths = line.split
-        src, dst = paths.first, paths.last
+        src = paths.first
+        dst = paths.last
 
         next unless File.extname(dst) == ".rb"
         next unless paths.any? { |p| File.dirname(p) == formula_directory }
@@ -224,7 +225,6 @@ class Updater
   end
 end
 
-
 class Report
   def initialize
     @hash = {}
@@ -250,18 +250,18 @@ class Report
     dump_formula_report :D, "Deleted Formulae"
   end
 
-  def select_formula key
+  def select_formula(key)
     fetch(key, []).map do |path|
       case path.to_s
       when HOMEBREW_TAP_PATH_REGEX
-        "#{$1}/#{$2.sub("homebrew-", "")}/#{path.basename(".rb")}"
+        "#{Regexp.last_match(1)}/#{Regexp.last_match(2).sub("homebrew-", "")}/#{path.basename(".rb")}"
       else
         path.basename(".rb").to_s
       end
     end.sort
   end
 
-  def dump_formula_report key, title
+  def dump_formula_report(key, title)
     formula = select_formula(key)
     unless formula.empty?
       ohai title

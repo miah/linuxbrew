@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libnatpmp < Formula
   desc "NAT port mapping protocol library"
-  homepage 'http://miniupnp.free.fr/libnatpmp.html'
-  url 'http://miniupnp.free.fr/files/download.php?file=libnatpmp-20130911.tar.gz'
-  sha1 'f2ec1ed22ae9f07b2cacf702d291858f13ae8781'
+  homepage "http://miniupnp.free.fr/libnatpmp.html"
+  url "http://miniupnp.free.fr/files/download.php?file=libnatpmp-20130911.tar.gz"
+  sha1 "f2ec1ed22ae9f07b2cacf702d291858f13ae8781"
 
   bottle do
     cellar :any
@@ -17,7 +17,7 @@ class Libnatpmp < Formula
   def install
     # Reported upstream:
     # http://miniupnp.tuxfamily.org/forum/viewtopic.php?t=978
-    inreplace 'Makefile', "-Wl,-install_name,$(SONAME)", "-Wl,-install_name,$(INSTALLDIRLIB)/$(SONAME)"
+    inreplace "Makefile", "-Wl,-install_name,$(SONAME)", "-Wl,-install_name,$(INSTALLDIRLIB)/$(SONAME)"
     system "make", "INSTALLPREFIX=#{prefix}", "install"
   end
 end

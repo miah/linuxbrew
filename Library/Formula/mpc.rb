@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Mpc < Formula
   desc "Command-line music player client for mpd"
-  homepage 'http://www.musicpd.org/clients/mpc/'
-  url 'http://www.musicpd.org/download/mpc/0/mpc-0.27.tar.gz'
-  sha1 '256926aa3ff8e9665a757d575bb962c094e4c352'
+  homepage "http://www.musicpd.org/clients/mpc/"
+  url "http://www.musicpd.org/download/mpc/0/mpc-0.27.tar.gz"
+  sha1 "256926aa3ff8e9665a757d575bb962c094e4c352"
 
   bottle do
     cellar :any
@@ -13,8 +13,8 @@ class Mpc < Formula
     sha256 "c80bf07b0a0e3c30cb4d4dd4d4a3da5479c43b9a1be389ed8e164e5e618a8ac3" => :mountain_lion
   end
 
-  depends_on 'pkg-config' => :build
-  depends_on 'libmpdclient'
+  depends_on "pkg-config" => :build
+  depends_on "libmpdclient"
 
   def install
     system "./configure", "--prefix=#{prefix}", "--disable-debug", "--disable-dependency-tracking"

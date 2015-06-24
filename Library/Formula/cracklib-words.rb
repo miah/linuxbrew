@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class CracklibWords < Formula
   desc "Wordlists for cracklib"
-  homepage 'http://cracklib.sourceforge.net'
-  url 'https://downloads.sourceforge.net/project/cracklib/cracklib-words/2008-05-07/cracklib-words-20080507.gz'
-  sha1 'e0cea03e505e709b15b8b950d56cb493166607da'
+  homepage "http://cracklib.sourceforge.net"
+  url "https://downloads.sourceforge.net/project/cracklib/cracklib-words/2008-05-07/cracklib-words-20080507.gz"
+  sha1 "e0cea03e505e709b15b8b950d56cb493166607da"
 
   bottle do
     cellar :any
@@ -13,7 +13,7 @@ class CracklibWords < Formula
     sha1 "d5adb62174571ba9e395b9143d9a1fcdfc3eb076" => :mountain_lion
   end
 
-  depends_on 'cracklib'
+  depends_on "cracklib"
 
   def install
     share.install "cracklib-words-#{version}" => "cracklib-words"

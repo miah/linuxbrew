@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Tcc < Formula
   desc "Tiny C compiler"
-  homepage 'http://bellard.org/tcc/'
-  url 'http://download.savannah.gnu.org/releases/tinycc/tcc-0.9.26.tar.bz2'
-  sha1 '7110354d3637d0e05f43a006364c897248aed5d0'
+  homepage "http://bellard.org/tcc/"
+  url "http://download.savannah.gnu.org/releases/tinycc/tcc-0.9.26.tar.bz2"
+  sha1 "7110354d3637d0e05f43a006364c897248aed5d0"
 
   bottle do
     sha256 "6361d686961e63328e2e084e346df9a0f3bea8f4c1aa7a48b627b528b76b5622" => :yosemite

@@ -31,6 +31,6 @@ class Epeg < Formula
     system "epeg", "--width=1",
                    "--height=1",
                    test_fixtures("test.jpg")
-                   "out.jpg"
+    "out.jpg"
   end
 end

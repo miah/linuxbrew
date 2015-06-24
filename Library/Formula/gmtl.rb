@@ -1,8 +1,8 @@
-require 'formula'
+require "formula"
 
 class Gmtl < Formula
   desc "Lightweight math library"
-  homepage 'http://ggt.sourceforge.net/'
+  homepage "http://ggt.sourceforge.net/"
 
   stable do
     url "https://downloads.sourceforge.net/project/ggt/Generic%20Math%20Template%20Library/0.6.1/gmtl-0.6.1.tar.gz"
@@ -21,9 +21,9 @@ class Gmtl < Formula
     sha1 "3444ed4b6eb1859a64f3f7250656ae5c1e074fd3" => :lion
   end
 
-  head 'https://ggt.svn.sourceforge.net/svnroot/ggt/trunk/'
+  head "https://ggt.svn.sourceforge.net/svnroot/ggt/trunk/"
 
-  depends_on 'scons' => :build
+  depends_on "scons" => :build
 
   # The scons script in gmtl only works for gcc, patch it
   # https://sourceforge.net/p/ggt/bugs/28/

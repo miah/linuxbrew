@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libpuzzle < Formula
   desc "Library to find visually similar images"
-  homepage 'http://libpuzzle.pureftpd.org/project/libpuzzle'
-  url 'http://download.pureftpd.org/pub/pure-ftpd/misc/libpuzzle/releases/libpuzzle-0.11.tar.bz2'
-  sha1 'a3352c67fd61eab33d5a03c214805b18723d719e'
+  homepage "http://libpuzzle.pureftpd.org/project/libpuzzle"
+  url "http://download.pureftpd.org/pub/pure-ftpd/misc/libpuzzle/releases/libpuzzle-0.11.tar.bz2"
+  sha1 "a3352c67fd61eab33d5a03c214805b18723d719e"
 
   bottle do
     cellar :any
@@ -14,7 +14,7 @@ class Libpuzzle < Formula
     sha1 "eb9791c2c0bb5429a31da0fa23a95e5df0be6f9b" => :mountain_lion
   end
 
-  depends_on 'gd'
+  depends_on "gd"
 
   def install
     system "./configure", "--disable-dependency-tracking",

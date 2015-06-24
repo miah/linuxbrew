@@ -20,9 +20,7 @@ class Cweb < Formula
     cwebinputs = (lib/"cweb")
 
     # make install doesn't use `mkdir -p` so this is needed
-    [bin, man1, macrosdir, emacsdir, cwebinputs].each do |path|
-        path.mkpath
-    end
+    [bin, man1, macrosdir, emacsdir, cwebinputs].each(&:mkpath)
 
     system "make", "install",
       "DESTDIR=#{bin}/",

@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Rasqal < Formula
   desc "RDF query library"
-  homepage 'http://librdf.org/rasqal/'
-  url 'http://download.librdf.org/source/rasqal-0.9.33.tar.gz'
-  sha1 '281c2e0a352c53ef1656bfe778c380226d61726f'
+  homepage "http://librdf.org/rasqal/"
+  url "http://download.librdf.org/source/rasqal-0.9.33.tar.gz"
+  sha1 "281c2e0a352c53ef1656bfe778c380226d61726f"
 
   bottle do
     cellar :any
@@ -13,13 +13,13 @@ class Rasqal < Formula
     sha1 "14efc7d7f18b8b9697cdacb43000cfa478579405" => :mountain_lion
   end
 
-  depends_on 'pkg-config' => :build
-  depends_on 'raptor'
+  depends_on "pkg-config" => :build
+  depends_on "raptor"
 
   def install
-    system './configure', "--prefix=#{prefix}",
+    system "./configure", "--prefix=#{prefix}",
                           "--with-html-dir=#{share}/doc",
-                          '--disable-dependency-tracking'
+                          "--disable-dependency-tracking"
     system "make install"
   end
 end

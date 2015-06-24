@@ -1,16 +1,16 @@
-require 'formula'
+require "formula"
 
 class Cdrdao < Formula
   desc "Record CDs in Disk-At-Once mode"
-  homepage 'http://cdrdao.sourceforge.net/'
-  url 'https://downloads.sourceforge.net/project/cdrdao/cdrdao/1.2.3/cdrdao-1.2.3.tar.bz2'
-  sha1 '70d6547795a1342631c7ab56709fd1940c2aff9f'
+  homepage "http://cdrdao.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/cdrdao/cdrdao/1.2.3/cdrdao-1.2.3.tar.bz2"
+  sha1 "70d6547795a1342631c7ab56709fd1940c2aff9f"
 
-  depends_on 'pkg-config' => :build
-  depends_on 'libao'
-  depends_on 'libvorbis'
-  depends_on 'mad'
-  depends_on 'lame'
+  depends_on "pkg-config" => :build
+  depends_on "libao"
+  depends_on "libvorbis"
+  depends_on "mad"
+  depends_on "lame"
 
   fails_with :llvm do
     build 2326

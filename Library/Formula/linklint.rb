@@ -1,18 +1,18 @@
-require 'formula'
+require "formula"
 
 class Linklint < Formula
   desc "Link checker and web site maintenance tool"
-  homepage 'http://linklint.org'
-  url 'http://linklint.org/download/linklint-2.3.5.tar.gz'
-  sha1 'd2dd384054b39a09c17b69e617f7393e44e98376'
+  homepage "http://linklint.org"
+  url "http://linklint.org/download/linklint-2.3.5.tar.gz"
+  sha1 "d2dd384054b39a09c17b69e617f7393e44e98376"
 
   devel do
-    url 'http://linklint.org/download/linklint-2.4.beta.tar.gz'
-    sha1 'a159d19b700db52e8a9e2d89a0a8984eb627bf17'
+    url "http://linklint.org/download/linklint-2.4.beta.tar.gz"
+    sha1 "a159d19b700db52e8a9e2d89a0a8984eb627bf17"
   end
 
   def install
-    mv 'READ_ME.txt', 'README' unless build.devel?
+    mv "READ_ME.txt", "README" unless build.devel?
 
     # fix version number reported by linklint -version in beta
     # note, upstream is abandoned, so inreplace instead of patch
@@ -23,7 +23,7 @@ class Linklint < Formula
   end
 
   test do
-    (testpath/'index.html').write('<a href="/">Home</a>')
+    (testpath/"index.html").write('<a href="/">Home</a>')
     system "#{bin}/linklint", "/"
   end
 end

@@ -1,13 +1,13 @@
-require 'formula'
+require "formula"
 
 class Wdiff < Formula
   desc "Display word differences between text files"
-  homepage 'http://www.gnu.org/software/wdiff/'
-  url 'http://ftpmirror.gnu.org/wdiff/wdiff-1.2.2.tar.gz'
-  mirror 'http://ftp.gnu.org/gnu/wdiff/wdiff-1.2.2.tar.gz'
-  sha1 'c93b5cb593257d814212e15fc371ff6c6b952c3d'
+  homepage "http://www.gnu.org/software/wdiff/"
+  url "http://ftpmirror.gnu.org/wdiff/wdiff-1.2.2.tar.gz"
+  mirror "http://ftp.gnu.org/gnu/wdiff/wdiff-1.2.2.tar.gz"
+  sha1 "c93b5cb593257d814212e15fc371ff6c6b952c3d"
 
-  depends_on 'gettext' => :optional
+  depends_on "gettext" => :optional
 
   def install
     system "./configure", "--disable-dependency-tracking",

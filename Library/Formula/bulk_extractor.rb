@@ -1,4 +1,4 @@
-require 'formula'
+require "formula"
 
 class BulkExtractor < Formula
   desc "Stream-based forensics tool"

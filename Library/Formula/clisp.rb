@@ -1,14 +1,14 @@
-require 'formula'
+require "formula"
 
 class Clisp < Formula
   desc "GNU CLISP, a Common Lisp implementation"
-  homepage 'http://www.clisp.org/'
-  url 'http://ftpmirror.gnu.org/clisp/release/2.49/clisp-2.49.tar.bz2'
-  mirror 'http://ftp.gnu.org/gnu/clisp/release/2.49/clisp-2.49.tar.bz2'
-  sha1 '7e8d585ef8d0d6349ffe581d1ac08681e6e670d4'
+  homepage "http://www.clisp.org/"
+  url "http://ftpmirror.gnu.org/clisp/release/2.49/clisp-2.49.tar.bz2"
+  mirror "http://ftp.gnu.org/gnu/clisp/release/2.49/clisp-2.49.tar.bz2"
+  sha1 "7e8d585ef8d0d6349ffe581d1ac08681e6e670d4"
 
-  depends_on 'libsigsegv'
-  depends_on 'readline'
+  depends_on "libsigsegv"
+  depends_on "readline"
 
   fails_with :llvm do
     build 2334
@@ -27,7 +27,7 @@ class Clisp < Formula
 
     # Clisp requires to select word size explicitly this way,
     # set it in CFLAGS won't work.
-    ENV['CC'] = "#{ENV.cc} -m#{MacOS.prefer_64_bit? ? 64 : 32}"
+    ENV["CC"] = "#{ENV.cc} -m#{MacOS.prefer_64_bit? ? 64 : 32}"
 
     system "./configure", "--prefix=#{prefix}",
                           "--with-readline=yes"
@@ -36,7 +36,7 @@ class Clisp < Formula
       # Multiple -O options will be in the generated Makefile,
       # make Homebrew's the last such option so it's effective.
       inreplace "Makefile" do |s|
-        s.change_make_var! 'CFLAGS', "#{s.get_make_var('CFLAGS')} #{ENV['CFLAGS']}"
+        s.change_make_var! "CFLAGS", "#{s.get_make_var("CFLAGS")} #{ENV["CFLAGS"]}"
       end
 
       # The ulimit must be set, otherwise `make` will fail and tell you to do so

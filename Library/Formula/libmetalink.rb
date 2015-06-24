@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libmetalink < Formula
   desc "C library to parse Metalink XML files"
-  homepage 'https://launchpad.net/libmetalink/'
-  url 'https://launchpad.net/libmetalink/trunk/packagingfix/+download/libmetalink-0.1.2.tar.bz2'
-  sha1 'fcc8c7960758c040b8b5f225efeb3f22bff14e40'
+  homepage "https://launchpad.net/libmetalink/"
+  url "https://launchpad.net/libmetalink/trunk/packagingfix/+download/libmetalink-0.1.2.tar.bz2"
+  sha1 "fcc8c7960758c040b8b5f225efeb3f22bff14e40"
 
   bottle do
     cellar :any
@@ -14,7 +14,7 @@ class Libmetalink < Formula
     sha1 "ceeab999a4e6b19c7859ffc8e4d0319cd365cb48" => :mountain_lion
   end
 
-  depends_on 'pkg-config' => :build
+  depends_on "pkg-config" => :build
 
   def install
     system "./configure", "--disable-dependency-tracking",

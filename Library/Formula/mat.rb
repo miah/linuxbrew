@@ -1,6 +1,6 @@
 require "formula"
 
-# FIXME this can be removed on the next release
+# FIXME: this can be removed on the next release
 # OSX has case-insensitive file names, and the Mat archive contains a "MAT"
 # directory *and* a "mat" file. `tar xf` will fail on it, so we rename "mat"
 # into "mat-cli" here.
@@ -71,9 +71,9 @@ class Mat < Formula
     %w[hachoir-core hachoir-parser pdfrw distutils-extra].each do |r|
       resource(r).stage do
         pyargs = ["setup.py", "install", "--prefix=#{libexec}"]
-          unless %w[hachoir-core hachoir-parser pdfrw].include? r
-            pyargs << "--single-version-externally-managed" << "--record=installed.txt"
-          end
+        unless %w[hachoir-core hachoir-parser pdfrw].include? r
+          pyargs << "--single-version-externally-managed" << "--record=installed.txt"
+        end
         system "python", *pyargs
       end
     end

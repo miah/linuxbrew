@@ -1,10 +1,10 @@
 class Id3lib < Formula
   desc "ID3 tag manipulation"
-  homepage 'http://id3lib.sourceforge.net/'
+  homepage "http://id3lib.sourceforge.net/"
 
   stable do
-    url 'https://downloads.sourceforge.net/project/id3lib/id3lib/3.8.3/id3lib-3.8.3.tar.gz'
-    sha1 'c92c880da41d1ec0b242745a901702ae87970838'
+    url "https://downloads.sourceforge.net/project/id3lib/id3lib/3.8.3/id3lib-3.8.3.tar.gz"
+    sha1 "c92c880da41d1ec0b242745a901702ae87970838"
 
     patch do
       url "https://trac.macports.org/export/112431/trunk/dports/audio/id3lib/files/id3lib-vbr-overflow.patch"
@@ -27,9 +27,9 @@ class Id3lib < Formula
     sha1 "9db89ba6ca30f1ae05d7af44ad6ba82931a88c42" => :mavericks
   end
 
-  depends_on 'autoconf' => :build
-  depends_on 'automake' => :build
-  depends_on 'libtool' => :build
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
 
   patch do
     url "https://trac.macports.org/export/112430/trunk/dports/audio/id3lib/files/no-iomanip.h.patch"

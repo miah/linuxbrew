@@ -1,8 +1,8 @@
-require 'formula'
+require "formula"
 
 class Uade < Formula
   desc "Play Amiga tunes through UAE emulation"
-  homepage 'http://zakalwe.fi/uade/'
+  homepage "http://zakalwe.fi/uade/"
 
   stable do
     url "http://zakalwe.fi/uade/uade2/uade-2.13.tar.bz2"
@@ -12,10 +12,10 @@ class Uade < Formula
     patch :DATA
   end
 
-  head 'git://zakalwe.fi/uade'
+  head "git://zakalwe.fi/uade"
 
-  depends_on 'pkg-config' => :build
-  depends_on 'libao'
+  depends_on "pkg-config" => :build
+  depends_on "libao"
 
   resource "bencode-tools" do
     url "https://github.com/heikkiorsila/bencode-tools.git"

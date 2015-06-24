@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class BerkeleyDb4 < Formula
   desc "High performance key/value database"
-  homepage 'http://www.oracle.com/technology/products/berkeley-db/index.html'
-  url 'http://download.oracle.com/berkeley-db/db-4.8.30.tar.gz'
-  sha1 'ab36c170dda5b2ceaad3915ced96e41c6b7e493c'
+  homepage "http://www.oracle.com/technology/products/berkeley-db/index.html"
+  url "http://download.oracle.com/berkeley-db/db-4.8.30.tar.gz"
+  sha1 "ab36c170dda5b2ceaad3915ced96e41c6b7e493c"
 
   bottle do
     cellar :any
@@ -28,13 +28,13 @@ class BerkeleyDb4 < Formula
             "--enable-cxx"]
 
     # BerkeleyDB requires you to build everything from the build_unix subdirectory
-    cd 'build_unix' do
+    cd "build_unix" do
       system "../dist/configure", *args
       system "make install"
 
       # use the standard docs location
       doc.parent.mkpath
-      mv prefix+'docs', doc
+      mv prefix+"docs", doc
     end
   end
 end

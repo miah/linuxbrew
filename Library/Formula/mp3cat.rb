@@ -13,7 +13,7 @@ class Mp3cat < Formula
 
   def install
     system "make"
-    bin.install %w(mp3cat mp3log mp3log-conf mp3dirclean mp3http mp3stream-conf)
+    bin.install %w[mp3cat mp3log mp3log-conf mp3dirclean mp3http mp3stream-conf]
   end
 
   test do

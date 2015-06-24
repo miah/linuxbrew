@@ -25,7 +25,7 @@ class Librem < Formula
   end
 
   test do
-    (testpath/'test.c').write <<-EOS.undent
+    (testpath/"test.c").write <<-EOS.undent
       #include <re/re.h>
       #include <rem/rem.h>
       int main() {

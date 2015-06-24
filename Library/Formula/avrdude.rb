@@ -1,11 +1,11 @@
-require 'formula'
+require "formula"
 
 class Avrdude < Formula
   desc "Atmel AVR MCU programmer"
-  homepage 'http://savannah.nongnu.org/projects/avrdude/'
-  url 'http://download.savannah.gnu.org/releases/avrdude/avrdude-6.1.tar.gz'
-  mirror 'http://download-mirror.savannah.gnu.org/releases/avrdude/avrdude-6.1.tar.gz'
-  sha1 '15525cbff5918568ef3955d871dbb94feaf83c79'
+  homepage "http://savannah.nongnu.org/projects/avrdude/"
+  url "http://download.savannah.gnu.org/releases/avrdude/avrdude-6.1.tar.gz"
+  mirror "http://download-mirror.savannah.gnu.org/releases/avrdude/avrdude-6.1.tar.gz"
+  sha1 "15525cbff5918568ef3955d871dbb94feaf83c79"
 
   bottle do
     sha1 "2d759fea880b097754defe8016e026390dbcfb31" => :mavericks
@@ -14,7 +14,7 @@ class Avrdude < Formula
   end
 
   head do
-    url 'svn://svn.savannah.nongnu.org/avrdude/trunk/avrdude/'
+    url "svn://svn.savannah.nongnu.org/avrdude/trunk/avrdude/"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -22,10 +22,10 @@ class Avrdude < Formula
   end
 
   depends_on :macos => :snow_leopard # needs GCD/libdispatch
-  depends_on 'libusb-compat'
-  depends_on 'libftdi0'
-  depends_on 'libelf'
-  depends_on 'libhid' => :optional
+  depends_on "libusb-compat"
+  depends_on "libftdi0"
+  depends_on "libelf"
+  depends_on "libhid" => :optional
 
   def install
     if build.head?

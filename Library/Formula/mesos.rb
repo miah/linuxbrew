@@ -27,7 +27,7 @@ class Mesos < Formula
     sha1 "3dff24d019729060eff569d7a718bdbb10db13a3"
   end
 
-# build dependencies for protobuf
+  # build dependencies for protobuf
   resource "six" do
     url "https://pypi.python.org/packages/source/s/six/six-1.9.0.tar.gz"
     sha1 "d168e6d01f0900875c6ecebc97da72d0fda31129"

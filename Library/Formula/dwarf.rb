@@ -1,12 +1,12 @@
-require 'formula'
+require "formula"
 
 class Dwarf < Formula
   desc "Object file manipulation tool"
-  homepage 'https://code.google.com/p/dwarf-ng/'
-  url 'https://dwarf-ng.googlecode.com/files/dwarf-0.3.0.tar.gz'
-  sha1 '19a69424bd208741a325a4fc0e791a516c3bc8bc'
+  homepage "https://code.google.com/p/dwarf-ng/"
+  url "https://dwarf-ng.googlecode.com/files/dwarf-0.3.0.tar.gz"
+  sha1 "19a69424bd208741a325a4fc0e791a516c3bc8bc"
 
-  depends_on 'readline'
+  depends_on "readline"
 
   # Imports inttypes.h in a generated lex file instead of stdint.h
   # Reported upstream: http://code.autistici.org/trac/dwarf/ticket/8
@@ -17,7 +17,7 @@ class Dwarf < Formula
   end
 
   def install
-    system './configure', "--prefix=#{prefix}", '--disable-dependency-tracking'
+    system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
     system "make install"
   end
 end

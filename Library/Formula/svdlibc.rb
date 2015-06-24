@@ -1,11 +1,11 @@
-require 'formula'
+require "formula"
 
 class Svdlibc < Formula
   desc "C library to perform singular value decomposition"
-  homepage 'http://tedlab.mit.edu/~dr/SVDLIBC/'
-  url 'http://tedlab.mit.edu/~dr/SVDLIBC/svdlibc.tgz'
-  version '1.4'
-  sha1 '9243fbc0516af42b020423442212a025b3406dac'
+  homepage "http://tedlab.mit.edu/~dr/SVDLIBC/"
+  url "http://tedlab.mit.edu/~dr/SVDLIBC/svdlibc.tgz"
+  version "1.4"
+  sha1 "9243fbc0516af42b020423442212a025b3406dac"
 
   bottle do
     cellar :any

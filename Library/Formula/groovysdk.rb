@@ -14,7 +14,7 @@ class Groovysdk < Formula
 
     prefix.install_metafiles
     bin.install Dir["bin/*"]
-    libexec.install %w(conf lib embeddable src doc)
+    libexec.install %w[conf lib embeddable src doc]
     bin.env_script_all_files(libexec+"bin", :GROOVY_HOME => ENV["GROOVY_HOME"])
   end
 

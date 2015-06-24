@@ -12,7 +12,7 @@ class TomeeJaxRs < Formula
     rm_rf Dir["bin/*.bat"]
 
     # Install files
-    prefix.install %w{ NOTICE LICENSE RELEASE-NOTES RUNNING.txt }
+    prefix.install %w[NOTICE LICENSE RELEASE-NOTES RUNNING.txt]
     libexec.install Dir["*"]
     bin.install_symlink "#{libexec}/bin/startup.sh" => "tomee-jax-rs-startup"
   end

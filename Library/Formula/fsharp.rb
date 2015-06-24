@@ -4,7 +4,7 @@ class Fsharp < Formula
   desc "F#, a functional-first programming language"
   homepage "http://fsharp.org/"
   url "https://github.com/fsharp/fsharp.git", :tag => "3.1.1.32",
-    :revision => "a4e1f7111a6d1410df3f33e7205ee34617006b94"
+                                              :revision => "a4e1f7111a6d1410df3f33e7205ee34617006b94"
 
   bottle do
     sha256 "10e035403f71f47b03e0961f5dc83959b5e2d8600a9af670e559bba811173ae9" => :yosemite
@@ -25,10 +25,9 @@ class Fsharp < Formula
 
   def post_install
     mono_ver = Formula["mono"].version
-    %w|3.0 3.1|.each do |fsharp_ver|
-      %w|Microsoft.Portable.FSharp.Targets
-         Microsoft.FSharp.Targets|.each do |fsharp_targ|
-
+    %w[3.0 3.1].each do |fsharp_ver|
+      %w[Microsoft.Portable.FSharp.Targets
+         Microsoft.FSharp.Targets].each do |fsharp_targ|
         tree_dir   = "lib/mono/Microsoft\ SDKs/F\#/#{fsharp_ver}/Framework/v4.0"
         source_dir = File.expand_path "#{prefix}/../../mono/#{mono_ver}/#{tree_dir}"
 
@@ -45,9 +44,9 @@ class Fsharp < Formula
   test do
     test_str = "Hello Homebrew"
     # fsharpi and fsharpc needs mono to be in the PATH
-    ENV.prepend_path 'PATH', Formula["mono"].bin
+    ENV.prepend_path "PATH", Formula["mono"].bin
 
-    output = shell_output %{echo 'printfn "#{test_str}"; exit 0' | #{bin}/fsharpi}
+    output = shell_output %(echo 'printfn "#{test_str}"; exit 0' | #{bin}/fsharpi)
     assert output.include? test_str
 
     hello = (testpath/"hello.fs")

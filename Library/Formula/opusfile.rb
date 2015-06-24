@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Opusfile < Formula
   desc "API for decoding and seeking in .opus files"
-  homepage 'http://www.opus-codec.org/'
-  url 'http://downloads.xiph.org/releases/opus/opusfile-0.6.tar.gz'
-  sha1 '2422e3c7bf6105a832226850b19053ec5ac41293'
+  homepage "http://www.opus-codec.org/"
+  url "http://downloads.xiph.org/releases/opus/opusfile-0.6.tar.gz"
+  sha1 "2422e3c7bf6105a832226850b19053ec5ac41293"
 
   head do
     url "https://git.xiph.org/opusfile.git"
@@ -13,9 +13,9 @@ class Opusfile < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on 'pkg-config' => :build
-  depends_on 'opus'
-  depends_on 'libogg'
+  depends_on "pkg-config" => :build
+  depends_on "opus"
+  depends_on "libogg"
 
   def install
     system "./autogen.sh" if build.head?
@@ -23,5 +23,4 @@ class Opusfile < Formula
                           "--prefix=#{prefix}"
     system "make install"
   end
-
 end

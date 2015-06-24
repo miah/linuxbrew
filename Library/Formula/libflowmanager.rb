@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libflowmanager < Formula
   desc "Flow-based measurement tasks with packet-based inputs"
-  homepage 'http://research.wand.net.nz/software/libflowmanager.php'
-  url 'http://research.wand.net.nz/software/libflowmanager/libflowmanager-2.0.4.tar.gz'
-  sha1 'fba31188c912433d3496bb0249da2a5d029a7b2e'
+  homepage "http://research.wand.net.nz/software/libflowmanager.php"
+  url "http://research.wand.net.nz/software/libflowmanager/libflowmanager-2.0.4.tar.gz"
+  sha1 "fba31188c912433d3496bb0249da2a5d029a7b2e"
 
   bottle do
     cellar :any
@@ -14,7 +14,7 @@ class Libflowmanager < Formula
     sha1 "7292b002e1ffff88f0156610253ad52e2d552820" => :mountain_lion
   end
 
-  depends_on 'libtrace'
+  depends_on "libtrace"
 
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",

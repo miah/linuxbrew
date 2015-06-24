@@ -28,7 +28,7 @@ class Cppdom < Formula
 
   def install
     args = ["prefix=#{prefix}", "build_test=no", "var_type=optimized",
-      "BoostBaseDir=#{HOMEBREW_PREFIX}/"]
+            "BoostBaseDir=#{HOMEBREW_PREFIX}/"]
 
     if MacOS.prefer_64_bit?
       args << "var_arch=x64"

@@ -1,9 +1,9 @@
-require 'requirement'
+require "requirement"
 
 class LanguageModuleRequirement < Requirement
   fatal true
 
-  def initialize language, module_name, import_name=nil
+  def initialize(language, module_name, import_name = nil)
     @language = language
     @module_name = module_name
     @import_name = import_name || module_name
@@ -21,16 +21,16 @@ class LanguageModuleRequirement < Requirement
 
   def the_test
     case @language
-      when :chicken then %W{/usr/bin/env csi -e (use\ #{@import_name})}
-      when :jruby then %W{/usr/bin/env jruby -rubygems -e require\ '#{@import_name}'}
-      when :lua then %W{/usr/bin/env luarocks show #{@import_name}}
-      when :node then %W{/usr/bin/env node -e require('#{@import_name}');}
-      when :ocaml then %W{/usr/bin/env opam list --installed #{@import_name}}
-      when :perl then %W{/usr/bin/env perl -e use\ #{@import_name}}
-      when :python then %W{/usr/bin/env python -c import\ #{@import_name}}
-      when :python3 then %W{/usr/bin/env python3 -c import\ #{@import_name}}
-      when :ruby then %W{/usr/bin/env ruby -rubygems -e require\ '#{@import_name}'}
-      when :rbx then %W{/usr/bin/env rbx -rubygems -e require\ '#{@import_name}'}
+      when :chicken then %W[/usr/bin/env csi -e (use\ #{@import_name})]
+      when :jruby then %W[/usr/bin/env jruby -rubygems -e require\ '#{@import_name}']
+      when :lua then %W[/usr/bin/env luarocks show #{@import_name}]
+      when :node then %W[/usr/bin/env node -e require('#{@import_name}');]
+      when :ocaml then %W[/usr/bin/env opam list --installed #{@import_name}]
+      when :perl then %W[/usr/bin/env perl -e use\ #{@import_name}]
+      when :python then %W[/usr/bin/env python -c import\ #{@import_name}]
+      when :python3 then %W[/usr/bin/env python3 -c import\ #{@import_name}]
+      when :ruby then %W[/usr/bin/env ruby -rubygems -e require\ '#{@import_name}']
+      when :rbx then %W[/usr/bin/env rbx -rubygems -e require\ '#{@import_name}']
     end
   end
 

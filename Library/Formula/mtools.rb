@@ -1,13 +1,13 @@
-require 'formula'
+require "formula"
 
 class Mtools < Formula
   desc "Tools for manipulating MSDOS files"
-  homepage 'http://www.gnu.org/software/mtools/'
-  url 'http://ftpmirror.gnu.org/mtools/mtools-4.0.17.tar.gz'
-  mirror 'http://ftp.gnu.org/gnu/mtools/mtools-4.0.17.tar.gz'
-  sha1 'eebfab51148c4ab20a6aca3cea8057da5a11bdc8'
+  homepage "http://www.gnu.org/software/mtools/"
+  url "http://ftpmirror.gnu.org/mtools/mtools-4.0.17.tar.gz"
+  mirror "http://ftp.gnu.org/gnu/mtools/mtools-4.0.17.tar.gz"
+  sha1 "eebfab51148c4ab20a6aca3cea8057da5a11bdc8"
 
-  conflicts_with 'multimarkdown', :because => 'both install `mmd` binaries'
+  conflicts_with "multimarkdown", :because => "both install `mmd` binaries"
 
   depends_on :x11 => :optional
 
@@ -16,7 +16,7 @@ class Mtools < Formula
             "--disable-debug",
             "--prefix=#{prefix}"]
 
-    if build.with? 'x11'
+    if build.with? "x11"
       args << "--with-x"
     else
       args << "--without-x"

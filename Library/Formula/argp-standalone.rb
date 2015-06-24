@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class ArgpStandalone < Formula
   desc "Standalone version of arguments parsing functions from GLIBC"
-  homepage 'http://www.lysator.liu.se/~nisse/misc/'
-  url 'http://www.lysator.liu.se/~nisse/misc/argp-standalone-1.3.tar.gz'
-  sha1 '815c560680ebdc11694b88de2f8ec15133e0bfa0'
+  homepage "http://www.lysator.liu.se/~nisse/misc/"
+  url "http://www.lysator.liu.se/~nisse/misc/argp-standalone-1.3.tar.gz"
+  sha1 "815c560680ebdc11694b88de2f8ec15133e0bfa0"
 
   bottle do
     cellar :any
@@ -23,7 +23,7 @@ class ArgpStandalone < Formula
   def install
     system "./configure", "--prefix=#{prefix}"
     system "make install"
-    lib.install 'libargp.a'
-    include.install 'argp.h'
+    lib.install "libargp.a"
+    include.install "argp.h"
   end
 end

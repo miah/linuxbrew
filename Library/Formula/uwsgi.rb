@@ -50,7 +50,7 @@ class Uwsgi < Formula
   option "with-ruby", "Compile with Ruby support"
 
   def install
-    ENV.append %w{CFLAGS LDFLAGS}, "-arch #{MacOS.preferred_arch}"
+    ENV.append %w[CFLAGS LDFLAGS], "-arch #{MacOS.preferred_arch}"
 
     json = build.with?("jansson") ? "jansson" : "yajl"
     yaml = build.with?("libyaml") ? "libyaml" : "embedded"
@@ -81,7 +81,7 @@ class Uwsgi < Formula
                "stats_pusher_socket", "symcall", "syslog",
                "transformation_chunked", "transformation_gzip",
                "transformation_offload", "transformation_tofile",
-               "transformation_toupper","ugreen", "webdav", "zergpool"]
+               "transformation_toupper", "ugreen", "webdav", "zergpool"]
 
     plugins << "alarm_xmpp" if build.with? "gloox"
     plugins << "emperor_mongodb" if build.with? "mongodb"

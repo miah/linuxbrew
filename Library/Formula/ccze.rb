@@ -1,12 +1,12 @@
-require 'formula'
+require "formula"
 
 class Ccze < Formula
   desc "Robust and modular log colorizer"
-  homepage 'http://packages.debian.org/wheezy/ccze'
-  url 'http://ftp.de.debian.org/debian/pool/main/c/ccze/ccze_0.2.1.orig.tar.gz'
-  sha1 'a265e826be8018cd2f1b13ea1e96e27cc1941d02'
+  homepage "http://packages.debian.org/wheezy/ccze"
+  url "http://ftp.de.debian.org/debian/pool/main/c/ccze/ccze_0.2.1.orig.tar.gz"
+  sha1 "a265e826be8018cd2f1b13ea1e96e27cc1941d02"
 
-  depends_on 'pcre'
+  depends_on "pcre"
 
   # Taken from debian
   patch :DATA
@@ -16,7 +16,7 @@ class Ccze < Formula
                           "--with-builtins=all"
     system "make", "install"
     # Strange but true: using --mandir above causes the build to fail!
-    share.install prefix/'man'
+    share.install prefix/"man"
   end
 
   test do

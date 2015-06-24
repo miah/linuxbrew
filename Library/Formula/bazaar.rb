@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Bazaar < Formula
   desc "Human-friendly source code management (or 'version control')"
-  homepage 'http://bazaar.canonical.com/'
-  url 'https://launchpad.net/bzr/2.6/2.6.0/+download/bzr-2.6.0.tar.gz'
-  sha1 '5eb4d0367c6d83396250165da5bb2c8a9f378293'
+  homepage "http://bazaar.canonical.com/"
+  url "https://launchpad.net/bzr/2.6/2.6.0/+download/bzr-2.6.0.tar.gz"
+  sha1 "5eb4d0367c6d83396250165da5bb2c8a9f378293"
 
   bottle do
     cellar :any
@@ -25,8 +25,8 @@ class Bazaar < Formula
 
     system "make"
     inreplace "bzr", "#! /usr/bin/env python", "#!/usr/bin/python"
-    libexec.install 'bzr', 'bzrlib'
+    libexec.install "bzr", "bzrlib"
 
-    bin.install_symlink libexec+'bzr'
+    bin.install_symlink libexec+"bzr"
   end
 end

@@ -43,9 +43,9 @@ class Ldc < Formula
       }
     EOS
 
-    system "#{bin}/ldc2", 'test.d'
+    system "#{bin}/ldc2", "test.d"
     system "./test"
-    system "#{bin}/ldmd2", 'test.d'
+    system "#{bin}/ldmd2", "test.d"
     system "./test"
   end
 end

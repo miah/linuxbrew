@@ -15,7 +15,7 @@ class Ncp < Formula
 
   def install
     system "make", "CC=#{ENV.cc}",
-                   "LIBOWFAT_PREFIX=#{Formula['libowfat'].opt_prefix}"
+                   "LIBOWFAT_PREFIX=#{Formula["libowfat"].opt_prefix}"
     system "make", "PREFIX=#{prefix}", "install"
   end
 

@@ -1,8 +1,8 @@
-require 'formula'
+require "formula"
 
 class Sleuthkit < Formula
   desc "Forensic toolkit"
-  homepage 'http://www.sleuthkit.org/'
+  homepage "http://www.sleuthkit.org/"
 
   stable do
     url "https://downloads.sourceforge.net/project/sleuthkit/sleuthkit/4.1.3/sleuthkit-4.1.3.tar.gz"
@@ -21,7 +21,6 @@ class Sleuthkit < Formula
     sha256 "abe6fee63395ae2a7f81179d993d9f114bef6633f3845af52541fc79a58321ae" => :mountain_lion
   end
 
-
   head do
     url "https://github.com/sleuthkit/sleuthkit.git"
 
@@ -30,16 +29,16 @@ class Sleuthkit < Formula
     depends_on "libtool" => :build
   end
 
-  conflicts_with 'irods', :because => 'both install `ils`'
+  conflicts_with "irods", :because => "both install `ils`"
 
-  option 'with-jni', "Build Sleuthkit with JNI bindings"
+  option "with-jni", "Build Sleuthkit with JNI bindings"
 
   depends_on :java
   depends_on :ant => :build
-  depends_on 'afflib' => :optional
-  depends_on 'libewf' => :optional
+  depends_on "afflib" => :optional
+  depends_on "libewf" => :optional
 
-  conflicts_with 'ffind',
+  conflicts_with "ffind",
     :because => "both install a 'ffind' executable."
 
   def install
@@ -49,11 +48,11 @@ class Sleuthkit < Formula
     system "make"
     system "make install"
 
-    if build.with? 'jni'
-      cd 'bindings/java' do
-        system 'ant'
+    if build.with? "jni"
+      cd "bindings/java" do
+        system "ant"
       end
-      prefix.install 'bindings'
+      prefix.install "bindings"
     end
   end
 end

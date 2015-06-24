@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Cmockery < Formula
   desc "Unit testing and mocking library for C"
-  homepage 'http://code.google.com/p/cmockery/'
-  url 'https://cmockery.googlecode.com/files/cmockery-0.1.2.tar.gz'
-  sha1 '964ed1104a0cbbea8a9a34e88c6e79b546eff1bc'
+  homepage "http://code.google.com/p/cmockery/"
+  url "https://cmockery.googlecode.com/files/cmockery-0.1.2.tar.gz"
+  sha1 "964ed1104a0cbbea8a9a34e88c6e79b546eff1bc"
 
   # This patch will be integrated upstream in 0.1.3, this is due to malloc.h being already in stdlib on OSX
   # It is safe to remove it on the next version

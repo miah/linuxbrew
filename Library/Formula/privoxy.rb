@@ -13,11 +13,11 @@ class Privoxy < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on 'pcre'
+  depends_on "pcre"
 
   def install
     # Find Homebrew's libpcre
-    ENV.append 'LDFLAGS', "-L#{HOMEBREW_PREFIX}/lib"
+    ENV.append "LDFLAGS", "-L#{HOMEBREW_PREFIX}/lib"
 
     # No configure script is shipped with the source
     system "autoreconf", "-i"

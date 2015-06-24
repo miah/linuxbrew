@@ -12,7 +12,7 @@ class ArpSk < Formula
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}",
-                          "--with-libnet=#{Formula['libnet'].opt_prefix}"
+                          "--with-libnet=#{Formula["libnet"].opt_prefix}"
     system "make", "install"
   end
 end

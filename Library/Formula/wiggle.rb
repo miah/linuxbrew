@@ -1,4 +1,4 @@
-require 'formula'
+require "formula"
 
 class Wiggle < Formula
   desc "Program for applying patches with conflicting changes"

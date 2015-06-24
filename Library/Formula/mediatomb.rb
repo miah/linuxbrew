@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Mediatomb < Formula
   desc "Open source (GPL) UPnP MediaServer"
-  homepage 'http://mediatomb.cc'
-  url 'https://downloads.sourceforge.net/mediatomb/mediatomb-0.12.1.tar.gz'
-  sha1 '86e880584cc9c8aaf3926d56048510d1d06e76b4'
+  homepage "http://mediatomb.cc"
+  url "https://downloads.sourceforge.net/mediatomb/mediatomb-0.12.1.tar.gz"
+  sha1 "86e880584cc9c8aaf3926d56048510d1d06e76b4"
   bottle do
     sha1 "716145891055b842417844efb1f786344ba79f56" => :mavericks
     sha1 "d5fd8a1389771a2bf4677dc5f008b0c4249344aa" => :mountain_lion
@@ -13,19 +13,19 @@ class Mediatomb < Formula
 
   revision 1
 
-  depends_on 'libexif' => :recommended
-  depends_on 'libmagic' => :recommended
-  depends_on 'lzlib' => :recommended
-  depends_on 'mp4v2' => :recommended
-  depends_on 'spidermonkey' => :recommended
-  depends_on 'sqlite' => :recommended
-  depends_on 'taglib' => :recommended
+  depends_on "libexif" => :recommended
+  depends_on "libmagic" => :recommended
+  depends_on "lzlib" => :recommended
+  depends_on "mp4v2" => :recommended
+  depends_on "spidermonkey" => :recommended
+  depends_on "sqlite" => :recommended
+  depends_on "taglib" => :recommended
 
-  depends_on 'ffmpeg' => :optional
-  depends_on 'ffmpegthumbnailer' => :optional
-  depends_on 'id3lib' => :optional
-  depends_on 'lastfmlib' => :optional
-  depends_on 'mysql' => :optional
+  depends_on "ffmpeg" => :optional
+  depends_on "ffmpegthumbnailer" => :optional
+  depends_on "id3lib" => :optional
+  depends_on "lastfmlib" => :optional
+  depends_on "mysql" => :optional
 
   # This is for libav 0.7 support. See:
   # https://bugs.launchpad.net/ubuntu/+source/mediatomb/+bug/784431

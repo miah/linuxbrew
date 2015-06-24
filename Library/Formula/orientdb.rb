@@ -1,11 +1,11 @@
-require 'formula'
+require "formula"
 
 class Orientdb < Formula
   desc "Graph database"
-  homepage 'http://www.orientdb.org/index.htm'
-  url 'http://www.orientechnologies.com/download.php?email=unknown@unknown.com&file=orientdb-community-2.0.11.tar.gz&os=mac'
-  version '2.0.11'
-  sha1 '812df4b971c3afc7bc9760b7de9bcc6680c060f0'
+  homepage "http://www.orientdb.org/index.htm"
+  url "http://www.orientechnologies.com/download.php?email=unknown@unknown.com&file=orientdb-community-2.0.11.tar.gz&os=mac"
+  version "2.0.11"
+  sha1 "812df4b971c3afc7bc9760b7de9bcc6680c060f0"
 
   bottle do
     cellar :any
@@ -21,21 +21,21 @@ class Orientdb < Formula
   end
 
   def install
-    rm_rf Dir['{bin,benchmarks}/*.{bat,exe}']
+    rm_rf Dir["{bin,benchmarks}/*.{bat,exe}"]
 
     inreplace %W[bin/orientdb.sh bin/console.sh bin/gremlin.sh],
       '"YOUR_ORIENTDB_INSTALLATION_PATH"', libexec
 
     chmod 0755, Dir["bin/*"]
-    libexec.install Dir['*']
+    libexec.install Dir["*"]
 
     mkpath "#{libexec}/log"
     touch "#{libexec}/log/orientdb.err"
     touch "#{libexec}/log/orientdb.log"
 
-    bin.install_symlink "#{libexec}/bin/orientdb.sh" => 'orientdb'
-    bin.install_symlink "#{libexec}/bin/console.sh" => 'orientdb-console'
-    bin.install_symlink "#{libexec}/bin/gremlin.sh" => 'orientdb-gremlin'
+    bin.install_symlink "#{libexec}/bin/orientdb.sh" => "orientdb"
+    bin.install_symlink "#{libexec}/bin/console.sh" => "orientdb-console"
+    bin.install_symlink "#{libexec}/bin/gremlin.sh" => "orientdb-gremlin"
   end
 
   def caveats

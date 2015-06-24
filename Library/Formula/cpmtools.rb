@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Cpmtools < Formula
   desc "Tools to access CP/M file systems"
-  homepage 'http://www.moria.de/~michael/cpmtools/'
-  url 'http://www.moria.de/~michael/cpmtools/files/cpmtools-2.20.tar.gz'
-  sha1 '5a2703265d903fe615ec3c71e3ce4ff8d58637af'
+  homepage "http://www.moria.de/~michael/cpmtools/"
+  url "http://www.moria.de/~michael/cpmtools/files/cpmtools-2.20.tar.gz"
+  sha1 "5a2703265d903fe615ec3c71e3ce4ff8d58637af"
 
   bottle do
     sha1 "a437721156fa15a612e823e4f1ee0fdbfe2d0ed7" => :yosemite

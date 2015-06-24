@@ -1,13 +1,13 @@
-require 'formula'
+require "formula"
 
 class Xspin < Formula
   desc "Software verification tool (developed at Bell Labs)"
-  homepage 'http://spinroot.com/spin/Src/index.html'
-  url 'http://spinroot.com/spin/Src/xspin525.tcl'
-  version '5.2.5'
-  sha1 '8166ccc6830f052e31162bec618c17452a988b5d'
+  homepage "http://spinroot.com/spin/Src/index.html"
+  url "http://spinroot.com/spin/Src/xspin525.tcl"
+  version "5.2.5"
+  sha1 "8166ccc6830f052e31162bec618c17452a988b5d"
 
-  depends_on 'spin'
+  depends_on "spin"
 
   patch :DATA
 

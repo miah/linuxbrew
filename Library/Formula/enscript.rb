@@ -1,17 +1,17 @@
-require 'formula'
+require "formula"
 
 class Enscript < Formula
   desc "Convert text to Postscript, HTML, or RTF, with syntax highlighting"
-  homepage 'http://www.gnu.org/software/enscript/'
-  url 'http://ftpmirror.gnu.org/enscript/enscript-1.6.6.tar.gz'
-  mirror 'http://ftp.gnu.org/gnu/enscript/enscript-1.6.6.tar.gz'
-  sha1 '1f1e97a2ebb3d77f48c57487fe39e64139fb2beb'
+  homepage "http://www.gnu.org/software/enscript/"
+  url "http://ftpmirror.gnu.org/enscript/enscript-1.6.6.tar.gz"
+  mirror "http://ftp.gnu.org/gnu/enscript/enscript-1.6.6.tar.gz"
+  sha1 "1f1e97a2ebb3d77f48c57487fe39e64139fb2beb"
 
-  head 'git://git.savannah.gnu.org/enscript.git'
+  head "git://git.savannah.gnu.org/enscript.git"
 
   keg_only :provided_pre_mountain_lion
 
-  depends_on 'gettext'
+  depends_on "gettext"
 
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",

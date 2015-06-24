@@ -11,6 +11,6 @@ class JettyRunner < Formula
     libexec.install Dir["*"]
 
     bin.mkpath
-    bin.write_jar_script libexec/"jetty-runner-#{version}.jar" , "jetty-runner"
+    bin.write_jar_script libexec/"jetty-runner-#{version}.jar", "jetty-runner"
   end
 end

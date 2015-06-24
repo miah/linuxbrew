@@ -1,12 +1,12 @@
-require 'formula'
+require "formula"
 
 class Nvi < Formula
   desc "44BSD re-implementation of vi"
-  homepage 'https://sites.google.com/a/bostic.com/keithbostic/vi/'
-  url 'http://ftp.de.debian.org/debian/pool/main/n/nvi/nvi_1.81.6.orig.tar.gz'
-  sha1 'ce3e0d7d476fb3bdcce9d547e170152290db0347'
+  homepage "https://sites.google.com/a/bostic.com/keithbostic/vi/"
+  url "http://ftp.de.debian.org/debian/pool/main/n/nvi/nvi_1.81.6.orig.tar.gz"
+  sha1 "ce3e0d7d476fb3bdcce9d547e170152290db0347"
 
-  depends_on 'berkeley-db4'
+  depends_on "berkeley-db4"
 
   # Patches per MacPorts
   # The first corrects usage of BDB flags.
@@ -26,7 +26,7 @@ class Nvi < Formula
   end
 
   def install
-    cd 'dist' do
+    cd "dist" do
       system "./configure", "--prefix=#{prefix}",
                             "--program-prefix=n",
                             "--disable-dependency-tracking"

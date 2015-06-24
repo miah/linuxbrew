@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Bonniexx < Formula
   desc "Benchmark suite for file systems and hard drives"
-  homepage 'http://www.coker.com.au/bonnie++/'
-  url 'http://www.coker.com.au/bonnie++/experimental/bonnie++-1.97.tgz'
-  sha1 '7b0ed205725a6526d34894412edb7e29bb9df7b4'
+  homepage "http://www.coker.com.au/bonnie++/"
+  url "http://www.coker.com.au/bonnie++/experimental/bonnie++-1.97.tgz"
+  sha1 "7b0ed205725a6526d34894412edb7e29bb9df7b4"
 
   bottle do
     cellar :any

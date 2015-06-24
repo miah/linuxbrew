@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Varnish < Formula
   desc "High-performance HTTP accelerator"
-  homepage 'https://www.varnish-cache.org/'
-  url 'https://repo.varnish-cache.org/source/varnish-4.0.3.tar.gz'
-  sha1 'ba4668cb7d17f95c4c5e4baf964fe1412a269297'
+  homepage "https://www.varnish-cache.org/"
+  url "https://repo.varnish-cache.org/source/varnish-4.0.3.tar.gz"
+  sha1 "ba4668cb7d17f95c4c5e4baf964fe1412a269297"
 
   bottle do
     sha256 "050160fe3c7780d56f0ff3a68e26c200c72ffb785451d351cb2b1410d7b86588" => :yosemite
@@ -12,8 +12,8 @@ class Varnish < Formula
     sha256 "31c5ee79f9bc61d9951dac9a6f56687b8c2724ff934c90ecfb171687707fd4d3" => :mountain_lion
   end
 
-  depends_on 'pkg-config' => :build
-  depends_on 'pcre'
+  depends_on "pkg-config" => :build
+  depends_on "pcre"
 
   resource "docutils" do
     url "https://pypi.python.org/packages/source/d/docutils/docutils-0.11.tar.gz"
@@ -32,7 +32,7 @@ class Varnish < Formula
                           "--with-rst2man=#{buildpath}/bin/rst2man.py",
                           "--with-rst2html=#{buildpath}/bin/rst2html.py"
     system "make install"
-    (var+'varnish').mkpath
+    (var+"varnish").mkpath
   end
 
   test do

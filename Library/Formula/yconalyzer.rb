@@ -23,7 +23,6 @@ class Yconalyzer < Formula
   # Fix build issues issue on OS X 10.9/clang
   # Patch reported to upstream - https://sourceforge.net/p/yconalyzer/bugs/3/
   patch :p0, :DATA
-
 end
 __END__
 --- yconalyzer.cc.orig	2014-01-12 14:15:17.000000000 +0800

@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Sleepwatcher < Formula
   desc "Monitors sleep, wakeup, and idleness of a Mac"
-  homepage 'http://www.bernhard-baehr.de/'
-  url 'http://www.bernhard-baehr.de/sleepwatcher_2.2.tgz'
-  sha1 'd4e4abb0bf0e1b3db9166d1eae38b8701fc28bf8'
+  homepage "http://www.bernhard-baehr.de/"
+  url "http://www.bernhard-baehr.de/sleepwatcher_2.2.tgz"
+  sha1 "d4e4abb0bf0e1b3db9166d1eae38b8701fc28bf8"
 
   def install
     # Adjust Makefile to build native binary only
@@ -26,15 +26,15 @@ class Sleepwatcher < Formula
     end
 
     # Write the sleep/wakeup scripts
-    (prefix + 'etc/sleepwatcher').install Dir["config/rc.*"]
+    (prefix + "etc/sleepwatcher").install Dir["config/rc.*"]
 
     # Write the launchd scripts
     inreplace Dir["config/*.plist"] do |s|
-      s.gsub! "/usr/local/sbin", HOMEBREW_PREFIX/'sbin'
+      s.gsub! "/usr/local/sbin", HOMEBREW_PREFIX/"sbin"
     end
 
-    inreplace 'config/de.bernhard-baehr.sleepwatcher-20compatibility.plist' do |s|
-      s.gsub! "/etc", (etc + 'sleepwatcher')
+    inreplace "config/de.bernhard-baehr.sleepwatcher-20compatibility.plist" do |s|
+      s.gsub! "/etc", (etc + "sleepwatcher")
     end
 
     prefix.install Dir["config/*.plist"]

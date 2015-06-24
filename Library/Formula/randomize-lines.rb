@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class RandomizeLines < Formula
   desc "Reads and randomize lines from a file (or STDIN)"
-  homepage 'http://arthurdejong.org/rl/'
-  url 'http://arthurdejong.org/rl/rl-0.2.7.tar.gz'
-  sha1 '72d0bb0284b07560374e19f3c7983d64ba12bd95'
+  homepage "http://arthurdejong.org/rl/"
+  url "http://arthurdejong.org/rl/rl-0.2.7.tar.gz"
+  sha1 "72d0bb0284b07560374e19f3c7983d64ba12bd95"
 
   def install
     system "./configure", "--disable-dependency-tracking",

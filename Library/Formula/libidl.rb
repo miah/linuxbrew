@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libidl < Formula
   desc "libIDL is a library for creating CORBA IDL files"
-  homepage 'http://ftp.acc.umu.se/pub/gnome/sources/libIDL/0.8/'
-  url 'http://ftp.gnome.org/pub/gnome/sources/libIDL/0.8/libIDL-0.8.14.tar.bz2'
-  sha1 'abedf091bef0c7e65162111baf068dcb739ffcd3'
+  homepage "http://ftp.acc.umu.se/pub/gnome/sources/libIDL/0.8/"
+  url "http://ftp.gnome.org/pub/gnome/sources/libIDL/0.8/libIDL-0.8.14.tar.bz2"
+  sha1 "abedf091bef0c7e65162111baf068dcb739ffcd3"
 
   bottle do
     cellar :any
@@ -16,9 +16,9 @@ class Libidl < Formula
 
   option :universal
 
-  depends_on 'pkg-config' => :build
-  depends_on 'gettext'
-  depends_on 'glib'
+  depends_on "pkg-config" => :build
+  depends_on "gettext"
+  depends_on "glib"
 
   def install
     ENV.universal_binary if build.universal?

@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libcsv < Formula
   desc "CSV library in ANSI C89"
-  homepage 'http://sourceforge.net/projects/libcsv/'
-  url 'https://downloads.sourceforge.net/project/libcsv/libcsv/libcsv-3.0.3/libcsv-3.0.3.tar.gz'
-  sha1 '2f637343c3dfac80559595f519e8f78f25acc7c1'
+  homepage "http://sourceforge.net/projects/libcsv/"
+  url "https://downloads.sourceforge.net/project/libcsv/libcsv/libcsv-3.0.3/libcsv-3.0.3.tar.gz"
+  sha1 "2f637343c3dfac80559595f519e8f78f25acc7c1"
 
   bottle do
     cellar :any
@@ -16,7 +16,7 @@ class Libcsv < Formula
 
   def install
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
-    system 'make'
-    system 'make install'
+    system "make"
+    system "make install"
   end
 end

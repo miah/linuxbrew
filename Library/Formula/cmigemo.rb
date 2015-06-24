@@ -1,8 +1,8 @@
-require 'formula'
+require "formula"
 
 class Cmigemo < Formula
   desc "Migemo is a tool that supports Japanese incremental search with Romaji"
-  homepage 'http://www.kaoriya.net/software/cmigemo'
+  homepage "http://www.kaoriya.net/software/cmigemo"
 
   stable do
     url "https://cmigemo.googlecode.com/files/cmigemo-default-src-20110227.zip"
@@ -12,9 +12,9 @@ class Cmigemo < Formula
     patch :DATA
   end
 
-  head 'https://github.com/koron/cmigemo.git'
+  head "https://github.com/koron/cmigemo.git"
 
-  depends_on 'nkf' => :build
+  depends_on "nkf" => :build
 
   def install
     system "chmod +x ./configure"

@@ -1,23 +1,23 @@
-require 'formula'
+require "formula"
 
 class Sqliteman < Formula
   desc "GUI tool for Sqlite3"
-  homepage 'http://www.sqliteman.com/'
-  url 'https://downloads.sourceforge.net/project/sqliteman/sqliteman/1.2.2/sqliteman-1.2.2.tar.bz2'
-  sha1 '8ca90d44ad0eda9e67bdd675523a8786b8ef3818'
+  homepage "http://www.sqliteman.com/"
+  url "https://downloads.sourceforge.net/project/sqliteman/sqliteman/1.2.2/sqliteman-1.2.2.tar.bz2"
+  sha1 "8ca90d44ad0eda9e67bdd675523a8786b8ef3818"
 
-  depends_on 'cmake' => :build
+  depends_on "cmake" => :build
 
-  depends_on 'qt'
-  depends_on 'qscintilla2'
+  depends_on "qt"
+  depends_on "qscintilla2"
 
   def install
-    mkdir 'build' do
+    mkdir "build" do
       qsci_include = Formula["qscintilla2"].include
       qsci_cmake_arg = "-DQSCINTILLA_INCLUDE_DIR=#{qsci_include}/Qsci"
-      system 'cmake', '..', qsci_cmake_arg, *std_cmake_args
-      system 'make'
-      system 'make', 'install'
+      system "cmake", "..", qsci_cmake_arg, *std_cmake_args
+      system "make"
+      system "make", "install"
     end
   end
 

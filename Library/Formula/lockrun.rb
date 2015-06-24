@@ -1,11 +1,11 @@
-require 'formula'
+require "formula"
 
 class Lockrun < Formula
   desc "Run cron jobs with overrun protection"
-  homepage 'http://unixwiz.net/tools/lockrun.html'
-  url 'http://unixwiz.net/tools/lockrun.c'
-  version '1.1.3'
-  sha1 '513e586884b9a7112b7da3acf53e75c84e28cda9'
+  homepage "http://unixwiz.net/tools/lockrun.html"
+  url "http://unixwiz.net/tools/lockrun.c"
+  version "1.1.3"
+  sha1 "513e586884b9a7112b7da3acf53e75c84e28cda9"
 
   bottle do
     cellar :any

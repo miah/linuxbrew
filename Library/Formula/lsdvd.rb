@@ -1,13 +1,13 @@
-require 'formula'
+require "formula"
 
 class Lsdvd < Formula
   desc "Read the content info of a DVD"
-  homepage 'http://sourceforge.net/projects/lsdvd'
-  url 'https://downloads.sourceforge.net/project/lsdvd/lsdvd/0.16%20-%20I%20hate%20James%20Blunt/lsdvd-0.16.tar.gz'
-  sha1 'd5c0d32bfb220807ebdc0bfbb17679e7294791f4'
+  homepage "http://sourceforge.net/projects/lsdvd"
+  url "https://downloads.sourceforge.net/project/lsdvd/lsdvd/0.16%20-%20I%20hate%20James%20Blunt/lsdvd-0.16.tar.gz"
+  sha1 "d5c0d32bfb220807ebdc0bfbb17679e7294791f4"
 
-  depends_on 'libdvdread'
-  depends_on 'libdvdcss' => :optional
+  depends_on "libdvdread"
+  depends_on "libdvdcss" => :optional
 
   patch :p0 do
     url "https://trac.macports.org/export/89276/trunk/dports/sysutils/lsdvd/files/patch-configure.diff"

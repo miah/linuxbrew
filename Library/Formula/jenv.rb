@@ -15,18 +15,18 @@ class Jenv < Formula
   end
 
   def install
-     libexec.install Dir["*"]
-     bin.write_exec_script libexec/"bin/jenv"
+    libexec.install Dir["*"]
+    bin.write_exec_script libexec/"bin/jenv"
    end
 
-   def caveats; <<-EOS.undent
+  def caveats; <<-EOS.undent
      To enable shims and autocompletion add to your profile:
        if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
      To use Homebrew's directories rather than ~/.jenv add to your profile:
        export JENV_ROOT=#{opt_prefix}
      EOS
-   end
+  end
 
   test do
     (testpath/".java-version").write "homebrew-test"

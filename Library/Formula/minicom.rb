@@ -1,23 +1,23 @@
-require 'formula'
+require "formula"
 
 class Minicom < Formula
   desc "Menu-driven communications program"
-  homepage 'http://alioth.debian.org/projects/minicom/'
-  url 'http://ftp.de.debian.org/debian/pool/main/m/minicom/minicom_2.7.orig.tar.gz'
-  sha1 '939eef8ca1bda82ee801b087d9db4f16a19fbe6e'
+  homepage "http://alioth.debian.org/projects/minicom/"
+  url "http://ftp.de.debian.org/debian/pool/main/m/minicom/minicom_2.7.orig.tar.gz"
+  sha1 "939eef8ca1bda82ee801b087d9db4f16a19fbe6e"
 
   def install
     # There is a silly bug in the Makefile where it forgets to link to iconv. Workaround below.
-    ENV['LIBS'] = '-liconv'
+    ENV["LIBS"] = "-liconv"
 
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}"
     system "make install"
 
-    (prefix + 'etc').mkdir
-    (prefix + 'var').mkdir
-    (prefix + 'etc/minirc.dfl').write "pu lock #{prefix}/var\npu escape-key Escape (Meta)\n"
+    (prefix + "etc").mkdir
+    (prefix + "var").mkdir
+    (prefix + "etc/minirc.dfl").write "pu lock #{prefix}/var\npu escape-key Escape (Meta)\n"
   end
 
   def caveats; <<-EOS

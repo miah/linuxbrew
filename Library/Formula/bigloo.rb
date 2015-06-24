@@ -44,7 +44,7 @@ class Bigloo < Formula
     system "make install"
 
     # Install the other manpages too
-    manpages = %w( bgldepend bglmake bglpp bgltags bglafile bgljfile bglmco bglprof )
-    manpages.each {|m| man1.install "manuals/#{m}.man" => "#{m}.1"}
+    manpages = %w[bgldepend bglmake bglpp bgltags bglafile bgljfile bglmco bglprof]
+    manpages.each { |m| man1.install "manuals/#{m}.man" => "#{m}.1" }
   end
 end

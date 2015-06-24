@@ -1,24 +1,24 @@
-require 'formula'
+require "formula"
 
 class Vip < Formula
   desc "Program that provides for interactive editing in a pipeline"
-  homepage 'http://www.cs.duke.edu/~des/vip.html'
-  url 'http://www.cs.duke.edu/~des/scripts/vip'
-  version '19971113'
-  sha1 '0b2794b5ac2792af5fcf1d97f9aae04798eac049'
+  homepage "http://www.cs.duke.edu/~des/vip.html"
+  url "http://www.cs.duke.edu/~des/scripts/vip"
+  version "19971113"
+  sha1 "0b2794b5ac2792af5fcf1d97f9aae04798eac049"
 
-  resource 'man' do
-    url 'http://www.cs.duke.edu/~des/scripts/vip.man'
-    sha1 'd52ce874d594ca2c82538200706bffdf1313fdc1'
+  resource "man" do
+    url "http://www.cs.duke.edu/~des/scripts/vip.man"
+    sha1 "d52ce874d594ca2c82538200706bffdf1313fdc1"
   end
 
   # use awk and /var/tmp as temporary directory
   patch :DATA
 
   def install
-    bin.install 'vip'
-    resource('man').stage do
-      man1.install 'vip.man' => 'vip.1'
+    bin.install "vip"
+    resource("man").stage do
+      man1.install "vip.man" => "vip.1"
     end
   end
 end

@@ -1,14 +1,14 @@
-require 'formula'
+require "formula"
 
 class Partio < Formula
   desc "Particle library for 3D graphics"
-  homepage 'http://www.partio.us'
-  url 'https://github.com/wdas/partio/archive/v1.1.0.tar.gz'
-  sha1 '446879b2a01a838ad23eb84c4e6da36c1a315e49'
+  homepage "http://www.partio.us"
+  url "https://github.com/wdas/partio/archive/v1.1.0.tar.gz"
+  sha1 "446879b2a01a838ad23eb84c4e6da36c1a315e49"
 
-  depends_on 'cmake' => :build
-  depends_on 'swig' => :build
-  depends_on 'doxygen' => :build
+  depends_on "cmake" => :build
+  depends_on "swig" => :build
+  depends_on "doxygen" => :build
 
   # These fixes are upstream and can be removed in the next released version.
   patch do
@@ -27,7 +27,7 @@ class Partio < Formula
   end
 
   def install
-    mkdir 'build' do
+    mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make"
       system "make doc"

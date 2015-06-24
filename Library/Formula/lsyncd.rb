@@ -43,7 +43,7 @@ class Lsyncd < Formula
     "10.10.2"  => ["xnu-2782.1.97.tar.gz", "c99cf8ec04c29d40b771652241dd325e4977d92b"],
   }
 
-  # TODO wrap MACOS_FULL_VERSION in a MacOS module method
+  # TODO: wrap MACOS_FULL_VERSION in a MacOS module method
   if xnu_headers.key? MACOS_FULL_VERSION
     tarball, checksum = xnu_headers.fetch(MACOS_FULL_VERSION)
     resource "xnu" do
@@ -75,7 +75,6 @@ class Lsyncd < Formula
                           "--without-inotify",
                           "--prefix=#{prefix}"
     system "make", "install"
-
   end
 
   test do

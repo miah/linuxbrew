@@ -44,7 +44,6 @@ class GpgAgent < Formula
   test do
     system "#{bin}/gpg-agent", "--help"
   end
-
 end
 
 __END__

@@ -1,18 +1,18 @@
-require 'formula'
+require "formula"
 
 class Ptex < Formula
   desc "Texture mapping system"
-  homepage 'http://ptex.us'
-  url 'https://github.com/wdas/ptex/archive/v2.0.42.tar.gz'
-  sha1 '0dc69452c42ccd4a2e24d931f7a9f2d24b7e60da'
+  homepage "http://ptex.us"
+  url "https://github.com/wdas/ptex/archive/v2.0.42.tar.gz"
+  sha1 "0dc69452c42ccd4a2e24d931f7a9f2d24b7e60da"
 
   # fix utils/Makefile not to expect a git repo for version info
   patch :DATA
 
   def install
     ENV.deparallelize # not parallel safe due to weird dep without rules for ../ptex/libPtex.a in utils/Makefile
-    system 'make -C src'
-    prefix.install Dir['install/*']
+    system "make -C src"
+    prefix.install Dir["install/*"]
   end
 end
 

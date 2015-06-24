@@ -17,6 +17,6 @@ class Ssss < Formula
 
     system "make"
     man1.install "ssss.1"
-    bin.install %w{ ssss-combine ssss-split }
+    bin.install %w[ssss-combine ssss-split]
   end
 end

@@ -1,8 +1,8 @@
-require 'formula'
+require "formula"
 
 class Libestr < Formula
   desc "C library for string handling (and a bit more)"
-  homepage 'http://libestr.adiscon.com'
+  homepage "http://libestr.adiscon.com"
   url "http://libestr.adiscon.com/files/download/libestr-0.1.9.tar.gz"
   sha1 "55fb6ad347f987c45d98b422b0436d6ae50d86aa"
 
@@ -14,7 +14,7 @@ class Libestr < Formula
     sha1 "3561f90f17cb8d8b339b8c0f7ead0a17b5bbe243" => :mountain_lion
   end
 
-  depends_on 'pkg-config' => :build
+  depends_on "pkg-config" => :build
 
   option :universal
 

@@ -1,12 +1,12 @@
-require 'formula'
+require "formula"
 
 class Winexe < Formula
   desc "Remote Windows-command executor"
-  homepage 'http://sourceforge.net/projects/winexe/'
-  url 'https://downloads.sourceforge.net/project/winexe/winexe-1.00.tar.gz'
-  sha1 'bdb598745953fcad3a9b6bba8f728c2b714a7aeb'
+  homepage "http://sourceforge.net/projects/winexe/"
+  url "https://downloads.sourceforge.net/project/winexe/winexe-1.00.tar.gz"
+  sha1 "bdb598745953fcad3a9b6bba8f728c2b714a7aeb"
 
-  depends_on 'pkg-config' => :build
+  depends_on "pkg-config" => :build
   depends_on "autoconf" => :build
 
   # This patch removes second definition of event context, which *should* break the build
@@ -25,7 +25,7 @@ class Winexe < Formula
 
   def install
     if MacOS.version >= :mavericks
-      ENV.prepend_create_path 'PERL5LIB', libexec+'lib/perl5'
+      ENV.prepend_create_path "PERL5LIB", libexec+"lib/perl5"
       resource("Perl4::CoreLibs").stage do
         system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
         system "make"

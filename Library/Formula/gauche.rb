@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Gauche < Formula
   desc "R5RS Scheme implementation, developed to be a handy script interpreter"
-  homepage 'http://practical-scheme.net/gauche/'
-  url 'https://downloads.sourceforge.net/gauche/Gauche/Gauche-0.9.4.tgz'
-  sha1 '2f0068d19adbc8e7fd3c04ab8e6576d0fac21ad6'
+  homepage "http://practical-scheme.net/gauche/"
+  url "https://downloads.sourceforge.net/gauche/Gauche/Gauche-0.9.4.tgz"
+  sha1 "2f0068d19adbc8e7fd3c04ab8e6576d0fac21ad6"
 
   bottle do
     sha1 "844ce90625ae0fd6ab27afc965edc7c05e6d283d" => :mavericks
@@ -13,8 +13,8 @@ class Gauche < Formula
   end
 
   def install
-    system './configure', "--prefix=#{prefix}", '--disable-dependency-tracking',
-                          '--enable-multibyte=utf-8'
+    system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking",
+                          "--enable-multibyte=utf-8"
     system "make"
     system "make check"
     system "make install"

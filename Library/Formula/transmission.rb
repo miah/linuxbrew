@@ -28,8 +28,8 @@ class Transmission < Formula
 
     args << "--disable-nls" if build.without? "nls"
 
-    #fixes issue w/ webui files not being found #21151
-    #submitted upstream: https://trac.transmissionbt.com/ticket/5304
+    # fixes issue w/ webui files not being found #21151
+    # submitted upstream: https://trac.transmissionbt.com/ticket/5304
     inreplace "libtransmission/platform.c", "SYS_DARWIN", "BUILD_MAC_CLIENT"
     inreplace "libtransmission/utils.c", "SYS_DARWIN", "BUILD_MAC_CLIENT"
 
@@ -47,7 +47,7 @@ class Transmission < Formula
     EOS
   end
 
-  plist_options :manual => 'transmission-daemon --foreground'
+  plist_options :manual => "transmission-daemon --foreground"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>

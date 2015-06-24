@@ -14,10 +14,10 @@ class Glibc < Formula
   def install
     mkdir "build" do
       args = ["--disable-debug",
-        "--disable-dependency-tracking",
-        "--disable-silent-rules",
-        "--prefix=#{prefix}",
-        "--without-selinux"] # Fix error: selinux/selinux.h: No such file or directory
+              "--disable-dependency-tracking",
+              "--disable-silent-rules",
+              "--prefix=#{prefix}",
+              "--without-selinux"] # Fix error: selinux/selinux.h: No such file or directory
       args << "--with-binutils=" +
         Formula["binutils"].prefix/"x86_64-unknown-linux-gnu/bin" if build.with? "binutils"
       args << "--with-headers=" +
@@ -36,18 +36,18 @@ class Glibc < Formula
 
     # Compile locale definition files
     mkdir_p lib/"locale"
-    locales = ENV.keys.select { |s|
+    locales = ENV.keys.select do |s|
       s == "LANG" || s[/^LC_/]
-    }.map { |key| ENV[key] } - ['C']
+    end.map { |key| ENV[key] } - ["C"]
     locales << "en_US.UTF-8" # Required by gawk make check
-    locales.uniq.each { |locale|
+    locales.uniq.each do |locale|
       lang, charmap = locale.split(".", 2)
-      if charmap != nil
+      if !charmap.nil?
         system bin/"localedef", "-i", lang, "-f", charmap, locale
       else
         system bin/"localedef", "-i", lang, locale
       end
-    }
+    end
 
     # Set the local time zone
     sys_localtime = Pathname.new "/etc/localtime"

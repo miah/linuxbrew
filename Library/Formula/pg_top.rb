@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class PgTop < Formula
   desc "Monitor PostgreSQL processes"
-  homepage 'http://ptop.projects.postgresql.org/'
-  url 'http://pgfoundry.org/frs/download.php/3504/pg_top-3.7.0.tar.bz2'
-  sha1 '377518d95d65011b984d23fd87fb3cc91aaa1afd'
+  homepage "http://ptop.projects.postgresql.org/"
+  url "http://pgfoundry.org/frs/download.php/3504/pg_top-3.7.0.tar.bz2"
+  sha1 "377518d95d65011b984d23fd87fb3cc91aaa1afd"
 
   depends_on :postgresql
 

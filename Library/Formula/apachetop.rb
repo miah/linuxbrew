@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Apachetop < Formula
   desc "Top-like display of Apache log"
-  homepage 'http://freecode.com/projects/apachetop'
-  url 'http://ftp.debian.org/debian/pool/main/a/apachetop/apachetop_0.12.6.orig.tar.gz'
-  sha1 '005c9479800a418ee7febe5027478ca8cbf3c51b'
+  homepage "http://freecode.com/projects/apachetop"
+  url "http://ftp.debian.org/debian/pool/main/a/apachetop/apachetop_0.12.6.orig.tar.gz"
+  sha1 "005c9479800a418ee7febe5027478ca8cbf3c51b"
 
   bottle do
     cellar :any

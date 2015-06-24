@@ -1,11 +1,11 @@
-require 'formula'
+require "formula"
 
 class Libcaca < Formula
   desc "Convert pixel information into colored ASCII art"
-  homepage 'http://caca.zoy.org/wiki/libcaca'
-  url 'http://fossies.org/linux/privat/libcaca-0.99.beta19.tar.gz'
-  version '0.99b19'
-  sha1 'ed138f3717648692113145b99a80511178548010'
+  homepage "http://caca.zoy.org/wiki/libcaca"
+  url "http://fossies.org/linux/privat/libcaca-0.99.beta19.tar.gz"
+  version "0.99b19"
+  sha1 "ed138f3717648692113145b99a80511178548010"
 
   bottle do
     cellar :any
@@ -14,8 +14,8 @@ class Libcaca < Formula
     sha1 "5dd773ce055c6cb9a754c3d691c30c05bf7dbc18" => :mavericks
   end
 
-  depends_on 'pkg-config' => :build
-  depends_on 'imlib2' => :optional
+  depends_on "pkg-config" => :build
+  depends_on "imlib2" => :optional
   depends_on :x11 if build.with? "imlib2"
 
   fails_with :llvm do
@@ -31,7 +31,7 @@ class Libcaca < Formula
 
     # Fix --destdir issue.
     #   ../.auto/py-compile: Missing argument to --destdir.
-    inreplace 'python/Makefile.in', '$(am__py_compile) --destdir "$(DESTDIR)"', "$(am__py_compile) --destdir \"$(cacadir)\""
+    inreplace "python/Makefile.in", '$(am__py_compile) --destdir "$(DESTDIR)"', "$(am__py_compile) --destdir \"$(cacadir)\""
 
     args = ["--disable-dependency-tracking",
             "--prefix=#{prefix}",

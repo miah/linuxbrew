@@ -1,13 +1,13 @@
-require 'formula'
+require "formula"
 
 class Liblqr < Formula
   desc "C/C++ seam carving library"
-  homepage 'http://liblqr.wikidot.com/'
-  url 'http://liblqr.wdfiles.com/local--files/en:download-page/liblqr-1-0.4.2.tar.bz2'
-  version '0.4.2'
-  sha1 '69639f7dc56a084f59a3198f3a8d72e4a73ff927'
+  homepage "http://liblqr.wikidot.com/"
+  url "http://liblqr.wdfiles.com/local--files/en:download-page/liblqr-1-0.4.2.tar.bz2"
+  version "0.4.2"
+  sha1 "69639f7dc56a084f59a3198f3a8d72e4a73ff927"
 
-  head 'git://repo.or.cz/liblqr.git'
+  head "git://repo.or.cz/liblqr.git"
 
   bottle do
     cellar :any
@@ -17,8 +17,8 @@ class Liblqr < Formula
     sha1 "bd524e0373ad841ccd7c838eccb279f710502633" => :mountain_lion
   end
 
-  depends_on 'pkg-config' => :build
-  depends_on 'glib'
+  depends_on "pkg-config" => :build
+  depends_on "glib"
 
   def install
     system "./configure", "--disable-dependency-tracking",

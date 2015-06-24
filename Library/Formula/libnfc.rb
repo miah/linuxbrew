@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libnfc < Formula
   desc "Low level NFC SDK and Programmers API"
-  homepage 'http://www.libnfc.org/'
-  url 'https://libnfc.googlecode.com/files/libnfc-1.7.0.tar.bz2'
-  sha1 '5adfb6c6238b1659ad8609837dc8e59eb41a8768'
+  homepage "http://www.libnfc.org/"
+  url "https://libnfc.googlecode.com/files/libnfc-1.7.0.tar.bz2"
+  sha1 "5adfb6c6238b1659ad8609837dc8e59eb41a8768"
 
   bottle do
     revision 2
@@ -13,8 +13,8 @@ class Libnfc < Formula
     sha1 "4d9b2216eb876d9a63fe0c0b168b2de0766d0a21" => :mountain_lion
   end
 
-  depends_on 'pkg-config' => :build
-  depends_on 'libusb-compat'
+  depends_on "pkg-config" => :build
+  depends_on "libusb-compat"
 
   # Fixes the lack of MIN macro in sys/param.h on OS X which causes the formula not to compile
   # Reported upstream:
@@ -27,7 +27,7 @@ class Libnfc < Formula
                           "--prefix=#{prefix}", "--enable-serial-autoprobe",
                           "--with-drivers=all"
     system "make install"
-    (prefix/'etc/nfc/libnfc.conf').write "allow_intrusive_scan=yes"
+    (prefix/"etc/nfc/libnfc.conf").write "allow_intrusive_scan=yes"
   end
 end
 

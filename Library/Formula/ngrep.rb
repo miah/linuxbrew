@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Ngrep < Formula
   desc "network grep"
-  homepage 'http://ngrep.sourceforge.net/'
-  url 'https://downloads.sourceforge.net/project/ngrep/ngrep/1.45/ngrep-1.45.tar.bz2'
-  sha1 'f26090a6ac607db66df99c6fa9aef74968f3330f'
+  homepage "http://ngrep.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/ngrep/ngrep/1.45/ngrep-1.45.tar.bz2"
+  sha1 "f26090a6ac607db66df99c6fa9aef74968f3330f"
   revision 1
 
   bottle do
@@ -16,8 +16,8 @@ class Ngrep < Formula
 
   # http://sourceforge.net/p/ngrep/bugs/27/
   patch do
-    url  'https://launchpadlibrarian.net/44952147/ngrep-fix-ipv6-support.patch'
-    sha1 '84ff02f59b4fab8692a3ff2a61b45a4b9d067177'
+    url "https://launchpadlibrarian.net/44952147/ngrep-fix-ipv6-support.patch"
+    sha1 "84ff02f59b4fab8692a3ff2a61b45a4b9d067177"
   end
 
   def install

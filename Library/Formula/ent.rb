@@ -1,11 +1,11 @@
-require 'formula'
+require "formula"
 
 class Ent < Formula
   desc "Pseudorandom number sequence test program"
-  homepage 'http://www.fourmilab.ch/random/'
+  homepage "http://www.fourmilab.ch/random/"
   # This tarball is versioned and smaller, though non-official
-  url 'https://github.com/psm14/ent/archive/1.0.tar.gz'
-  sha1 'b69eac8c3531ef58b61a9cbd78b506901d1a3192'
+  url "https://github.com/psm14/ent/archive/1.0.tar.gz"
+  sha1 "b69eac8c3531ef58b61a9cbd78b506901d1a3192"
 
   def install
     system "make", "CC=#{ENV.cc}", "CFLAGS=#{ENV.cflags}"

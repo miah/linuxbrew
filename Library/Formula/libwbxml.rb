@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libwbxml < Formula
   desc "Library and tools to parse and encode WBXML documents"
-  homepage 'https://libwbxml.opensync.org/'
-  url 'https://downloads.sourceforge.net/project/libwbxml/libwbxml/0.11.2/libwbxml-0.11.2.tar.bz2'
-  sha1 '0b4f526709cac75c4b261666950bd935dda9f0d4'
+  homepage "https://libwbxml.opensync.org/"
+  url "https://downloads.sourceforge.net/project/libwbxml/libwbxml/0.11.2/libwbxml-0.11.2.tar.bz2"
+  sha1 "0b4f526709cac75c4b261666950bd935dda9f0d4"
 
   bottle do
     cellar :any
@@ -17,8 +17,8 @@ class Libwbxml < Formula
   option "with-docs", "Build the documentation with Doxygen and Graphviz"
   deprecated_option "docs" => "with-docs"
 
-  depends_on 'cmake' => :build
-  depends_on 'wget' => :optional
+  depends_on "cmake" => :build
+  depends_on "wget" => :optional
 
   if build.with? "docs"
     depends_on "doxygen" => :build

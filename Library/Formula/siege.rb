@@ -1,12 +1,12 @@
-require 'formula'
+require "formula"
 
 class Siege < Formula
   desc "HTTP regression testing and benchmarking utility"
-  homepage 'http://www.joedog.org/index/siege-home'
-  url 'http://download.joedog.org/siege/siege-3.0.9.tar.gz'
-  sha256 '82376eb466414ef4872a979a372972658df9813778ee8572341d4736ed30cb8f'
+  homepage "http://www.joedog.org/index/siege-home"
+  url "http://download.joedog.org/siege/siege-3.0.9.tar.gz"
+  sha256 "82376eb466414ef4872a979a372972658df9813778ee8572341d4736ed30cb8f"
 
-  depends_on 'openssl'
+  depends_on "openssl"
 
   bottle do
     sha1 "8fc40ce186470abb7b79dcae5bf0f79de19aa95a" => :yosemite
@@ -16,7 +16,7 @@ class Siege < Formula
 
   def install
     # To avoid unnecessary warning due to hardcoded path, create the folder first
-    (prefix+'etc').mkdir
+    (prefix+"etc").mkdir
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}",

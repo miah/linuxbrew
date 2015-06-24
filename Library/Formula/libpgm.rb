@@ -1,11 +1,11 @@
-require 'formula'
+require "formula"
 
 class Libpgm < Formula
   desc "Implements the PGM reliable multicast protocol"
-  homepage 'http://code.google.com/p/openpgm/'
-  url 'https://openpgm.googlecode.com/files/libpgm-5.2.122%7Edfsg.tar.gz'
-  sha1 '788efcb223a05bb68b304bcdd3c37bb54fe4de28'
-  version '5.2.122'
+  homepage "http://code.google.com/p/openpgm/"
+  url "https://openpgm.googlecode.com/files/libpgm-5.2.122%7Edfsg.tar.gz"
+  sha1 "788efcb223a05bb68b304bcdd3c37bb54fe4de28"
+  version "5.2.122"
 
   bottle do
     cellar :any
@@ -18,7 +18,7 @@ class Libpgm < Formula
   option :universal
 
   def install
-    cd 'openpgm/pgm' do
+    cd "openpgm/pgm" do
       ENV.universal_binary if build.universal?
       system "./configure", "--disable-dependency-tracking",
                             "--prefix=#{prefix}"

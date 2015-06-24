@@ -1,16 +1,16 @@
-require 'formula'
+require "formula"
 
 class Gmediaserver < Formula
   desc "UPnP Mediaserver"
-  homepage 'http://www.gnu.org/software/gmediaserver/'
-  url 'http://download.savannah.gnu.org/releases/gmediaserver/gmediaserver-0.13.0.tar.gz'
-  sha1 '5b868bc3c3d3bf0c2c550a4fc618c586a2640799'
+  homepage "http://www.gnu.org/software/gmediaserver/"
+  url "http://download.savannah.gnu.org/releases/gmediaserver/gmediaserver-0.13.0.tar.gz"
+  sha1 "5b868bc3c3d3bf0c2c550a4fc618c586a2640799"
 
-  depends_on 'pkg-config' => :build
-  depends_on 'libupnp'
-  depends_on 'libmagic'
-  depends_on 'id3lib' => :optional
-  depends_on 'taglib' => :optional
+  depends_on "pkg-config" => :build
+  depends_on "libupnp"
+  depends_on "libmagic"
+  depends_on "id3lib" => :optional
+  depends_on "taglib" => :optional
 
   # patching gmediaserver because sigwaitinfo is not available on
   # mac os x snow leopard, using sigwait instead

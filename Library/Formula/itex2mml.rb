@@ -1,4 +1,4 @@
-require 'formula'
+require "formula"
 
 # From: Jacques Distler <distler@golem.ph.utexas.edu>
 # You can always find the latest version by checking
@@ -8,9 +8,9 @@ require 'formula'
 
 class Itex2mml < Formula
   desc "Text filter to convert itex equations to MathML"
-  homepage 'http://golem.ph.utexas.edu/~distler/blog/itex2MML.html'
-  url 'http://golem.ph.utexas.edu/~distler/blog/files/itexToMML-1.5.1.tar.gz'
-  sha1 'e87cb48c9e0ad357d9e20186e4bd34fc8750b59c'
+  homepage "http://golem.ph.utexas.edu/~distler/blog/itex2MML.html"
+  url "http://golem.ph.utexas.edu/~distler/blog/files/itexToMML-1.5.1.tar.gz"
+  sha1 "e87cb48c9e0ad357d9e20186e4bd34fc8750b59c"
 
   def install
     bin.mkpath

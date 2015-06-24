@@ -1,9 +1,9 @@
-require 'formula'
+require "formula"
 
 class Gsasl < Formula
   desc "SASL library command-line interface"
-  homepage 'http://www.gnu.org/software/gsasl/'
-  url 'http://ftpmirror.gnu.org/gsasl/gsasl-1.8.0.tar.gz'
+  homepage "http://www.gnu.org/software/gsasl/"
+  url "http://ftpmirror.gnu.org/gsasl/gsasl-1.8.0.tar.gz"
   bottle do
     cellar :any
     revision 1
@@ -12,8 +12,8 @@ class Gsasl < Formula
     sha1 "bf3355e1963568a4282ec50bb3d2dfebb5f6b190" => :mountain_lion
   end
 
-  mirror 'http://ftp.gnu.org/gsasl/gsasl-1.8.0.tar.gz'
-  sha1 '343fd97ae924dc406986c02fb9b889f4114239ae'
+  mirror "http://ftp.gnu.org/gsasl/gsasl-1.8.0.tar.gz"
+  sha1 "343fd97ae924dc406986c02fb9b889f4114239ae"
 
   def install
     system "./configure", "--disable-dependency-tracking",

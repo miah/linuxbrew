@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Enet < Formula
   desc "Provides a network communication layer on top of UDP"
-  homepage 'http://enet.bespin.org'
-  url 'http://enet.bespin.org/download/enet-1.3.12.tar.gz'
-  sha1 '5fd9ef590dc7bcff652e99fef3e7241b3a743f25'
+  homepage "http://enet.bespin.org"
+  url "http://enet.bespin.org/download/enet-1.3.12.tar.gz"
+  sha1 "5fd9ef590dc7bcff652e99fef3e7241b3a743f25"
 
   bottle do
     cellar :any

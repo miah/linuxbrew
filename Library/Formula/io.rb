@@ -51,16 +51,16 @@ class Io < Formula
     ENV.j1
 
     # FSF GCC needs this to build the ObjC bridge
-    ENV.append_to_cflags '-fobjc-exceptions'
+    ENV.append_to_cflags "-fobjc-exceptions"
 
     if build.without? "addons"
       # Turn off all add-ons in main cmake file
       inreplace "CMakeLists.txt", "add_subdirectory(addons)",
-                                  '#add_subdirectory(addons)'
+                                  "#add_subdirectory(addons)"
     else
       inreplace "addons/CMakeLists.txt" do |s|
         if build.without? "python"
-          s.gsub! "add_subdirectory(Python)", '#add_subdirectory(Python)'
+          s.gsub! "add_subdirectory(Python)", "#add_subdirectory(Python)"
         end
 
         # Turn off specific add-ons that are not currently working
@@ -75,7 +75,7 @@ class Io < Formula
     mkdir "buildroot" do
       system "cmake", "..", *std_cmake_args
       system "make"
-      output = %x[./_build/binaries/io ../libs/iovm/tests/correctness/run.io]
+      output = `./_build/binaries/io ../libs/iovm/tests/correctness/run.io`
       if $?.exitstatus != 0
         opoo "Test suite not 100% successful:\n#{output}"
       else

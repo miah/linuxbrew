@@ -1,11 +1,11 @@
-require 'formula'
+require "formula"
 
 class Libcapn < Formula
   desc "C library to send push notifications to Apple devices"
-  homepage 'http://libcapn.org/'
+  homepage "http://libcapn.org/"
   url "http://libcapn.org/download/libcapn-1.0.0-src.tar.gz"
   sha1 "740dc87395fc7255b78c3c926a044f00692e8c41"
-  head 'https://github.com/adobkin/libcapn.git'
+  head "https://github.com/adobkin/libcapn.git"
 
   bottle do
     cellar :any
@@ -14,8 +14,8 @@ class Libcapn < Formula
     sha1 "0ec5a47c3fb17267eb8d714746195ab9205f057f" => :mountain_lion
   end
 
-  depends_on 'cmake' => :build
-  depends_on 'pkg-config' => :build
+  depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
   depends_on "openssl"
 
   def install
@@ -26,7 +26,7 @@ class Libcapn < Formula
   end
 
   test do
-    (testpath/'test_install.c').write <<-TEST_SCRIPT.undent
+    (testpath/"test_install.c").write <<-TEST_SCRIPT.undent
     #include <apn.h>
     int main() {
         apn_ctx_ref ctx = NULL;

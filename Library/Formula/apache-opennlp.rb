@@ -9,8 +9,8 @@ class ApacheOpennlp < Formula
 
   def install
     prefix.install_metafiles
-    libexec.install Dir['*']
+    libexec.install Dir["*"]
 
-    bin.write_exec_script libexec/'bin/opennlp'
+    bin.write_exec_script libexec/"bin/opennlp"
   end
 end

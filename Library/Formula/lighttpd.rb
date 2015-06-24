@@ -25,10 +25,21 @@ class Lighttpd < Formula
   # default max. file descriptors; this option will be ignored if the server is not started as root
   MAX_FDS = 512
 
-  def config_path; etc+"lighttpd/"; end
-  def log_path; var+"log/lighttpd/"; end
-  def www_path; var+"www/"; end
-  def run_path; var+"lighttpd/"; end
+  def config_path 
+    etc+"lighttpd/" 
+  end
+
+  def log_path 
+    var+"log/lighttpd/" 
+  end
+
+  def www_path 
+    var+"www/" 
+  end
+
+  def run_path 
+    var+"lighttpd/" 
+  end
 
   def install
     args = %W[
@@ -59,27 +70,27 @@ class Lighttpd < Formula
       config_path.install "doc/config/lighttpd.conf", "doc/config/modules.conf"
       (config_path/"conf.d/").install Dir["doc/config/conf.d/*.conf"]
       inreplace config_path+"lighttpd.conf" do |s|
-        s.sub!(/^var\.log_root\s*=\s*".+"$/,"var.log_root    = \"#{log_path}\"")
-        s.sub!(/^var\.server_root\s*=\s*".+"$/,"var.server_root = \"#{www_path}\"")
-        s.sub!(/^var\.state_dir\s*=\s*".+"$/,"var.state_dir   = \"#{run_path}\"")
-        s.sub!(/^var\.home_dir\s*=\s*".+"$/,"var.home_dir    = \"#{run_path}\"")
-        s.sub!(/^var\.conf_dir\s*=\s*".+"$/,"var.conf_dir    = \"#{config_path}\"")
-        s.sub!(/^server\.port\s*=\s*80$/,"server.port = 8080")
-        s.sub!(/^server\.document-root\s*=\s*server_root \+ "\/htdocs"$/,"server.document-root = server_root")
+        s.sub!(/^var\.log_root\s*=\s*".+"$/, "var.log_root    = \"#{log_path}\"")
+        s.sub!(/^var\.server_root\s*=\s*".+"$/, "var.server_root = \"#{www_path}\"")
+        s.sub!(/^var\.state_dir\s*=\s*".+"$/, "var.state_dir   = \"#{run_path}\"")
+        s.sub!(/^var\.home_dir\s*=\s*".+"$/, "var.home_dir    = \"#{run_path}\"")
+        s.sub!(/^var\.conf_dir\s*=\s*".+"$/, "var.conf_dir    = \"#{config_path}\"")
+        s.sub!(/^server\.port\s*=\s*80$/, "server.port = 8080")
+        s.sub!(/^server\.document-root\s*=\s*server_root \+ "\/htdocs"$/, "server.document-root = server_root")
 
         # get rid of "warning: please use server.use-ipv6 only for hostnames, not
         # without server.bind / empty address; your config will break if the kernel
         # default for IPV6_V6ONLY changes"
-        s.sub!(/^server.use-ipv6\s*=\s*"enable"$/,'server.use-ipv6 = "disable"')
+        s.sub!(/^server.use-ipv6\s*=\s*"enable"$/, 'server.use-ipv6 = "disable"')
 
-        s.sub!(/^server\.username\s*=\s*".+"$/,'server.username  = "_www"')
-        s.sub!(/^server\.groupname\s*=\s*".+"$/,'server.groupname = "_www"')
-        s.sub!(/^server\.event-handler\s*=\s*"linux-sysepoll"$/,'server.event-handler = "select"')
-        s.sub!(/^server\.network-backend\s*=\s*"linux-sendfile"$/,'server.network-backend = "writev"')
+        s.sub!(/^server\.username\s*=\s*".+"$/, 'server.username  = "_www"')
+        s.sub!(/^server\.groupname\s*=\s*".+"$/, 'server.groupname = "_www"')
+        s.sub!(/^server\.event-handler\s*=\s*"linux-sysepoll"$/, 'server.event-handler = "select"')
+        s.sub!(/^server\.network-backend\s*=\s*"linux-sendfile"$/, 'server.network-backend = "writev"')
 
         # "max-connections == max-fds/2",
         # http://redmine.lighttpd.net/projects/1/wiki/Server_max-connectionsDetails
-        s.sub!(/^server\.max-connections = .+$/,"server.max-connections = " + (MAX_FDS / 2).to_s())
+        s.sub!(/^server\.max-connections = .+$/, "server.max-connections = " + (MAX_FDS / 2).to_s)
       end
     end
 

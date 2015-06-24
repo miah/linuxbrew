@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Mad < Formula
   desc "MPEG audio decoder"
-  homepage 'http://www.underbit.com/products/mad/'
-  url 'https://downloads.sourceforge.net/project/mad/libmad/0.15.1b/libmad-0.15.1b.tar.gz'
-  sha1 'cac19cd00e1a907f3150cc040ccc077783496d76'
+  homepage "http://www.underbit.com/products/mad/"
+  url "https://downloads.sourceforge.net/project/mad/libmad/0.15.1b/libmad-0.15.1b.tar.gz"
+  sha1 "cac19cd00e1a907f3150cc040ccc077783496d76"
 
   bottle do
     cellar :any
@@ -15,10 +15,10 @@ class Mad < Formula
   end
 
   def install
-    fpm = MacOS.prefer_64_bit? ? '64bit': 'intel'
+    fpm = MacOS.prefer_64_bit? ? "64bit": "intel"
     system "./configure", "--disable-debugging", "--enable-fpm=#{fpm}", "--prefix=#{prefix}"
     system "make", "CFLAGS=#{ENV.cflags}", "LDFLAGS=#{ENV.ldflags}", "install"
-    (lib+'pkgconfig/mad.pc').write pc_file
+    (lib+"pkgconfig/mad.pc").write pc_file
   end
 
   def pc_file; <<-EOS.undent

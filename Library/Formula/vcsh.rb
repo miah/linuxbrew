@@ -1,16 +1,16 @@
-require 'formula'
+require "formula"
 
 class Vcsh < Formula
   desc "Config manager based on git"
-  homepage 'https://github.com/RichiH/vcsh'
-  url 'https://github.com/RichiH/vcsh/archive/v1.20141026-manpage-static.tar.gz'
-  version '1.20141026'
-  sha1 '9e4fac6d354fca4bda32cab8fa7f0fffe4ddd110'
+  homepage "https://github.com/RichiH/vcsh"
+  url "https://github.com/RichiH/vcsh/archive/v1.20141026-manpage-static.tar.gz"
+  version "1.20141026"
+  sha1 "9e4fac6d354fca4bda32cab8fa7f0fffe4ddd110"
 
   def install
-    bin.install 'vcsh'
-    man1.install 'vcsh.1'
-    zsh_completion.install '_vcsh'
+    bin.install "vcsh"
+    man1.install "vcsh.1"
+    zsh_completion.install "_vcsh"
   end
 
   test do

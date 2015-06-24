@@ -1,11 +1,11 @@
-require 'formula'
+require "formula"
 
 class Afsctool < Formula
   desc "Utility for manipulating HFS+ compressed files"
-  homepage 'http://brkirch.wordpress.com/afsctool/'
-  url 'https://docs.google.com/uc?export=download&id=0BwQlnXqL939ZQjBQNEhRQUo0aUk'
-  version '1.6.4'
-  sha1 '216d7ff54bad947781d9b49f9754c5d3c07349be'
+  homepage "http://brkirch.wordpress.com/afsctool/"
+  url "https://docs.google.com/uc?export=download&id=0BwQlnXqL939ZQjBQNEhRQUo0aUk"
+  version "1.6.4"
+  sha1 "216d7ff54bad947781d9b49f9754c5d3c07349be"
 
   def install
     cd "afsctool_34" do

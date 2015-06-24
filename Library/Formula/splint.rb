@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Splint < Formula
   desc "Secure Programming Lint"
-  homepage 'http://www.splint.org/'
-  url 'http://www.splint.org/downloads/splint-3.1.2.src.tgz'
-  sha1 '0df489cb228dcfffb149b38c57614c2c3e200501'
+  homepage "http://www.splint.org/"
+  url "http://www.splint.org/downloads/splint-3.1.2.src.tgz"
+  sha1 "0df489cb228dcfffb149b38c57614c2c3e200501"
 
   # fix compiling error of osd.c
   patch :DATA

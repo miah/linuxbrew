@@ -1,14 +1,14 @@
-require 'formula'
+require "formula"
 
 class Mpg321 < Formula
   desc "Command-line MP3 player"
-  homepage 'http://mpg321.sourceforge.net/'
-  url 'https://downloads.sourceforge.net/project/mpg321/mpg321/0.3.2/mpg321_0.3.2.orig.tar.gz'
-  sha1 'bf1c22542c86af69267828e45f217fdeb49e5d43'
+  homepage "http://mpg321.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/mpg321/mpg321/0.3.2/mpg321_0.3.2.orig.tar.gz"
+  sha1 "bf1c22542c86af69267828e45f217fdeb49e5d43"
 
-  depends_on 'mad'
-  depends_on 'libid3tag'
-  depends_on 'libao'
+  depends_on "mad"
+  depends_on "libid3tag"
+  depends_on "libao"
 
   # 1. Apple defines semun already. Skip redefining it to fix build errors.
   #    This is a homemade patch fashioned using deduction.

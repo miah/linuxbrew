@@ -37,5 +37,4 @@ class Libtins < Formula
     EOS
     system ENV.cxx, "test.cpp", "-ltins", "-o", "test"
   end
-
 end

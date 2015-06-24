@@ -1,8 +1,8 @@
-require 'formula'
+require "formula"
 
 class Cdrtools < Formula
   desc "ISO 9660 file system and CD creation tools"
-  homepage 'http://cdrecord.org/'
+  homepage "http://cdrecord.org/"
 
   stable do
     url "https://downloads.sourceforge.net/project/cdrtools/cdrtools-3.00.tar.bz2"
@@ -27,10 +27,10 @@ class Cdrtools < Formula
     patch :p0, :DATA
   end
 
-  depends_on 'smake' => :build
+  depends_on "smake" => :build
 
-  conflicts_with 'dvdrtools',
-    :because => 'both dvdrtools and cdrtools install binaries by the same name'
+  conflicts_with "dvdrtools",
+    :because => "both dvdrtools and cdrtools install binaries by the same name"
 
   def install
     system "smake", "INS_BASE=#{prefix}", "INS_RBASE=#{prefix}", "install"

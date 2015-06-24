@@ -1,8 +1,8 @@
 class Newt < Formula
   desc "Library for color text mode, widget based user interfaces"
-  homepage 'https://fedorahosted.org/newt/'
-  url 'https://fedorahosted.org/releases/n/e/newt/newt-0.52.18.tar.gz'
-  sha1 '2992c926bd3699ff0d6fd7549d4a8a018e3ac8fd'
+  homepage "https://fedorahosted.org/newt/"
+  url "https://fedorahosted.org/releases/n/e/newt/newt-0.52.18.tar.gz"
+  sha1 "2992c926bd3699ff0d6fd7549d4a8a018e3ac8fd"
 
   bottle do
     cellar :any
@@ -11,9 +11,9 @@ class Newt < Formula
     sha1 "599600fa6e92c38dbaa7bb6e1138eda04a4c5bf1" => :mountain_lion
   end
 
-  depends_on 'gettext'
-  depends_on 'popt'
-  depends_on 's-lang'
+  depends_on "gettext"
+  depends_on "popt"
+  depends_on "s-lang"
   depends_on :python => :optional
 
   # build dylibs with -dynamiclib; version libraries
@@ -24,7 +24,7 @@ class Newt < Formula
 
   def install
     args = ["--prefix=#{prefix}", "--without-tcl"]
-    args << "--without-python" if build.without? 'python'
+    args << "--without-python" if build.without? "python"
 
     inreplace "Makefile.in" do |s|
       # name libraries correctly

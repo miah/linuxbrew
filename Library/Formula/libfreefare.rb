@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libfreefare < Formula
   desc "API for MIFARE card manipulations"
-  homepage 'https://code.google.com/p/libfreefare/'
-  url 'https://libfreefare.googlecode.com/files/libfreefare-0.4.0.tar.bz2'
-  sha1 '74214069d6443a6a40d717e496320428a114198c'
+  homepage "https://code.google.com/p/libfreefare/"
+  url "https://libfreefare.googlecode.com/files/libfreefare-0.4.0.tar.bz2"
+  sha1 "74214069d6443a6a40d717e496320428a114198c"
   revision 1
 
   bottle do
@@ -14,8 +14,8 @@ class Libfreefare < Formula
     sha1 "3ef841880e81e9839b69ae5ede01e02ff922ac32" => :mountain_lion
   end
 
-  depends_on 'pkg-config' => :build
-  depends_on 'libnfc'
+  depends_on "pkg-config" => :build
+  depends_on "libnfc"
   depends_on "openssl"
 
   def install

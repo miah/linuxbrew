@@ -29,7 +29,7 @@ class SoundTouch < Formula
 
     ENV.universal_binary if build.universal?
 
-    system "./configure",*args
+    system "./configure", *args
     system "make", "install"
   end
 end

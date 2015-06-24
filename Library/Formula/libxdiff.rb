@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libxdiff < Formula
   desc "Implements diff functions for binary and text files"
-  homepage 'http://www.xmailserver.org/xdiff-lib.html'
-  url 'http://www.xmailserver.org/libxdiff-0.23.tar.gz'
-  sha1 'f92eff48eeb49d5145ddafcb72dcfb18f5d07303'
+  homepage "http://www.xmailserver.org/xdiff-lib.html"
+  url "http://www.xmailserver.org/libxdiff-0.23.tar.gz"
+  sha1 "f92eff48eeb49d5145ddafcb72dcfb18f5d07303"
 
   bottle do
     cellar :any

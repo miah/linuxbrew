@@ -1,13 +1,13 @@
-require 'formula'
+require "formula"
 
 class Pngxx < Formula
   desc "C++ wrapper for libpng library"
-  homepage 'http://www.nongnu.org/pngpp/'
-  url 'http://download.savannah.nongnu.org/releases/pngpp/png++-0.2.5.tar.gz'
-  sha1 'bfe39c414a8c5c18dbaaf96fea22ce12a6887576'
+  homepage "http://www.nongnu.org/pngpp/"
+  url "http://download.savannah.nongnu.org/releases/pngpp/png++-0.2.5.tar.gz"
+  sha1 "bfe39c414a8c5c18dbaaf96fea22ce12a6887576"
   revision 1
 
-  depends_on 'libpng'
+  depends_on "libpng"
 
   def install
     system "make", "PREFIX=#{prefix}", "install"

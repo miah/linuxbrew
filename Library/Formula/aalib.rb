@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Aalib < Formula
   desc "Portable ASCII art graphics library"
-  homepage 'http://aa-project.sourceforge.net/aalib/'
-  url 'https://downloads.sourceforge.net/aa-project/aalib-1.4rc5.tar.gz'
-  sha1 'a23269e950a249d2ef93625837cace45ddbce03b'
+  homepage "http://aa-project.sourceforge.net/aalib/"
+  url "https://downloads.sourceforge.net/aa-project/aalib-1.4rc5.tar.gz"
+  sha1 "a23269e950a249d2ef93625837cace45ddbce03b"
 
   bottle do
     cellar :any

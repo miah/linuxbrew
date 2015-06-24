@@ -36,7 +36,6 @@ class GstPluginsBase < Formula
   depends_on "libvorbis" => :optional
 
   def install
-
     # gnome-vfs turned off due to lack of formula for it.
     args = %W[
       --prefix=#{prefix}

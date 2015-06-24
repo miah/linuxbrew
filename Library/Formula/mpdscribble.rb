@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Mpdscribble < Formula
   desc "Last.fm reporting client for mpd"
-  homepage 'http://mpd.wikia.com/wiki/Client:Mpdscribble'
-  url 'http://www.musicpd.org/download/mpdscribble/0.22/mpdscribble-0.22.tar.gz'
-  sha1 '3b4a1a71130deea1720bbfeb104fdcae298f52de'
+  homepage "http://mpd.wikia.com/wiki/Client:Mpdscribble"
+  url "http://www.musicpd.org/download/mpdscribble/0.22/mpdscribble-0.22.tar.gz"
+  sha1 "3b4a1a71130deea1720bbfeb104fdcae298f52de"
 
   bottle do
     sha1 "975024cac5d4bc41221f7f9a6fcd889a487e658d" => :mavericks
@@ -12,9 +12,9 @@ class Mpdscribble < Formula
     sha1 "3d45208c83304423bdca07e5c26d7d37d2271170" => :lion
   end
 
-  depends_on 'pkg-config' => :build
-  depends_on 'glib'
-  depends_on 'libmpdclient'
+  depends_on "pkg-config" => :build
+  depends_on "glib"
+  depends_on "libmpdclient"
 
   def install
     system "./configure", "--prefix=#{prefix}", "--sysconfdir=#{etc}"

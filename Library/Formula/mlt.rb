@@ -32,7 +32,6 @@ class Mlt < Formula
   end
 
   def install
-
     args = ["--prefix=#{prefix}",
             "--disable-jackrack",
             "--disable-swfdec"]

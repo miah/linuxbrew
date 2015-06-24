@@ -1,12 +1,12 @@
-require 'formula'
+require "formula"
 
 class Lysp < Formula
   desc "Small Lisp interpreter"
-  homepage 'http://www.piumarta.com/software/lysp/'
-  url 'http://www.piumarta.com/software/lysp/lysp-1.1.tar.gz'
-  sha1 '4d579895a5ccd947249b8de6c992ab969c144c78'
+  homepage "http://www.piumarta.com/software/lysp/"
+  url "http://www.piumarta.com/software/lysp/lysp-1.1.tar.gz"
+  sha1 "4d579895a5ccd947249b8de6c992ab969c144c78"
 
-  depends_on 'bdw-gc'
+  depends_on "bdw-gc"
 
   fails_with :clang do
     build 500

@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Pygobject < Formula
   desc "GLib/GObject/GIO Python bindings for Python 2"
-  homepage 'https://live.gnome.org/PyGObject'
-  url 'http://ftp.gnome.org/pub/GNOME/sources/pygobject/2.28/pygobject-2.28.6.tar.bz2'
-  sha1 '4eda7d2b97f495a2ad7d4cdc234d08ca5408d9d5'
+  homepage "https://live.gnome.org/PyGObject"
+  url "http://ftp.gnome.org/pub/GNOME/sources/pygobject/2.28/pygobject-2.28.6.tar.bz2"
+  sha1 "4eda7d2b97f495a2ad7d4cdc234d08ca5408d9d5"
 
   bottle do
     sha1 "41b026312378b3d1cc90135e68e88e72aed68fea" => :yosemite
@@ -12,8 +12,8 @@ class Pygobject < Formula
     sha1 "0eb2294d2eff8f0efef2b12c8d7b7e87d0026bee" => :mountain_lion
   end
 
-  depends_on 'pkg-config' => :build
-  depends_on 'glib'
+  depends_on "pkg-config" => :build
+  depends_on "glib"
   depends_on :python
 
   option :universal

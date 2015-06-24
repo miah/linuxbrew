@@ -49,7 +49,7 @@ class Zookeeper < Formula
 
   depends_on :python => :optional
 
-  def shim_script target
+  def shim_script(target)
     <<-EOS.undent
       #!/usr/bin/env bash
       . "#{etc}/zookeeper/defaults"

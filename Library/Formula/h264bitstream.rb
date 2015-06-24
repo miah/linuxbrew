@@ -1,13 +1,13 @@
-require 'formula'
+require "formula"
 
 class H264bitstream < Formula
   desc "Library for reading and writing H264 video streams"
-  homepage 'http://h264bitstream.sourceforge.net/'
-  url 'https://downloads.sourceforge.net/project/h264bitstream/h264bitstream/0.1.9/h264bitstream-0.1.9.tar.gz'
-  sha1 '5e12e765641e76f86b794f939bf99405c4e4d373'
+  homepage "http://h264bitstream.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/h264bitstream/h264bitstream/0.1.9/h264bitstream-0.1.9.tar.gz"
+  sha1 "5e12e765641e76f86b794f939bf99405c4e4d373"
 
   def install
-    system './configure', "--prefix=#{prefix}"
-    system 'make install'
+    system "./configure", "--prefix=#{prefix}"
+    system "make install"
   end
 end

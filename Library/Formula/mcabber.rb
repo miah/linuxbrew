@@ -1,13 +1,13 @@
-require 'formula'
+require "formula"
 
 class Mcabber < Formula
   desc "Console Jabber client"
-  homepage 'http://mcabber.com/'
-  url 'http://mcabber.com/files/mcabber-0.10.3.tar.bz2'
-  sha1 '9254f520cb37e691fb55d4fc46df4440e4a17f14'
+  homepage "http://mcabber.com/"
+  url "http://mcabber.com/files/mcabber-0.10.3.tar.bz2"
+  sha1 "9254f520cb37e691fb55d4fc46df4440e4a17f14"
 
   head do
-    url 'http://mcabber.com/hg/', :using => :hg
+    url "http://mcabber.com/hg/", :using => :hg
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -17,13 +17,13 @@ class Mcabber < Formula
   deprecated_option "enable-aspell" => "with-aspell"
   deprecated_option "enable-enchant" => "with-enchant"
 
-  depends_on 'pkg-config' => :build
-  depends_on 'glib'
-  depends_on 'loudmouth'
-  depends_on 'gpgme'
-  depends_on 'libgcrypt'
-  depends_on 'libotr'
-  depends_on 'libidn'
+  depends_on "pkg-config" => :build
+  depends_on "glib"
+  depends_on "loudmouth"
+  depends_on "gpgme"
+  depends_on "libgcrypt"
+  depends_on "libotr"
+  depends_on "libidn"
   depends_on "aspell" => :optional
   depends_on "enchant" => :optional
 
@@ -44,7 +44,7 @@ class Mcabber < Formula
     system "./configure", *args
     system "make install"
 
-    (share+'mcabber').install %w[mcabberrc.example contrib]
+    (share+"mcabber").install %w[mcabberrc.example contrib]
   end
 
   def caveats; <<-EOS.undent

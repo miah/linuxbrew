@@ -1,11 +1,11 @@
-require 'formula'
+require "formula"
 
 class Eprover < Formula
   desc "Theorem prover for full first-order logic with equality"
-  homepage 'http://www4.informatik.tu-muenchen.de/~schulz/E/E.html'
-  url 'http://www4.in.tum.de/~schulz/WORK/E_DOWNLOAD/V_1.8/E.tgz'
-  version '1.8'
-  sha1 '43cec71bc1187798352036b550794a4d03137f87'
+  homepage "http://www4.informatik.tu-muenchen.de/~schulz/E/E.html"
+  url "http://www4.in.tum.de/~schulz/WORK/E_DOWNLOAD/V_1.8/E.tgz"
+  version "1.8"
+  sha1 "43cec71bc1187798352036b550794a4d03137f87"
 
   def install
     system "./configure", "--bindir=#{bin}", "--man-prefix=#{man}"

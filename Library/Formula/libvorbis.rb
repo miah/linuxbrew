@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libvorbis < Formula
   desc "Vorbis General Audio Compression Codec"
-  homepage 'http://vorbis.com'
-  url 'http://downloads.xiph.org/releases/vorbis/libvorbis-1.3.5.tar.xz'
-  sha256 '54f94a9527ff0a88477be0a71c0bab09a4c3febe0ed878b24824906cd4b0e1d1'
+  homepage "http://vorbis.com"
+  url "http://downloads.xiph.org/releases/vorbis/libvorbis-1.3.5.tar.xz"
+  sha256 "54f94a9527ff0a88477be0a71c0bab09a4c3febe0ed878b24824906cd4b0e1d1"
 
   bottle do
     cellar :any
@@ -14,7 +14,7 @@ class Libvorbis < Formula
   end
 
   head do
-    url 'http://svn.xiph.org/trunk/vorbis'
+    url "http://svn.xiph.org/trunk/vorbis"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -23,8 +23,8 @@ class Libvorbis < Formula
 
   option :universal
 
-  depends_on 'pkg-config' => :build
-  depends_on 'libogg'
+  depends_on "pkg-config" => :build
+  depends_on "libogg"
 
   def install
     ENV.universal_binary if build.universal?

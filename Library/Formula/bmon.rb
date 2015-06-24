@@ -1,8 +1,8 @@
-require 'formula'
+require "formula"
 
 class Bmon < Formula
   desc "Interface bandwidth monitor"
-  homepage 'https://github.com/tgraf/bmon'
+  homepage "https://github.com/tgraf/bmon"
   url "https://github.com/tgraf/bmon/releases/download/v3.6/bmon-3.6.tar.gz"
   sha1 "abbe4362061493a1120eed074debd875916dd49a"
 

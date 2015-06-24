@@ -1,8 +1,8 @@
-require 'formula'
+require "formula"
 
 class Grass < Formula
   desc "Geographic Resources Analysis Support System"
-  homepage 'http://grass.osgeo.org/'
+  homepage "http://grass.osgeo.org/"
   revision 1
 
   stable do
@@ -25,7 +25,7 @@ class Grass < Formula
   option "without-gui", "Build without WxPython interface. Command line tools still available."
 
   depends_on :macos => :lion
-  depends_on 'gcc' if MacOS.version >= :mountain_lion
+  depends_on "gcc" if MacOS.version >= :mountain_lion
   depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "readline"
@@ -47,7 +47,7 @@ class Grass < Formula
   def headless?
     # The GRASS GUI is based on WxPython. Unfortunately, Lion does not include
     # this module so we have to drop it.
-    build.without? "gui" or MacOS.version == :lion
+    build.without?("gui") || MacOS.version == :lion
   end
 
   def install
@@ -83,7 +83,7 @@ class Grass < Formula
       args << "--with-opengl-includes=#{MacOS.sdk_path}/System/Library/Frameworks/OpenGL.framework/Headers"
     end
 
-    if headless? or build.without? 'wxmac'
+    if headless? || build.without?("wxmac")
       args << "--without-wxwidgets"
     else
       args << "--with-wxwidgets=#{Formula["wxmac"].opt_bin}/wx-config"

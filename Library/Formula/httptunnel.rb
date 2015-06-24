@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Httptunnel < Formula
   desc "Tunnels a data stream in HTTP requests"
-  homepage 'http://www.nocrew.org/software/httptunnel.html'
-  url 'http://www.nocrew.org/software/httptunnel/httptunnel-3.3.tar.gz'
-  sha1 'e3fa5c6499cbad9202bb7a3ba8a5b6478a60a3f3'
+  homepage "http://www.nocrew.org/software/httptunnel.html"
+  url "http://www.nocrew.org/software/httptunnel/httptunnel-3.3.tar.gz"
+  sha1 "e3fa5c6499cbad9202bb7a3ba8a5b6478a60a3f3"
 
   def install
     system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"

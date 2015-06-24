@@ -1,7 +1,7 @@
-require 'hardware'
-require 'os/mac/version'
-require 'os/mac/xcode'
-require 'os/mac/xquartz'
+require "hardware"
+require "os/mac/version"
+require "os/mac/xcode"
+require "os/mac/xquartz"
 
 module OS
   module Mac
@@ -19,19 +19,19 @@ module OS
       version.to_sym
     end
 
-    def locate tool
+    def locate(tool)
       # Don't call tools (cc, make, strip, etc.) directly!
       # Give the name of the binary you look for as a string to this method
       # in order to get the full path back as a Pathname.
       (@locate ||= {}).fetch(tool) do |key|
         @locate[key] = if File.executable?(path = "/usr/bin/#{tool}")
-          Pathname.new path
-        # Homebrew GCCs most frequently; much faster to check this before xcrun
-        elsif File.executable?(path = "#{HOMEBREW_PREFIX}/bin/#{tool}")
-          Pathname.new path
-        elsif OS.mac?
-          path = Utils.popen_read("/usr/bin/xcrun", "-no-cache", "-find", tool).chomp
-          Pathname.new(path) if File.executable?(path)
+                         Pathname.new path
+                       # Homebrew GCCs most frequently; much faster to check this before xcrun
+                       elsif File.executable?(path = "#{HOMEBREW_PREFIX}/bin/#{tool}")
+                         Pathname.new path
+                       elsif OS.mac?
+                         path = Utils.popen_read("/usr/bin/xcrun", "-no-cache", "-find", tool).chomp
+                         Pathname.new(path) if File.executable?(path)
         end
       end
     end
@@ -56,7 +56,7 @@ module OS
     end
 
     def default_cc
-      cc = locate 'cc'
+      cc = locate "cc"
       cc.realpath.basename.to_s rescue nil
     end
 
@@ -85,7 +85,7 @@ module OS
     def gcc_40_build_version
       @gcc_40_build_version ||=
         if (path = locate("gcc-4.0"))
-          %x{#{path} --version}[/build (\d{4,})/, 1].to_i
+          `#{path} --version`[/build (\d{4,})/, 1].to_i
         end
     end
     alias_method :gcc_4_0_build_version, :gcc_40_build_version
@@ -95,7 +95,7 @@ module OS
         begin
           gcc = MacOS.locate("gcc-4.2") || HOMEBREW_PREFIX.join("opt/apple-gcc42/bin/gcc-4.2")
           if gcc.exist? && gcc.realpath.basename.to_s !~ /^llvm/
-            %x{#{gcc} --version}[/build (\d{4,})/, 1].to_i
+            `#{gcc} --version`[/build (\d{4,})/, 1].to_i
           end
         end
     end
@@ -104,21 +104,21 @@ module OS
     def llvm_build_version
       @llvm_build_version ||=
         if (path = locate("llvm-gcc")) && path.realpath.basename.to_s !~ /^clang/
-          %x{#{path} --version}[/LLVM build (\d{4,})/, 1].to_i
+          `#{path} --version`[/LLVM build (\d{4,})/, 1].to_i
         end
     end
 
     def clang_version
       @clang_version ||=
         if (path = locate("clang"))
-          %x{#{path} --version}[/(?:clang|LLVM) version (\d\.\d)/, 1]
+          `#{path} --version`[/(?:clang|LLVM) version (\d\.\d)/, 1]
         end
     end
 
     def clang_build_version
       @clang_build_version ||=
         if (path = locate("clang"))
-          %x{#{path} --version}[%r[clang-(\d{2,})], 1].to_i
+          `#{path} --version`[/clang-(\d{2,})/, 1].to_i
         end
     end
 
@@ -127,7 +127,7 @@ module OS
         path = HOMEBREW_PREFIX.join("opt", "gcc", "bin", cc)
         path = locate(cc) unless path.exist?
         path = locate(cc.delete("-.")) if OS.linux? && !path
-        version = %x{#{path} --version}[/gcc(?:-\d(?:\.\d)? \(.+\))? (\d\.\d\.\d)/, 1] if path
+        version = `#{path} --version`[/gcc(?:-\d(?:\.\d)? \(.+\))? (\d\.\d\.\d)/, 1] if path
         @non_apple_gcc_version[cc] = version
       end
     end
@@ -147,7 +147,7 @@ module OS
 
       # First look in the path because MacPorts is relocatable and Fink
       # may become relocatable in the future.
-      %w{port fink}.each do |ponk|
+      %w[port fink].each do |ponk|
         path = which(ponk)
         paths << path unless path.nil?
       end
@@ -155,7 +155,7 @@ module OS
       # Look in the standard locations, because even if port or fink are
       # not in the path they can still break builds if the build scripts
       # have these paths baked in.
-      %w{/sw/bin/fink /opt/local/bin/port}.each do |ponk|
+      %w[/sw/bin/fink /opt/local/bin/port].each do |ponk|
         path = Pathname.new(ponk)
         paths << path if path.exist?
       end
@@ -164,7 +164,7 @@ module OS
       # read-only in order to try out Homebrew, but this doens't work as
       # some build scripts error out when trying to read from these now
       # unreadable paths.
-      %w{/sw /opt/local}.map { |p| Pathname.new(p) }.each do |path|
+      %w[/sw /opt/local].map { |p| Pathname.new(p) }.each do |path|
         paths << path if path.exist? && !path.readable?
       end
 
@@ -240,7 +240,7 @@ module OS
 
     def app_with_bundle_id(*ids)
       path = mdfind(*ids).first
-      Pathname.new(path) unless path.nil? or path.empty?
+      Pathname.new(path) unless path.nil? || path.empty?
     end
 
     def mdfind(*ids)

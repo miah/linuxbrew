@@ -1,15 +1,15 @@
-require 'formula'
+require "formula"
 
 class Cc65 < Formula
   desc "6502 C compiler"
-  homepage 'https://cc65.github.io/cc65/'
+  homepage "https://cc65.github.io/cc65/"
   # CC65 stable has ceased to be maintained as of March 2013.
   # The head build has a new home, and new maintainer, but no new stable release yet.
-  head 'https://github.com/cc65/cc65.git'
-  url 'ftp://ftp.musoftware.de/pub/uz/cc65/cc65-sources-2.13.3.tar.bz2'
-  sha1 '925c6edfcef7057e24ecb0704fa07210faec07bc'
+  head "https://github.com/cc65/cc65.git"
+  url "ftp://ftp.musoftware.de/pub/uz/cc65/cc65-sources-2.13.3.tar.bz2"
+  sha1 "925c6edfcef7057e24ecb0704fa07210faec07bc"
 
-  conflicts_with 'grc', :because => 'both install `grc` binaries'
+  conflicts_with "grc", :because => "both install `grc` binaries"
 
   def install
     ENV.deparallelize

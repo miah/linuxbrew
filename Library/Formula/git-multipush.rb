@@ -1,18 +1,18 @@
 class GitMultipush < Formula
   desc "Push a branch to multiple remotes in one command"
-  homepage 'http://code.google.com/p/git-multipush/'
-  url 'https://git-multipush.googlecode.com/files/git-multipush-2.3.tar.bz2'
-  sha1 'a53f171af5e794afe9b1de6ccd9bd0661db6fd91'
+  homepage "http://code.google.com/p/git-multipush/"
+  url "https://git-multipush.googlecode.com/files/git-multipush-2.3.tar.bz2"
+  sha1 "a53f171af5e794afe9b1de6ccd9bd0661db6fd91"
 
   devel do
-    url 'https://github.com/gavinbeatty/git-multipush/archive/git-multipush-v2.4.rc2.tar.gz'
-    sha1 '7179bc729a1dee76a76e3c91935f524911037313'
-    version '2.4-rc2'
+    url "https://github.com/gavinbeatty/git-multipush/archive/git-multipush-v2.4.rc2.tar.gz"
+    sha1 "7179bc729a1dee76a76e3c91935f524911037313"
+    version "2.4-rc2"
   end
 
-  head 'https://github.com/gavinbeatty/git-multipush.git'
+  head "https://github.com/gavinbeatty/git-multipush.git"
 
-  depends_on 'asciidoc' => :build
+  depends_on "asciidoc" => :build
 
   def install
     system "make" if build.head?

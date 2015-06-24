@@ -1,28 +1,28 @@
-require 'formula'
+require "formula"
 
 class Jbig2enc < Formula
   desc "JBIG2 encoder (for monochrome documents)"
-  homepage 'https://github.com/agl/jbig2enc'
+  homepage "https://github.com/agl/jbig2enc"
   revision 1
 
   stable do
-    url 'https://github.com/agl/jbig2enc/archive/0.28-dist.tar.gz'
-    sha1 'd2d73f732168eeb6fa18962dbe7743337363c3b6'
-    version '0.28'
+    url "https://github.com/agl/jbig2enc/archive/0.28-dist.tar.gz"
+    sha1 "d2d73f732168eeb6fa18962dbe7743337363c3b6"
+    version "0.28"
 
     # Patch data from https://github.com/agl/jbig2enc/commit/53ce5fe7e73d7ed95c9e12b52dd4984723f865fa
     patch :DATA
   end
 
   head do
-    url 'https://github.com/agl/jbig2enc.git'
+    url "https://github.com/agl/jbig2enc.git"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
   end
 
-  depends_on 'leptonica'
+  depends_on "leptonica"
 
   def install
     system "./autogen.sh" if build.head?

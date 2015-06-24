@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libao < Formula
   desc "Cross-platform Audio Library"
-  homepage 'http://www.xiph.org/ao/'
-  url 'http://downloads.xiph.org/releases/ao/libao-1.2.0.tar.gz'
-  sha1 '6b1d2c6a2e388e3bb6ebea158d51afef18aacc56'
+  homepage "http://www.xiph.org/ao/"
+  url "http://downloads.xiph.org/releases/ao/libao-1.2.0.tar.gz"
+  sha1 "6b1d2c6a2e388e3bb6ebea158d51afef18aacc56"
 
   bottle do
     revision 1
@@ -13,7 +13,7 @@ class Libao < Formula
     sha1 "f6fac2951b26b0df3a91da55ad5763e23183eace" => :mountain_lion
   end
 
-  depends_on 'pkg-config' => :build
+  depends_on "pkg-config" => :build
 
   def install
     system "./configure", "--disable-dependency-tracking",

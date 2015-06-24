@@ -1,13 +1,13 @@
-require 'formula'
+require "formula"
 
 class Fragroute < Formula
   desc "Intercepts, modifies, and rewrites egress traffic for a specified host"
-  homepage 'http://www.monkey.org/~dugsong/fragroute/'
-  url 'http://www.monkey.org/~dugsong/fragroute/fragroute-1.2.tar.gz'
-  sha1 '0e85daf40f4910d56d75e6cdee163305a1cb9004'
+  homepage "http://www.monkey.org/~dugsong/fragroute/"
+  url "http://www.monkey.org/~dugsong/fragroute/fragroute-1.2.tar.gz"
+  sha1 "0e85daf40f4910d56d75e6cdee163305a1cb9004"
 
-  depends_on 'libdnet'
-  depends_on 'libevent'
+  depends_on "libdnet"
+  depends_on "libevent"
 
   patch :p0 do
     url "https://trac.macports.org/export/105753/trunk/dports/net/fragroute/files/configure.patch"

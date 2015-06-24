@@ -1,12 +1,12 @@
-require 'formula'
+require "formula"
 
 class Olsrd < Formula
   desc "Implementation of the optimized link state routing protocol"
-  homepage 'http://www.olsr.org'
-  url 'http://www.olsr.org/releases/0.6/olsrd-0.6.6.1.tar.bz2'
-  sha1 '0d74708dd94ad978af061a44758f8ea31845261f'
+  homepage "http://www.olsr.org"
+  url "http://www.olsr.org/releases/0.6/olsrd-0.6.6.1.tar.bz2"
+  sha1 "0d74708dd94ad978af061a44758f8ea31845261f"
 
-  #Release is broken and assumes git repository
+  # Release is broken and assumes git repository
   patch :DATA
 
   def install
@@ -16,8 +16,8 @@ class Olsrd < Formula
       USRDIR=#{prefix}
       LIBDIR=#{lib}
     ]
-    system 'make', 'build_all', *args
-    system 'make', 'install_all', *args
+    system "make", "build_all", *args
+    system "make", "install_all", *args
   end
 
   plist_options :startup => true, :manual => "olsrd -f #{HOMEBREW_PREFIX}/etc/olsrd.conf"

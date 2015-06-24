@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Openrtsp < Formula
   desc "Command-line RTSP client"
-  homepage 'http://www.live555.com/openRTSP'
-  url 'http://www.live555.com/liveMedia/public/live.2014.10.21.tar.gz'
-  sha1 'e493e0d6f7f2bf4be8e88393bb3ba583136bb271'
+  homepage "http://www.live555.com/openRTSP"
+  url "http://www.live555.com/liveMedia/public/live.2014.10.21.tar.gz"
+  sha1 "e493e0d6f7f2bf4be8e88393bb3ba583136bb271"
 
   bottle do
     cellar :any

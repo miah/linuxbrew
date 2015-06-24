@@ -1,17 +1,17 @@
-require 'formula'
+require "formula"
 
 class GdalGrass < Formula
   desc "Geospatial Data Abstraction Library"
-  homepage 'http://www.gdal.org'
-  url 'http://download.osgeo.org/gdal/gdal-grass-1.4.3.tar.gz'
-  sha1 '63b87ad1688cc365dc6bd6c3ccc854d0e6aa637a'
+  homepage "http://www.gdal.org"
+  url "http://download.osgeo.org/gdal/gdal-grass-1.4.3.tar.gz"
+  sha1 "63b87ad1688cc365dc6bd6c3ccc854d0e6aa637a"
 
-  depends_on 'gdal'
-  depends_on 'grass'
+  depends_on "gdal"
+  depends_on "grass"
 
   def install
-    gdal = Formula['gdal']
-    grass = Formula['grass']
+    gdal = Formula["gdal"]
+    grass = Formula["grass"]
 
     system "./configure", "--prefix=#{prefix}",
                           "--disable-debug",
@@ -20,7 +20,7 @@ class GdalGrass < Formula
                           "--with-grass=#{grass.opt_prefix}/grass-#{grass.version}",
                           "--with-autoload=#{lib}/gdalplugins"
 
-    inreplace "Makefile", 'mkdir', 'mkdir -p'
+    inreplace "Makefile", "mkdir", "mkdir -p"
 
     system "make install"
   end

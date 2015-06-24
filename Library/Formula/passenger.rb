@@ -2,7 +2,7 @@ class Passenger < Formula
   desc "Server for Ruby, Python, and Node.js apps via Apache/NGINX"
   homepage "https://www.phusionpassenger.com/"
   url "https://s3.amazonaws.com/phusion-passenger/releases/passenger-5.0.11.tar.gz"
-  sha256 '5f90508c9192393f227664ae01a236147f9fe05e249bad1bccb4f921e9239c01'
+  sha256 "5f90508c9192393f227664ae01a236147f9fe05e249bad1bccb4f921e9239c01"
   head "https://github.com/phusion/passenger.git"
 
   bottle do

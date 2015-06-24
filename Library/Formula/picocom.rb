@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Picocom < Formula
   desc "Minimal dump-terminal emulation program"
-  homepage 'http://code.google.com/p/picocom/'
-  url 'https://picocom.googlecode.com/files/picocom-1.7.tar.gz'
-  sha1 'bde6e36af71db845913f9d61f28dee1b485218fa'
+  homepage "http://code.google.com/p/picocom/"
+  url "https://picocom.googlecode.com/files/picocom-1.7.tar.gz"
+  sha1 "bde6e36af71db845913f9d61f28dee1b485218fa"
 
   patch :DATA # HIGH_BAUD is not defined
 

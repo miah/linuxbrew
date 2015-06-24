@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Openjpeg < Formula
   desc "Library for JPEG-2000 image manipulation"
-  homepage 'http://www.openjpeg.org/'
-  url 'https://openjpeg.googlecode.com/files/openjpeg-1.5.1.tar.gz'
-  sha1 '1b0b74d1af4c297fd82806a9325bb544caf9bb8b'
+  homepage "http://www.openjpeg.org/"
+  url "https://openjpeg.googlecode.com/files/openjpeg-1.5.1.tar.gz"
+  sha1 "1b0b74d1af4c297fd82806a9325bb544caf9bb8b"
   revision 1
 
   bottle do
@@ -14,11 +14,11 @@ class Openjpeg < Formula
     sha1 "adf2186e0a1962e495cd6e1d17ec89087dd48635" => :mountain_lion
   end
 
-  head 'http://openjpeg.googlecode.com/svn/trunk/'
+  head "http://openjpeg.googlecode.com/svn/trunk/"
 
-  depends_on 'little-cms2'
-  depends_on 'libtiff'
-  depends_on 'libpng'
+  depends_on "little-cms2"
+  depends_on "libtiff"
+  depends_on "libpng"
 
   def install
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"

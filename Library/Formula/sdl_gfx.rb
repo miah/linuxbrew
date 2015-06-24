@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class SdlGfx < Formula
   desc "Graphics drawing primitives and other support functions"
-  homepage 'http://www.ferzkopp.net/joomla/content/view/19/14/'
-  url 'http://www.ferzkopp.net/Software/SDL_gfx-2.0/SDL_gfx-2.0.24.tar.gz'
-  sha1 '34e8963188e4845557468a496066a8fa60d5f563'
+  homepage "http://www.ferzkopp.net/joomla/content/view/19/14/"
+  url "http://www.ferzkopp.net/Software/SDL_gfx-2.0/SDL_gfx-2.0.24.tar.gz"
+  sha1 "34e8963188e4845557468a496066a8fa60d5f563"
 
   bottle do
     cellar :any
@@ -14,7 +14,7 @@ class SdlGfx < Formula
     sha1 "342e8a64a908f0e39ba6a1d8318ed111679067a1" => :mountain_lion
   end
 
-  depends_on 'sdl'
+  depends_on "sdl"
 
   option :universal
 

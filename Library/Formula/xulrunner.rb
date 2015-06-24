@@ -15,7 +15,7 @@ class Python273Requirement < Requirement
 
   satisfy do
     `python -V 2>&1` =~ /^Python 2.7.(\d+)/
-    $1.to_i >= 3
+    Regexp.last_match(1).to_i >= 3
   end
 end
 

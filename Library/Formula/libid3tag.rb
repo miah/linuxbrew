@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libid3tag < Formula
   desc "ID3 tag manipulation library"
-  homepage 'http://www.underbit.com/products/mad/'
-  url 'https://downloads.sourceforge.net/project/mad/libid3tag/0.15.1b/libid3tag-0.15.1b.tar.gz'
-  sha1 '4d867e8a8436e73cd7762fe0e85958e35f1e4306'
+  homepage "http://www.underbit.com/products/mad/"
+  url "https://downloads.sourceforge.net/project/mad/libid3tag/0.15.1b/libid3tag-0.15.1b.tar.gz"
+  sha1 "4d867e8a8436e73cd7762fe0e85958e35f1e4306"
 
   bottle do
     cellar :any
@@ -49,7 +49,7 @@ class Libid3tag < Formula
     system "./configure", "--prefix=#{prefix}", "--disable-debug", "--disable-dependency-tracking"
     system "make install"
 
-    (lib+'pkgconfig/id3tag.pc').write pc_file
+    (lib+"pkgconfig/id3tag.pc").write pc_file
   end
 
   def pc_file; <<-EOS.undent

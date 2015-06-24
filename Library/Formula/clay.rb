@@ -1,15 +1,15 @@
-require 'formula'
+require "formula"
 
 class Clay < Formula
   desc "Language designed for generic programming"
-  homepage 'http://claylabs.com/clay/'
-  url 'https://github.com/jckarter/clay/archive/v0.1.2.tar.gz'
-  sha1 'cd557a5ccaca17fd8ec83651f8df3e5405c4f855'
+  homepage "http://claylabs.com/clay/"
+  url "https://github.com/jckarter/clay/archive/v0.1.2.tar.gz"
+  sha1 "cd557a5ccaca17fd8ec83651f8df3e5405c4f855"
 
-  head 'https://github.com/jckarter/clay.git'
+  head "https://github.com/jckarter/clay.git"
 
-  depends_on 'cmake' => :build
-  depends_on 'llvm'  => :build
+  depends_on "cmake" => :build
+  depends_on "llvm"  => :build
 
   def install
     system "cmake", ".", *std_cmake_args

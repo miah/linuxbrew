@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Sdl2 < Formula
   desc "Low-level access to audio, keyboard, mouse, joystick, and graphics"
-  homepage 'http://www.libsdl.org/'
-  url 'http://libsdl.org/release/SDL2-2.0.3.tar.gz'
-  sha1 '21c45586a4e94d7622e371340edec5da40d06ecc'
+  homepage "http://www.libsdl.org/"
+  url "http://libsdl.org/release/SDL2-2.0.3.tar.gz"
+  sha1 "21c45586a4e94d7622e371340edec5da40d06ecc"
 
   bottle do
     cellar :any
@@ -15,7 +15,7 @@ class Sdl2 < Formula
   end
 
   head do
-    url 'http://hg.libsdl.org/SDL', :using => :hg
+    url "http://hg.libsdl.org/SDL", :using => :hg
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -28,7 +28,7 @@ class Sdl2 < Formula
     # we have to do this because most build scripts assume that all sdl modules
     # are installed to the same prefix. Consequently SDL stuff cannot be
     # keg-only but I doubt that will be needed.
-    inreplace %w[sdl2.pc.in sdl2-config.in], '@prefix@', HOMEBREW_PREFIX
+    inreplace %w[sdl2.pc.in sdl2-config.in], "@prefix@", HOMEBREW_PREFIX
 
     ENV.universal_binary if build.universal?
 
@@ -36,10 +36,10 @@ class Sdl2 < Formula
 
     args = %W[--prefix=#{prefix}]
     # LLVM-based compilers choke on the assembly code packaged with SDL.
-    args << '--disable-assembly' if ENV.compiler == :llvm or (ENV.compiler == :clang and MacOS.clang_build_version < 421)
-    args << '--without-x'
+    args << "--disable-assembly" if ENV.compiler == :llvm || (ENV.compiler == :clang && MacOS.clang_build_version < 421)
+    args << "--without-x"
 
-    system './configure', *args
+    system "./configure", *args
     system "make install"
   end
 

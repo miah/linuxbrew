@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libfishsound < Formula
   desc "Decode and encode audio data using the Xiph.org codecs"
-  homepage 'http://xiph.org/fishsound/'
-  url 'http://downloads.xiph.org/releases/libfishsound/libfishsound-1.0.0.tar.gz'
-  sha1 '5263dfaa12dce71e30c5d80f871d92869c6b5ce2'
+  homepage "http://xiph.org/fishsound/"
+  url "http://downloads.xiph.org/releases/libfishsound/libfishsound-1.0.0.tar.gz"
+  sha1 "5263dfaa12dce71e30c5d80f871d92869c6b5ce2"
 
   bottle do
     cellar :any
@@ -14,10 +14,10 @@ class Libfishsound < Formula
     sha1 "1099a2dee3da3ef7748b0e752394e2a4de26d6af" => :mountain_lion
   end
 
-  depends_on 'pkg-config' => :build
-  depends_on 'libvorbis'
-  depends_on 'speex' => :optional
-  depends_on 'flac' => :optional
+  depends_on "pkg-config" => :build
+  depends_on "libvorbis"
+  depends_on "speex" => :optional
+  depends_on "flac" => :optional
 
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",

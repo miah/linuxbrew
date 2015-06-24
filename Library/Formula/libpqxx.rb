@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libpqxx < Formula
   desc "C++ connector for PostgreSQL"
-  homepage 'http://pqxx.org/development/libpqxx/'
-  url 'http://pqxx.org/download/software/libpqxx/libpqxx-4.0.1.tar.gz'
-  sha1 '4748835bd1a90fb34e6e577788006a416c2acb60'
+  homepage "http://pqxx.org/development/libpqxx/"
+  url "http://pqxx.org/download/software/libpqxx/libpqxx-4.0.1.tar.gz"
+  sha1 "4748835bd1a90fb34e6e577788006a416c2acb60"
 
   bottle do
     cellar :any
@@ -14,7 +14,7 @@ class Libpqxx < Formula
     sha1 "3061cee2fd2c387febcbf02a08820d56b8abbda7" => :mountain_lion
   end
 
-  depends_on 'pkg-config' => :build
+  depends_on "pkg-config" => :build
   depends_on :postgresql
 
   # Patches borrowed from MacPorts. See:

@@ -21,6 +21,6 @@ class Jove < Formula
   end
 
   test do
-    assert_match /There's nothing to recover./, %x{#{lib}/jove/recover}
+    assert_match /There's nothing to recover./, `#{lib}/jove/recover`
   end
 end

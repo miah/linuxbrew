@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Udis86 < Formula
   desc "Minimalistic disassembler library for x86"
-  homepage 'http://udis86.sourceforge.net'
-  url 'https://downloads.sourceforge.net/udis86/udis86-1.7.2.tar.gz'
-  sha1 'f55dec2d5319aac9d0a7ae2614ddcc7aa73d3744'
+  homepage "http://udis86.sourceforge.net"
+  url "https://downloads.sourceforge.net/udis86/udis86-1.7.2.tar.gz"
+  sha1 "f55dec2d5319aac9d0a7ae2614ddcc7aa73d3744"
 
   option :universal
 

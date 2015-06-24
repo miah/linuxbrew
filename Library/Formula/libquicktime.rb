@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libquicktime < Formula
   desc "Library for reading and writing quicktime files"
-  homepage 'http://libquicktime.sourceforge.net/'
-  url 'https://downloads.sourceforge.net/project/libquicktime/libquicktime/1.2.4/libquicktime-1.2.4.tar.gz'
-  sha1 '7008b2dc27b9b40965bd2df42d39ff4cb8b6305e'
+  homepage "http://libquicktime.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/libquicktime/libquicktime/1.2.4/libquicktime-1.2.4.tar.gz"
+  sha1 "7008b2dc27b9b40965bd2df42d39ff4cb8b6305e"
   revision 1
 
   bottle do
@@ -14,13 +14,13 @@ class Libquicktime < Formula
     sha1 "97260df51e133923c94c88aeee5d84a216617490" => :mountain_lion
   end
 
-  depends_on 'pkg-config' => :build
-  depends_on 'gettext'
-  depends_on 'jpeg' => :optional
-  depends_on 'lame' => :optional
-  depends_on 'schroedinger' => :optional
-  depends_on 'ffmpeg' => :optional
-  depends_on 'libvorbis' => :optional
+  depends_on "pkg-config" => :build
+  depends_on "gettext"
+  depends_on "jpeg" => :optional
+  depends_on "lame" => :optional
+  depends_on "schroedinger" => :optional
+  depends_on "ffmpeg" => :optional
+  depends_on "libvorbis" => :optional
 
   # Fixes compilation with ffmpeg 2.x; applied upstream
   # http://sourceforge.net/p/libquicktime/mailman/message/30792767/

@@ -12,15 +12,15 @@ class Csync < Formula
     sha1 "a47861728aa4d4cb4c26423afcc45ae942a415e5" => :mountain_lion
   end
 
-  depends_on 'check' => :build
-  depends_on 'cmake' => :build
-  depends_on 'doxygen' => [:build, :optional]
-  depends_on 'argp-standalone'
-  depends_on 'iniparser'
-  depends_on 'sqlite'
-  depends_on 'libssh' => :optional
-  depends_on 'log4c' => :optional
-  depends_on 'samba' => :optional
+  depends_on "check" => :build
+  depends_on "cmake" => :build
+  depends_on "doxygen" => [:build, :optional]
+  depends_on "argp-standalone"
+  depends_on "iniparser"
+  depends_on "sqlite"
+  depends_on "libssh" => :optional
+  depends_on "log4c" => :optional
+  depends_on "samba" => :optional
 
   depends_on :macos => :lion
 

@@ -33,7 +33,7 @@ class Binutils < Formula
   end
 
   test do
-    assert `#{bin}/gnm #{bin}/gnm`.include? 'main'
+    assert `#{bin}/gnm #{bin}/gnm`.include? "main"
     assert_equal 0, $?.exitstatus
   end
 end

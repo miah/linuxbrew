@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Udns < Formula
   desc "DNS resolver library"
-  homepage 'http://www.corpit.ru/mjt/udns.html'
-  url 'http://www.corpit.ru/mjt/udns/udns-0.4.tar.gz'
-  sha1 'ffa0abf9d1654feb64d571b2615d8b70e1dd92ce'
+  homepage "http://www.corpit.ru/mjt/udns.html"
+  url "http://www.corpit.ru/mjt/udns/udns-0.4.tar.gz"
+  sha1 "ffa0abf9d1654feb64d571b2615d8b70e1dd92ce"
 
   # Build target for dylib. See:
   # http://www.corpit.ru/pipermail/udns/2011q3/000154.html

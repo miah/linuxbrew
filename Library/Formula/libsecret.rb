@@ -24,10 +24,10 @@ class Libsecret < Formula
 
   def install
     args = %W[
-        --disable-debug
-        --disable-dependency-tracking
-        --disable-silent-rules
-        --prefix=#{prefix}
+      --disable-debug
+      --disable-dependency-tracking
+      --disable-silent-rules
+      --prefix=#{prefix}
     ]
 
     args << "--enable-gobject-introspection" if build.with? "gobject-introspection"

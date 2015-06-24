@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Fdupes < Formula
   desc "Identify or delete duplicate files"
-  homepage 'https://github.com/adrianlopezroche/fdupes'
-  url 'https://github.com/adrianlopezroche/fdupes/archive/fdupes-1.51.tar.gz'
-  sha1 'ac713d3f84dc9d7929f8a4dc1f7d700ddef58d60'
+  homepage "https://github.com/adrianlopezroche/fdupes"
+  url "https://github.com/adrianlopezroche/fdupes/archive/fdupes-1.51.tar.gz"
+  sha1 "ac713d3f84dc9d7929f8a4dc1f7d700ddef58d60"
 
   bottle do
     cellar :any

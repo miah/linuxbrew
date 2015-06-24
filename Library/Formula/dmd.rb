@@ -59,7 +59,6 @@ class Dmd < Formula
     cp_r ["phobos/std", "phobos/etc"], include/"d2"
     lib.install Dir["druntime/lib/*", "phobos/**/libphobos2.a"]
 
-
     resource("tools").stage do
       inreplace "posix.mak", "install: $(TOOLS) $(CURL_TOOLS)", "install: $(TOOLS) $(ROOT)/dustmite"
       system "make", "install", *make_args

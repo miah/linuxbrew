@@ -1,8 +1,8 @@
-require 'formula'
-require 'tab'
+require "formula"
+require "tab"
 
 module Homebrew
-  def missing_deps ff
+  def missing_deps(ff)
     missing = {}
     ff.each do |f|
       missing_deps = f.recursive_dependencies do |dependent, dep|
@@ -29,14 +29,14 @@ module Homebrew
     return unless HOMEBREW_CELLAR.exist?
 
     ff = if ARGV.named.empty?
-      Formula.installed
-    else
-      ARGV.resolved_formulae
+           Formula.installed
+         else
+           ARGV.resolved_formulae
     end
 
     missing_deps(ff) do |name, missing|
       print "#{name}: " if ff.size > 1
-      puts "#{missing * ' '}"
+      puts "#{missing * " "}"
     end
   end
 end

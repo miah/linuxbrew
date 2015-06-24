@@ -1,13 +1,13 @@
 class Unac < Formula
   desc "C library and command that removes accents from a string"
-  homepage 'https://savannah.nongnu.org/projects/unac'
-  url 'http://ftp.de.debian.org/debian/pool/main/u/unac/unac_1.8.0.orig.tar.gz'
-  sha1 '3e779bb7f3b505880ac4f43b48ee2f935ef8aa36'
+  homepage "https://savannah.nongnu.org/projects/unac"
+  url "http://ftp.de.debian.org/debian/pool/main/u/unac/unac_1.8.0.orig.tar.gz"
+  sha1 "3e779bb7f3b505880ac4f43b48ee2f935ef8aa36"
 
-  depends_on 'autoconf' => :build
-  depends_on 'automake' => :build
-  depends_on 'libtool' => :build
-  depends_on 'gettext' => :build
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
+  depends_on "gettext" => :build
 
   patch :DATA
 

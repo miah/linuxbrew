@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Ccal < Formula
-  url 'http://ccal.chinesebay.com/ccal/ccal-2.5.3.tar.gz'
+  url "http://ccal.chinesebay.com/ccal/ccal-2.5.3.tar.gz"
   desc "Create Chinese calendars for print or browsing"
-  homepage 'http://ccal.chinesebay.com/ccal'
-  sha1 'b44d73804ef3ba9129ae196887509f99b508401c'
+  homepage "http://ccal.chinesebay.com/ccal"
+  sha1 "b44d73804ef3ba9129ae196887509f99b508401c"
 
   def install
     system "make", "-e", "BINDIR=#{bin}", "install"

@@ -27,7 +27,7 @@ class Pyqt < Formula
 
   def install
     # On Mavericks we want to target libc++, this requires a non default qt makespec
-    if ENV.compiler == :clang and MacOS.version >= :mavericks
+    if ENV.compiler == :clang && MacOS.version >= :mavericks
       ENV.append "QMAKESPEC", "unsupported/macx-clang-libc++"
     end
 
@@ -54,7 +54,7 @@ class Pyqt < Formula
       require "tmpdir"
       dir = Dir.mktmpdir
       begin
-        cp_r(Dir.glob('*'), dir)
+        cp_r(Dir.glob("*"), dir)
         cd dir do
           system python, "configure.py", *args
           (lib/"python#{version}/site-packages/PyQt4").install "pyqtconfig.py"
@@ -64,7 +64,7 @@ class Pyqt < Formula
       end
 
       # On Mavericks we want to target libc++, this requires a non default qt makespec
-      if ENV.compiler == :clang and MacOS.version >= :mavericks
+      if ENV.compiler == :clang && MacOS.version >= :mavericks
         args << "--spec" << "unsupported/macx-clang-libc++"
       end
 
@@ -85,7 +85,7 @@ class Pyqt < Formula
       QtNetwork.QNetworkAccessManager().networkAccessible()
     EOS
 
-    Language::Python.each_python(build) do |python, version|
+    Language::Python.each_python(build) do |python, _version|
       system python, "test.py"
     end
   end

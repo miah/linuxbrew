@@ -1,17 +1,15 @@
-require 'formula'
-require 'blacklist'
-require 'digest'
-require 'erb'
+require "formula"
+require "blacklist"
+require "digest"
+require "erb"
 
 module Homebrew
-
   # Create a formula from a tarball URL
   def create
-
     # Allow searching MacPorts or Fink.
-    if ARGV.include? '--macports'
+    if ARGV.include? "--macports"
       exec_browser "https://www.macports.org/ports.php?by=name&substr=#{ARGV.next}"
-    elsif ARGV.include? '--fink'
+    elsif ARGV.include? "--fink"
       exec_browser "http://pdb.finkproject.org/pdb/browse.php?summary=#{ARGV.next}"
     end
 
@@ -22,18 +20,18 @@ module Homebrew
 
     url = ARGV.named.first # Pull the first (and only) url from ARGV
 
-    version = ARGV.next if ARGV.include? '--set-version'
-    name = ARGV.next if ARGV.include? '--set-name'
+    version = ARGV.next if ARGV.include? "--set-version"
+    name = ARGV.next if ARGV.include? "--set-name"
 
     fc = FormulaCreator.new
     fc.name = name
     fc.version = version
     fc.url = url
 
-    fc.mode = if ARGV.include? '--cmake'
-      :cmake
-    elsif ARGV.include? '--autotools'
-      :autotools
+    fc.mode = if ARGV.include? "--cmake"
+                :cmake
+              elsif ARGV.include? "--autotools"
+                :autotools
     end
 
     if fc.name.nil? || fc.name.strip.empty?
@@ -76,14 +74,14 @@ class FormulaCreator
   attr_reader :url, :sha256
   attr_accessor :name, :version, :path, :mode
 
-  def url= url
+  def url=(url)
     @url = url
     path = Pathname.new(url)
     if @name.nil?
       %r{github.com/\S+/(\S+)/archive/}.match url
-      @name ||= $1
+      @name ||= Regexp.last_match(1)
       /(.*?)[-_.]?#{path.version}/.match path.basename
-      @name ||= $1
+      @name ||= Regexp.last_match(1)
       @path = Formulary.path @name unless @name.nil?
     else
       @path = Formulary.path name
@@ -115,7 +113,7 @@ class FormulaCreator
       @sha256 = r.fetch.sha256 if r.download_strategy == CurlDownloadStrategy
     end
 
-    path.write ERB.new(template, nil, '>').result(binding)
+    path.write ERB.new(template, nil, ">").result(binding)
   end
 
   def template; <<-EOS.undent

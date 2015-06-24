@@ -1,4 +1,4 @@
-require 'formula'
+require "formula"
 
 class Mboxgrep < Formula
   desc "Scan a mailbox for messages matching a regular expression"

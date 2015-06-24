@@ -61,7 +61,7 @@ class Volatility < Formula
     ENV["PYTHONPATH"] = lib+"python2.7/site-packages"
     ENV.prepend_create_path "PYTHONPATH", libexec+"lib/python2.7/site-packages"
 
-    res = %w(distorm3 pycrypto PIL openpyxl pytz ipython readline)
+    res = %w[distorm3 pycrypto PIL openpyxl pytz ipython readline]
 
     res.each do |r|
       resource(r).stage do

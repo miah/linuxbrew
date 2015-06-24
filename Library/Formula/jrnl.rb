@@ -50,7 +50,6 @@ class Jrnl < Formula
     sha1 "6f3d6d1fc5a7dcdd41d5be22ab90351be4a6ed47"
   end
 
-
   def install
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
     %w[six pycrypto keyring parsedatetime python-dateutil pytz tzlocal].each do |r|

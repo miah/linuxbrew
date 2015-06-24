@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libiptcdata < Formula
   desc "Virtual package provided by libiptcdata0"
-  homepage 'http://libiptcdata.sourceforge.net/'
-  url 'https://downloads.sourceforge.net/project/libiptcdata/libiptcdata/1.0.4/libiptcdata-1.0.4.tar.gz'
-  sha1 '2e967be3aee9ae5393f208a3df2b52e08dcd98c8'
+  homepage "http://libiptcdata.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/libiptcdata/libiptcdata/1.0.4/libiptcdata-1.0.4.tar.gz"
+  sha1 "2e967be3aee9ae5393f208a3df2b52e08dcd98c8"
 
   bottle do
     revision 1
@@ -13,7 +13,7 @@ class Libiptcdata < Formula
     sha1 "8794ce897c84182173496a3aed8577be0f2ec609" => :mountain_lion
   end
 
-  depends_on 'gettext'
+  depends_on "gettext"
 
   def install
     system "./configure", "--disable-dependency-tracking",

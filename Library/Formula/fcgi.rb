@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Fcgi < Formula
   desc "Protocol for interfacing interactive programs with a web server"
-  homepage 'http://www.fastcgi.com/'
-  url 'http://www.fastcgi.com/dist/fcgi-2.4.0.tar.gz'
-  sha1 '2329404159e8b8315e524b9eaf1de763202c6e6a'
+  homepage "http://www.fastcgi.com/"
+  url "http://www.fastcgi.com/dist/fcgi-2.4.0.tar.gz"
+  sha1 "2329404159e8b8315e524b9eaf1de763202c6e6a"
 
   # Fixes "dyld: Symbol not found: _environ"
   # Affects programs linking this library. Reported at

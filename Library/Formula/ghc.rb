@@ -88,10 +88,10 @@ class Ghc < Formula
       # Change the dynamic linker and RPATH of the binary executables.
       if OS.linux? && Formula["glibc"].installed?
         keg = Keg.new(prefix)
-        Dir["ghc/stage2/build/tmp/ghc-stage2", "libraries/*/dist-install/build/*.so", "rts/dist/build/*.so*", "utils/*/dist*/build/tmp/*"].each { |s|
+        Dir["ghc/stage2/build/tmp/ghc-stage2", "libraries/*/dist-install/build/*.so", "rts/dist/build/*.so*", "utils/*/dist*/build/tmp/*"].each do |s|
           file = Pathname.new(s)
           keg.change_rpath(file, HOMEBREW_PREFIX.to_s) if file.mach_o_executable? || file.dylib?
-        }
+        end
       end
 
       binary = buildpath/"binary"

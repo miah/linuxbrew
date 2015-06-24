@@ -27,7 +27,7 @@ class Dirac < Formula
     sha256 "52c40f2c8aec9174eba2345e6ba9689ced1b8f865c7ced23e7f7ee5fdd6502c3"
   end
 
-  # hack the configure script, which assumes any compiler that
+  # HACK: the configure script, which assumes any compiler that
   # starts with "cl" is a Microsoft compiler
   patch :DATA
 

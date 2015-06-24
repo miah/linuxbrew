@@ -1,4 +1,4 @@
-require 'formula'
+require "formula"
 
 class Smake < Formula
   desc "Portable make program with automake features"

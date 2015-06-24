@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Devtodo < Formula
   desc "Command-line task lists"
-  homepage 'http://swapoff.org/DevTodo'
-  url 'http://swapoff.org/files/devtodo/devtodo-0.1.20.tar.gz'
-  sha1 '003067a12139d712dbb3706069e0950a93ecaaf4'
+  homepage "http://swapoff.org/DevTodo"
+  url "http://swapoff.org/files/devtodo/devtodo-0.1.20.tar.gz"
+  sha1 "003067a12139d712dbb3706069e0950a93ecaaf4"
 
   depends_on "readline"
 
@@ -23,7 +23,7 @@ class Devtodo < Formula
                           "--prefix=#{prefix}",
                           "--mandir=#{man}"
     system "make install"
-    doc.install 'contrib'
+    doc.install "contrib"
   end
 end
 

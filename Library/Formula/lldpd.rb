@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Lldpd < Formula
   desc "Implementation library for LLDP"
-  homepage 'http://vincentbernat.github.io/lldpd/'
-  url 'http://media.luffy.cx/files/lldpd/lldpd-0.7.12.tar.gz'
-  sha1 '2d602aaaad01d1f76f8e1c87e48dca1c6725ba78'
+  homepage "http://vincentbernat.github.io/lldpd/"
+  url "http://media.luffy.cx/files/lldpd/lldpd-0.7.12.tar.gz"
+  sha1 "2d602aaaad01d1f76f8e1c87e48dca1c6725ba78"
 
   bottle do
     sha1 "c77debb346c325a44b8e91a7b983b251dc1db76f" => :yosemite
@@ -12,14 +12,14 @@ class Lldpd < Formula
     sha1 "6d6d4f6d4b7e23b9f707db180c99c24174ff9293" => :mountain_lion
   end
 
-  option 'with-snmp', "Build SNMP subagent support"
-  option 'with-json', "Build JSON support for lldpcli"
+  option "with-snmp", "Build SNMP subagent support"
+  option "with-json", "Build JSON support for lldpcli"
 
-  depends_on 'pkg-config' => :build
-  depends_on 'readline'
-  depends_on 'libevent'
-  depends_on 'net-snmp' if build.with? "snmp"
-  depends_on 'jansson'  if build.with? "json"
+  depends_on "pkg-config" => :build
+  depends_on "readline"
+  depends_on "libevent"
+  depends_on "net-snmp" if build.with? "snmp"
+  depends_on "jansson"  if build.with? "json"
 
   def install
     readline = Formula["readline"]
@@ -47,7 +47,7 @@ class Lldpd < Formula
     if build.with? "snmp"
       additional_args += "<string>-x</string>"
     end
-    return <<-EOS.undent
+    <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
     <plist version="1.0">
@@ -65,5 +65,4 @@ class Lldpd < Formula
     </plist>
     EOS
   end
-
 end

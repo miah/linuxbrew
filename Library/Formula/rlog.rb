@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Rlog < Formula
   desc "Flexible message logging facility for C++"
-  homepage 'http://www.arg0.net/rlog'
-  url 'https://rlog.googlecode.com/files/rlog-1.4.tar.gz'
-  sha1 '9cd86b4ceec3988f0a17730a8987110233797dcd'
+  homepage "http://www.arg0.net/rlog"
+  url "https://rlog.googlecode.com/files/rlog-1.4.tar.gz"
+  sha1 "9cd86b4ceec3988f0a17730a8987110233797dcd"
 
   patch :DATA
 

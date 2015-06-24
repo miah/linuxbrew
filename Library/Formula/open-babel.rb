@@ -1,12 +1,12 @@
-require 'formula'
+require "formula"
 
 class OpenBabel < Formula
   desc "A chemical toolbox"
-  homepage 'http://www.openbabel.org'
+  homepage "http://www.openbabel.org"
 
   stable do
-    url 'https://downloads.sourceforge.net/project/openbabel/openbabel/2.3.2/openbabel-2.3.2.tar.gz'
-    sha1 'b8831a308617d1c78a790479523e43524f07d50d'
+    url "https://downloads.sourceforge.net/project/openbabel/openbabel/2.3.2/openbabel-2.3.2.tar.gz"
+    sha1 "b8831a308617d1c78a790479523e43524f07d50d"
 
     # Patch to support libc++ in OS X 10.9+, backport of upstream commit c3abbddae78e654df9322ad1020ff79dd6332946
     patch do
@@ -26,38 +26,37 @@ class OpenBabel < Formula
     sha256 "0350407844a4bbc86dbf0c6dd562ca6bac7b71b92251cfdf222a9f1d2a092306" => :mountain_lion
   end
 
-
   head do
-    url 'https://github.com/openbabel/openbabel.git'
+    url "https://github.com/openbabel/openbabel.git"
   end
 
-  option 'with-cairo',  'Support PNG depiction'
-  option 'with-java',   'Compile Java language bindings'
-  option 'with-python', 'Compile Python language bindings'
-  option 'with-wxmac',  'Build with GUI'
+  option "with-cairo",  "Support PNG depiction"
+  option "with-java",   "Compile Java language bindings"
+  option "with-python", "Compile Python language bindings"
+  option "with-wxmac",  "Build with GUI"
 
-  depends_on 'pkg-config' => :build
-  depends_on 'cmake' => :build
+  depends_on "pkg-config" => :build
+  depends_on "cmake" => :build
   depends_on :python => :optional
-  depends_on 'wxmac' => :optional
-  depends_on 'cairo' => :optional
-  depends_on 'eigen'
-  depends_on 'swig' if build.with? 'python' or build.with? 'java'
+  depends_on "wxmac" => :optional
+  depends_on "cairo" => :optional
+  depends_on "eigen"
+  depends_on "swig" if build.with?("python") || build.with?("java")
 
   def install
     args = std_cmake_args
-    args << "-DRUN_SWIG=ON" if build.with? 'python' or build.with? 'java'
-    args << "-DJAVA_BINDINGS=ON" if build.with? 'java'
-    args << "-DBUILD_GUI=ON" if build.with? 'wxmac'
+    args << "-DRUN_SWIG=ON" if build.with?("python") || build.with?("java")
+    args << "-DJAVA_BINDINGS=ON" if build.with? "java"
+    args << "-DBUILD_GUI=ON" if build.with? "wxmac"
 
     # Look for Cairo in HOMEBREW_PREFIX (automatic detection with cmake is fixed in HEAD)
-    if build.with? 'cairo' and not build.head?
+    if build.with?("cairo") && !build.head?
       args << "-DCAIRO_INCLUDE_DIRS='#{HOMEBREW_PREFIX}/include/cairo'"
       args << "-DCAIRO_LIBRARIES='#{HOMEBREW_PREFIX}/lib/libcairo.dylib'"
     end
 
     # Point cmake towards correct python
-    if build.with? 'python'
+    if build.with? "python"
       pypref = `python -c 'import sys;print(sys.prefix)'`.strip
       pyinc = `python -c 'from distutils import sysconfig;print(sysconfig.get_python_inc(True))'`.strip
       args << "-DPYTHON_BINDINGS=ON"
@@ -65,17 +64,17 @@ class OpenBabel < Formula
       args << "-DPYTHON_LIBRARY='#{pypref}/lib/libpython2.7.dylib'"
     end
 
-    args << '..'
+    args << ".."
 
-    mkdir 'build' do
+    mkdir "build" do
       system "cmake", *args
       system "make"
       system "make install"
     end
 
     # Manually install the python files (fixed in HEAD)
-    if build.with? 'python' and not build.head?
-      (lib+'python2.7/site-packages').install lib/'openbabel.py', lib/'pybel.py', lib/'_openbabel.so'
+    if build.with?("python") && !build.head?
+      (lib+"python2.7/site-packages").install lib/"openbabel.py", lib/"pybel.py", lib/"_openbabel.so"
     end
   end
 

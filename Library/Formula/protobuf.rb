@@ -1,8 +1,8 @@
 class Protobuf < Formula
   desc "Protocol buffers (Google's data interchange format)"
   homepage "https://github.com/google/protobuf/"
-  url 'https://github.com/google/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.bz2'
-  sha1 '6421ee86d8fb4e39f21f56991daa892a3e8d314b'
+  url "https://github.com/google/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.bz2"
+  sha1 "6421ee86d8fb4e39f21f56991daa892a3e8d314b"
 
   devel do
     url "https://github.com/google/protobuf/archive/v3.0.0-alpha-3.tar.gz"
@@ -104,7 +104,7 @@ class Protobuf < Formula
 
   test do
     testdata = if devel?
-      <<-EOS.undent
+                 <<-EOS.undent
         syntax = "proto3";
         package test;
         message TestCase {
@@ -114,8 +114,8 @@ class Protobuf < Formula
           repeated TestCase case = 1;
         }
         EOS
-    else
-      <<-EOS.undent
+               else
+                 <<-EOS.undent
         package test;
         message TestCase {
           required string name = 4;

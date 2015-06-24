@@ -1,11 +1,11 @@
-require 'formula'
+require "formula"
 
 class Screenresolution < Formula
   desc "Get, set, and list display resolution"
-  homepage 'https://github.com/jhford/screenresolution'
-  url 'https://github.com/jhford/screenresolution/archive/v1.6.tar.gz'
-  sha1 '5a4c397711c0cadb3cf58e8eb13dff50b993b388'
-  head 'https://github.com/jhford/screenresolution.git'
+  homepage "https://github.com/jhford/screenresolution"
+  url "https://github.com/jhford/screenresolution/archive/v1.6.tar.gz"
+  sha1 "5a4c397711c0cadb3cf58e8eb13dff50b993b388"
+  head "https://github.com/jhford/screenresolution.git"
 
   # Uses CGDisplayModeRef type, introduced in 10.6
   depends_on :macos => :snow_leopard
@@ -16,6 +16,6 @@ class Screenresolution < Formula
   end
 
   test do
-    system "#{bin}/screenresolution", 'get'
+    system "#{bin}/screenresolution", "get"
   end
 end

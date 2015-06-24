@@ -32,7 +32,7 @@ class Libraw < Formula
   end
 
   def install
-    %w(gpl2 gpl3).each {|f| (buildpath/f).install resource(f)}
+    %w[gpl2 gpl3].each { |f| (buildpath/f).install resource(f) }
     system "./configure", "--prefix=#{prefix}",
                           "--disable-dependency-tracking",
                           "--enable-demosaic-pack-gpl2=#{buildpath}/gpl2",

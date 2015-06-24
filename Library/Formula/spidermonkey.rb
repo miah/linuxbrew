@@ -1,14 +1,14 @@
-require 'formula'
+require "formula"
 
 class Spidermonkey < Formula
   desc "JavaScript-C Engine"
-  homepage 'https://developer.mozilla.org/en/SpiderMonkey'
-  url 'http://ftp.mozilla.org/pub/mozilla.org/js/js185-1.0.0.tar.gz'
-  version '1.8.5'
-  sha1 '52a01449c48d7a117b35f213d3e4263578d846d6'
+  homepage "https://developer.mozilla.org/en/SpiderMonkey"
+  url "http://ftp.mozilla.org/pub/mozilla.org/js/js185-1.0.0.tar.gz"
+  version "1.8.5"
+  sha1 "52a01449c48d7a117b35f213d3e4263578d846d6"
   revision 1
 
-  head 'https://hg.mozilla.org/tracemonkey/archive/tip.tar.gz'
+  head "https://hg.mozilla.org/tracemonkey/archive/tip.tar.gz"
 
   bottle do
     sha256 "7ab660cad3aac11fbf4befa3fbbf65a7ee64d858539ad81298271389b2957375" => :yosemite
@@ -16,10 +16,10 @@ class Spidermonkey < Formula
     sha256 "769035a4fa0ed09b71aa9747c2834a51285903e51d9bc478f865c037a8666370" => :mountain_lion
   end
 
-  conflicts_with 'narwhal', :because => 'both install a js binary'
+  conflicts_with "narwhal", :because => "both install a js binary"
 
-  depends_on 'readline'
-  depends_on 'nspr'
+  depends_on "readline"
+  depends_on "nspr"
 
   def install
     cd "js/src" do

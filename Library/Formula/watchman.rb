@@ -31,7 +31,7 @@ class Watchman < Formula
     system "#{bin}/watchman", "shutdown-server"
     system "#{bin}/watchman", "watch", testpath
     list = `#{bin}/watchman watch-list`
-    if list.index(testpath) === nil then
+    if list.index(testpath).nil?
       raise "failed to watch tmpdir"
     end
     system "#{bin}/watchman", "watch-del", testpath

@@ -1,18 +1,18 @@
-require 'formula'
+require "formula"
 
 class Ganglia < Formula
   desc "Ganglia monitoring client"
-  homepage 'http://ganglia.sourceforge.net/'
-  url 'https://downloads.sourceforge.net/project/ganglia/ganglia%20monitoring%20core/3.6.0/ganglia-3.6.0.tar.gz'
-  sha1 'b06529ac49deb1f1c65c6215b8d2d13c3f3fa23f'
+  homepage "http://ganglia.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/ganglia/ganglia%20monitoring%20core/3.6.0/ganglia-3.6.0.tar.gz"
+  sha1 "b06529ac49deb1f1c65c6215b8d2d13c3f3fa23f"
 
-  conflicts_with 'coreutils', :because => 'both install `gstat` binaries'
+  conflicts_with "coreutils", :because => "both install `gstat` binaries"
 
-  depends_on 'pkg-config' => :build
+  depends_on "pkg-config" => :build
   depends_on :apr => :build
-  depends_on 'confuse'
-  depends_on 'pcre'
-  depends_on 'rrdtool'
+  depends_on "confuse"
+  depends_on "pcre"
+  depends_on "rrdtool"
 
   # fixes build on Leopard and newer, which lack kvm.h, cpu_steal_func() and its corresponding /dev/ node
   # merged upstream: https://github.com/ganglia/monitor-core/issues/150
@@ -22,7 +22,7 @@ class Ganglia < Formula
   end
 
   def install
-    inreplace "configure", %{varstatedir="/var/lib"}, %{varstatedir="#{var}/lib"}
+    inreplace "configure", %(varstatedir="/var/lib"), %(varstatedir="#{var}/lib")
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",

@@ -21,7 +21,7 @@ class Dockutil < Formula
   end
 
   def install
-    ENV.prepend_create_path 'PYTHONPATH', libexec+'lib/python2.7/site-packages'
+    ENV.prepend_create_path "PYTHONPATH", libexec+"lib/python2.7/site-packages"
 
     resource("plistlib").stage { system "python", "setup.py", "install", "--prefix=#{libexec}" }
 

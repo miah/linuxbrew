@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libnids < Formula
   desc "Implements E-component of network intrusion detection system"
-  homepage 'http://libnids.sourceforge.net/'
-  url 'https://downloads.sourceforge.net/project/libnids/libnids/1.24/libnids-1.24.tar.gz'
-  sha1 '9a421df05cefdc4f5f7db95efc001b3c2b5249ce'
+  homepage "http://libnids.sourceforge.net/"
+  url "https://downloads.sourceforge.net/project/libnids/libnids/1.24/libnids-1.24.tar.gz"
+  sha1 "9a421df05cefdc4f5f7db95efc001b3c2b5249ce"
 
   bottle do
     cellar :any
@@ -29,7 +29,7 @@ class Libnids < Formula
 
   def install
     # autoreconf the old 2005 era code for sanity.
-    system 'autoreconf', '-ivf'
+    system "autoreconf", "-ivf"
     args = ["--prefix=#{prefix}", "--mandir=#{man}", "--enable-shared"]
     args << "--disable-libnet" if build.without? "libnet"
     args << "--disable-libglib" if build.without? "glib"

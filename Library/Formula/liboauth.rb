@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Liboauth < Formula
   desc "C library for the OAuth Core RFC 5849 standard"
-  homepage 'http://liboauth.sourceforge.net'
-  url 'https://downloads.sourceforge.net/project/liboauth/liboauth-1.0.3.tar.gz'
-  sha1 '791dbb4166b5d2c843c8ff48ac17284cc0884af2'
+  homepage "http://liboauth.sourceforge.net"
+  url "https://downloads.sourceforge.net/project/liboauth/liboauth-1.0.3.tar.gz"
+  sha1 "791dbb4166b5d2c843c8ff48ac17284cc0884af2"
   revision 1
 
   bottle do

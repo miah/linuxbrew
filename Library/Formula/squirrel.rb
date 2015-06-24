@@ -1,11 +1,11 @@
-require 'formula'
+require "formula"
 
 class Squirrel < Formula
   desc "High level, imperative, object-oriented programming language"
-  homepage 'http://www.squirrel-lang.org'
-  url 'https://downloads.sourceforge.net/project/squirrel/squirrel3/squirrel%203.0.7%20stable/squirrel_3_0_7_stable.tar.gz'
-  version '3.0.7'
-  sha1 '5ae3f669677ac5f5d663ec070d42ee68980e1911'
+  homepage "http://www.squirrel-lang.org"
+  url "https://downloads.sourceforge.net/project/squirrel/squirrel3/squirrel%203.0.7%20stable/squirrel_3_0_7_stable.tar.gz"
+  version "3.0.7"
+  sha1 "5ae3f669677ac5f5d663ec070d42ee68980e1911"
 
   bottle do
     cellar :any
@@ -17,10 +17,10 @@ class Squirrel < Formula
   def install
     system "make"
     prefix.install %w[bin include lib]
-    doc.install Dir['doc/*.pdf']
+    doc.install Dir["doc/*.pdf"]
     doc.install %w[etc samples]
     # See: https://github.com/Homebrew/homebrew/pull/9977
-    (lib+'pkgconfig/libsquirrel.pc').write pc_file
+    (lib+"pkgconfig/libsquirrel.pc").write pc_file
   end
 
   def pc_file; <<-EOS.undent

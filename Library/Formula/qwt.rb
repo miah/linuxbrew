@@ -27,7 +27,7 @@ class Qwt < Formula
 
     args = ["-config", "release", "-spec"]
     # On Mavericks we want to target libc++, this requires a unsupported/macx-clang-libc++ flag
-    if ENV.compiler == :clang and MacOS.version >= :mavericks
+    if ENV.compiler == :clang && MacOS.version >= :mavericks
       args << "unsupported/macx-clang-libc++"
     else
       args << "macx-g++"
@@ -48,7 +48,7 @@ class Qwt < Formula
   end
 
   def caveats
-    if build.with? "qwtmathml";<<-EOS.undent
+    if build.with? "qwtmathml"; <<-EOS.undent
         The qwtmathml library contains code of the MML Widget from the Qt solutions package.
         Beside the Qwt license you also have to take care of its license:
         #{opt_prefix}/qtmmlwidget-license

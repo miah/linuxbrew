@@ -1,8 +1,8 @@
 class Googlecl < Formula
   desc "Manage Google services from the command-line"
-  homepage 'https://code.google.com/p/googlecl/'
-  url 'https://googlecl.googlecode.com/files/googlecl-0.9.14.tar.gz'
-  sha1 '810b2426e2c5e5292e507837ea425e66f4949a1d'
+  homepage "https://code.google.com/p/googlecl/"
+  url "https://googlecl.googlecode.com/files/googlecl-0.9.14.tar.gz"
+  sha1 "810b2426e2c5e5292e507837ea425e66f4949a1d"
 
   bottle do
     cellar :any
@@ -13,7 +13,7 @@ class Googlecl < Formula
 
   depends_on :python if MacOS.version <= :snow_leopard
 
-  conflicts_with 'osxutils', :because => 'both install a google binary'
+  conflicts_with "osxutils", :because => "both install a google binary"
 
   resource "gdata" do
     url "https://pypi.python.org/packages/source/g/gdata/gdata-2.0.18.tar.gz"
@@ -30,7 +30,7 @@ class Googlecl < Formula
     system "python", *Language::Python.setup_install_args(libexec)
 
     bin.install Dir[libexec/"bin/*"]
-    bin.env_script_all_files(libexec+'bin', :PYTHONPATH => ENV['PYTHONPATH'])
+    bin.env_script_all_files(libexec+"bin", :PYTHONPATH => ENV["PYTHONPATH"])
   end
 
   test do

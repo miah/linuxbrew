@@ -8,7 +8,6 @@ class Bro < Formula
   stable do
     url "https://www.bro.org/downloads/release/bro-2.4.tar.gz"
     sha256 "740c0d0b0bec279c2acef5e1b6b4d0016c57cd02a729f5e2924ae4a922e208b2"
-
   end
 
   bottle do

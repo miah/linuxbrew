@@ -1,20 +1,20 @@
-require 'formula'
+require "formula"
 
 class Tcpflow < Formula
   desc "TCP flow recorder"
-  homepage 'https://github.com/simsong/tcpflow'
-  url 'http://digitalcorpora.org/downloads/tcpflow/tcpflow-1.4.4.tar.gz'
-  sha1 'e4bc5ad08a81a39943bd1c799edefcdee09de784'
+  homepage "https://github.com/simsong/tcpflow"
+  url "http://digitalcorpora.org/downloads/tcpflow/tcpflow-1.4.4.tar.gz"
+  sha1 "e4bc5ad08a81a39943bd1c799edefcdee09de784"
 
   head do
-    url 'https://github.com/simsong/tcpflow.git'
+    url "https://github.com/simsong/tcpflow.git"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
   end
 
-  depends_on 'boost' => :build
-  depends_on 'sqlite' if MacOS.version < :lion
+  depends_on "boost" => :build
+  depends_on "sqlite" if MacOS.version < :lion
   depends_on "openssl"
 
   stable do

@@ -19,7 +19,6 @@ class Libgetdata < Formula
   depends_on "xz" if build.include? "lzma"
   depends_on "libzzip" if build.include? "zzip"
 
-
   def install
     args = %W[
       --disable-dependency-tracking

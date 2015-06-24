@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Juise < Formula
   desc "JUNOS user interface scripting environment"
-  homepage 'https://github.com/Juniper/juise/wiki'
-  url 'https://github.com/Juniper/juise/releases/download/0.6.1/juise-0.6.1.tar.gz'
-  sha1 '9180619ffc67c7b3ebbdd003d9010328e7513527'
+  homepage "https://github.com/Juniper/juise/wiki"
+  url "https://github.com/Juniper/juise/releases/download/0.6.1/juise-0.6.1.tar.gz"
+  sha1 "9180619ffc67c7b3ebbdd003d9010328e7513527"
 
   bottle do
     sha1 "a8acedc9b48bc87a2daa4da9e81f17693d08fc32" => :mavericks
@@ -13,17 +13,17 @@ class Juise < Formula
   end
 
   head do
-    url 'https://github.com/Juniper/juise.git'
+    url "https://github.com/Juniper/juise.git"
 
-    depends_on 'autoconf' => :build
-    depends_on 'automake' => :build
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
   end
 
-  depends_on 'libtool' => :build
-  depends_on 'libslax'
-  depends_on 'libssh2'
-  depends_on 'pcre'
-  depends_on 'sqlite'
+  depends_on "libtool" => :build
+  depends_on "libslax"
+  depends_on "libssh2"
+  depends_on "pcre"
+  depends_on "sqlite"
 
   def install
     system "sh ./bin/setup.sh" if build.head?

@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Serd < Formula
   desc "C library for RDF syntax"
-  homepage 'http://drobilla.net/software/serd/'
-  url 'http://download.drobilla.net/serd-0.20.0.tar.bz2'
-  sha1 '38c0c8600270e38d99bc87b0ceb14b25c4c0cea3'
+  homepage "http://drobilla.net/software/serd/"
+  url "http://download.drobilla.net/serd-0.20.0.tar.bz2"
+  sha1 "38c0c8600270e38d99bc87b0ceb14b25c4c0cea3"
 
   bottle do
     cellar :any
@@ -13,7 +13,7 @@ class Serd < Formula
     sha256 "ef544a7dab5f355717e72587bb66bc99c2b5c48f05a2e34f2523849c4bad3526" => :mountain_lion
   end
 
-  depends_on 'pkg-config' => :build
+  depends_on "pkg-config" => :build
 
   def install
     system "./waf", "configure", "--prefix=#{prefix}"

@@ -45,7 +45,7 @@ class Imapsync < Formula
   end
 
   def install
-    ENV.prepend_create_path 'PERL5LIB', libexec+'lib/perl5'
+    ENV.prepend_create_path "PERL5LIB", libexec+"lib/perl5"
 
     resources.each do |r|
       r.stage do
@@ -59,6 +59,6 @@ class Imapsync < Formula
     system "pod2man", "imapsync", "imapsync.1"
     bin.install "imapsync"
     man1.install "imapsync.1"
-    bin.env_script_all_files(libexec+"bin", :PERL5LIB => ENV['PERL5LIB'])
+    bin.env_script_all_files(libexec+"bin", :PERL5LIB => ENV["PERL5LIB"])
   end
 end

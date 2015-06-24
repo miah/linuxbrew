@@ -1,10 +1,10 @@
-require 'formula'
+require "formula"
 
 class Libcmph < Formula
   desc "C minimal perfect hashing library"
-  homepage 'http://cmph.sourceforge.net'
-  url 'https://downloads.sourceforge.net/project/cmph/cmph/cmph-2.0.tar.gz'
-  sha1 'eabdd4cd9f9bb2fed6773caac8d91638ad2d02b7'
+  homepage "http://cmph.sourceforge.net"
+  url "https://downloads.sourceforge.net/project/cmph/cmph/cmph-2.0.tar.gz"
+  sha1 "eabdd4cd9f9bb2fed6773caac8d91638ad2d02b7"
 
   bottle do
     cellar :any

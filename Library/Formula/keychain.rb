@@ -1,11 +1,11 @@
-require 'formula'
+require "formula"
 
 class Keychain < Formula
   desc "User-friendly front-end to ssh-agent(1)"
-  homepage 'http://www.funtoo.org/Keychain'
-  url 'http://build.funtoo.org/distfiles/keychain/keychain-2.8.0.tar.bz2'
-  mirror 'http://ftp.osuosl.org/pub/funtoo/distfiles/keychain/keychain-2.8.0.tar.bz2'
-  sha256 '411bfe6a3ac9daca1c35f9a56828f03cc8474e8a668e122773397deb8f7a0799'
+  homepage "http://www.funtoo.org/Keychain"
+  url "http://build.funtoo.org/distfiles/keychain/keychain-2.8.0.tar.bz2"
+  mirror "http://ftp.osuosl.org/pub/funtoo/distfiles/keychain/keychain-2.8.0.tar.bz2"
+  sha256 "411bfe6a3ac9daca1c35f9a56828f03cc8474e8a668e122773397deb8f7a0799"
 
   bottle do
     cellar :any

@@ -1,4 +1,4 @@
-require 'formula'
+require "formula"
 
 class TokyoCabinet < Formula
   desc "Lightweight database library"

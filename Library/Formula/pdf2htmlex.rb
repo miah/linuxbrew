@@ -53,7 +53,7 @@ class Pdf2htmlex < Formula
               "--without-iconv",
               "--disable-python-scripting",
               "--disable-python-extension",
-      ]
+             ]
 
       # Fix linker error; see: http://trac.macports.org/ticket/25012
       ENV.append "LDFLAGS", "-lintl"

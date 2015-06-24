@@ -1,11 +1,11 @@
-require 'formula'
+require "formula"
 
 class Libxslt < Formula
   desc "C XSLT library for GNOME"
-  homepage 'http://xmlsoft.org/XSLT/'
-  url 'http://xmlsoft.org/sources/libxslt-1.1.28.tar.gz'
-  mirror 'ftp://xmlsoft.org/libxml2/libxslt-1.1.28.tar.gz'
-  sha1 '4df177de629b2653db322bfb891afa3c0d1fa221'
+  homepage "http://xmlsoft.org/XSLT/"
+  url "http://xmlsoft.org/sources/libxslt-1.1.28.tar.gz"
+  mirror "ftp://xmlsoft.org/libxml2/libxslt-1.1.28.tar.gz"
+  sha1 "4df177de629b2653db322bfb891afa3c0d1fa221"
   revision 1
 
   bottle do
@@ -16,7 +16,7 @@ class Libxslt < Formula
 
   keg_only :provided_by_osx
 
-  depends_on 'libxml2'
+  depends_on "libxml2"
 
   head do
     url "https://git.gnome.org/browse/libxslt"
